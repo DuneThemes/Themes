@@ -1,0 +1,892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{Title} {block:PostTitle} - {PostTitle}{/block:PostTitle} {block:PostSummary}
+- {PostSummary}
+{/block:PostSummary}</title>
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing you link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    
+    <!-- Layout Options -->
+    	<meta name="if:Display Portrait" content="1" />
+        <meta name="if:Display Title" content="1" />
+        <meta name="if:Display Description" content="1" />
+        <meta name="if:DisplayAskLink" content="1" />
+        <meta name="if:DisplayArchiveLink" content="1" />
+        <meta name="if:Blur Background" content="0" />
+    
+    <!-- Images and Colours -->
+    	<meta name="image:Background" content="" />
+        <meta name="color:Background" content="#454545" />
+        <meta name="color:Post Background" content="#ffffff" />
+        <meta name="color:Post Text" content="#000000" />
+        
+    <!-- Drop Downs -->
+    	<meta name="select:ReblogLike Colour" content="black" title="Black">
+        <meta name="select:ReblogLike Colour" content="white" title="White">
+        <meta name="select:ReblogLike Colour" content="grey" title="Grey">
+    <style>
+		@import url(http://fonts.googleapis.com/css?family=Arimo);
+		body{
+		  font-family: 'Arimo', sans-serif;	
+		}
+		#background{
+		  top: -10px;
+		  right: -10px;
+		  bottom: -10px;
+		  left: -10px;
+		  position: fixed;
+		  background-color: {color:Background};
+		  background-image: url({image:Background});
+		  background-size: cover;	
+		}
+		{block:IfBlurBackground}
+			#background{
+			  -webkit-filter: blur(3px); 
+		  	  -moz-filter: blur(3px); 
+		  	  -o-filter: blur(3px); 
+		  	  -ms-filter: blur(3px); 
+		  	  filter: blur(3px);	
+			}
+		{/block:IfBlurBackground}
+		#wrapper{
+		  max-width: 850px;
+		  position: relative;
+		  margin: 0 auto;
+		  top: 100px;
+		}
+		#header{
+		  left: 0px;
+		  top: 0px;
+		  position: relative;
+		  width: 100%;
+		  padding-top: 10px;
+		  padding-bottom: 10px;
+		  text-align: center;	
+		}
+		.portrait{
+		  border-radius: 200px;	
+		  width: 128px;
+		}
+		#header h1, #header p{
+		  margin: 0;	
+		}
+		#header h1{
+		  text-transform: uppercase;
+		  font-size: 40px;	
+		}
+		#header p{
+		  max-width: 420px;
+		  position: relative;
+		  margin: 0 auto;	
+		}
+		#header ul{
+		  margin-left: -40px;
+		  list-style: none;
+		}
+		.menu{
+		  font-weight: bold;	
+		}
+		#header ul li{
+		  display: inline;
+		  margin: 0;
+		  padding: 5px;	
+		}
+		#header ul li a{
+		  text-decoration: none;
+		  color: #000;
+		  text-transform: uppercase;	
+		}
+		#content{
+		  position: relative;
+		  margin: 0 auto;
+		  max-width: 850px;
+		}
+		#entry{
+		  width: 230px;
+		  height: auto;
+		  color: {color:Post Text};
+		  background: {color:Post Background};
+		  margin: 15px;
+		  padding: 10px;
+		}
+		#entry h1, #entry p{
+		  margin: 5px;	
+		}
+		#entry h1{
+		  font-size: 30px;	
+		}
+		.photoPost{
+		  width: 250px;
+		  margin-left: -10px;
+		  margin-top: -10px;	
+		  margin-bottom: 10px;
+		}
+		#entry figcaption{
+		  margin: 5px;	
+		}
+		#quoteBox, #linkBox, #answerBox{
+		  padding: 5px;
+		  text-transform: uppercase;
+		  background: #171717;
+		  font-weight: bold;
+		  color: #fff;
+		  font-size: 20px;
+		  margin-left: -10px;
+		  margin-top: -10px;
+		  width: 240px;	
+		  margin-bottom: 10px;
+		}
+		#linkBox{
+		  font-size: 16px;
+		  text-transform: none;	
+		  text-align: center;
+		}
+		#linkBox h1{
+		  font-size: 20px;
+		}
+		#linkBox em{
+		  font-size: 12px;	
+		}
+		.linkBox{
+		  text-decoration: none;	
+		}
+		#quoteBox{
+		  padding: 10px;
+		  width: 230px;	
+		}
+		.chatPost{
+		  margin: 5px;	
+		}
+		ul.chatPost li{
+		  padding: 5px;
+		  margin-left: -40px;
+		  list-style: none;
+		}
+		ul.chatPost li:nth-child(even){
+		  background: #EAEAEA;	
+		}
+		.video-container { 
+  		  position: relative; 
+  		  padding-bottom: 56.25%; 
+  		  padding-top: 30px; 
+  		  height: 0; 
+  		  overflow: hidden; 
+		  margin-bottom: 10px;
+		}		 
+		.video-container iframe, 
+		.video-container object, 
+		.video-container embed { 
+  		  position: absolute; 
+  		  top: 0; 
+  		  left: 0; 
+  		  width: 100%; 
+  		  height: 100%; 
+  		  margin-bottom: 10px;
+		}
+		#answerBox{
+		  font-size: 16px;
+		}
+		#answerBox h1{
+		  font-size: 16px;	
+		}
+		#answerBox p{
+		  text-transform: none;
+		  font-weight: normal;	
+		}
+		#overlay{
+		  position: absolute;
+		  top: 0px;
+		  right: 0px;
+		  background: #333;
+		  color: #fff;	
+		  visibility: hidden;
+		}
+		#overlay ul{
+		  margin: 0;
+		  margin-left: -40px;	
+		}
+		#overlay ul li{
+		  list-style-type: none;
+		  padding: 3px;	
+		}
+		.overlayLink{
+		  color: #fff;	
+		}
+		#entry:hover > #overlay{
+		  visibility: visible;	
+		}
+		#exclude.blogInfo{
+		  background: none;
+		  box-shadow: none;
+		  text-align: center;
+		  font-size: 12px;
+		  color: #fff;
+		  position: relative;
+		  width: 230px;
+		  margin: 15px;
+		  padding: 10px;
+		}  
+		#exclude.blogInfo h1{
+		  font-weight: 100;	
+		}
+		#exclude.blogInfo p{
+		  font-size: 16px;	
+		}
+		#exclude.blogInfo ul.menu{
+		  margin-left: -40px;
+		  list-style-type: none;
+		  font-size: 16px;	
+		}
+		#exclude.blogInfo ul.menu li{
+		  display: inline;
+		  padding: 10px;	
+		}
+		#exclude.blogInfo ul.menu li a{
+		  text-decoration: none;
+		  color: #fff;
+		  text-transform: uppercase;	
+		}
+		#exclude.blogInfo ul.socialMenu{
+		  margin-left: -40px;
+		  list-style-type: none;
+		  font-size: 16px;	
+		}
+		#exclude.blogInfo ul.socialMenu li{
+		  display: inline;
+		  padding: 10px;	
+		}
+		#exclude.blogInfo ul.socialMenu li a{
+		  text-decoration: none;
+		  color: #fff;
+		  text-transform: uppercase;
+		  font-size: 18px;
+		}
+		#postInfo{
+		  display: none;	
+		  visibility: hidden;
+		}
+		#postInfo #notes{
+		  display: none;	
+		}
+		#postInfo #notes h3{
+		  display: none;	
+		}
+		#postInfo a{
+		  display: none;	
+		}
+		{block:PermalinkPage}
+		/* Permalink Styles */
+		#content{
+		  max-width: 400px;	
+		}
+		#exclude.blogInfo{
+		  width: 100%;
+		  text-align: center;
+		}
+		#permaPost{
+		  width: 100%;
+		  margin: 0 auto;
+		  margin-bottom: 10px;
+		  padding: 10px;
+		  color: {color:Post Text};
+		  background: {color:Post Background};	
+		}
+		#permaPost h1, #permaPost h2, #permaPost p{
+		  margin: 0;	
+		}
+		#permaPost.postInfo{
+		  background: none;
+		  color: #fff;	
+		}
+		#permaPost.postInfo a{
+		  color: #fff;
+		  font-weight: bold;
+		  text-decoration: none;	
+		}
+		ol.notes{
+		  margin-left: -20px;	
+		}
+		ol.notes li img{
+		  margin-right: 10px;	
+		}
+		#permaPost.postInfo .right{
+		  float: right;	
+		}
+		#permaPost img.photoPost{
+		  width: 420px;	
+		}
+		#permaPost #quoteBox{
+		  width: 400px;	
+		}
+		#permaPost #linkBox{
+		  width: 410px;	
+		}
+		#permaPost #answerBox{
+		  padding: 20px;
+		  width: 380px;	
+		}
+		{/block:PermalinkPage}
+		/* Responsive */
+		@media screen and (max-width: 300px) {
+    		body{
+			  overflow-x: hidden;	
+			}
+			#wrapper{
+			  top: 0px;	
+			}
+			#content{
+        	  width: 300px;
+    		}
+			#entry{
+			  width: 245px;	
+			  margin-left: 0;
+			  margin-right: 0;
+			}
+			.photoPost{
+			  width: 265px;	
+			}
+			#quoteBox{
+			  width: 245px;	
+			}
+			#linkBox, #answerBox{
+			  width: 255px;	
+			}
+			#exclude.blogInfo{
+			  margin: 0;	
+			}
+			#exclude.blogInfo ul.menu li{
+			  display: list-item;	
+			  padding: 5px;
+			  border-bottom: solid 1px #000;
+			  margin-left: -20px;
+			  margin-right: -20px;
+			}
+			#exclude.blogInfo ul.menu li:last-child{
+			  border: none;	
+			}
+			#exclude.blogInfo ul.socialMenu{
+		 	  margin-left: -40px;
+		      list-style-type: none;
+		      font-size: 16px;	
+		    }
+		    #exclude.blogInfo ul.socialMenu li{
+		      display: inline;
+		      padding: 10px;	
+		      background: #FFF;
+		    }
+			#exclude.blogInfo ul.socialMenu li a{
+		   	  text-decoration: none;
+		      color: #000;
+		      text-transform: uppercase;
+		      font-size: 18px;
+			}
+		}
+		@media screen and (max-width: 620px) {
+    		#content{
+        	  width: 400px;
+    		}
+		}
+		@media screen and (max-width: 820px) {
+    		#content{
+        	  max-width: 607px;
+    		}
+		} */
+		#pagination{
+		  display: none;
+		}  
+		#entry iframe{
+		  width: 100%;
+		}
+		.credit{
+		  right: 10px;
+		  bottom: 10px;
+		  position: fixed;	
+		}
+	</style>
+</head>
+
+<body>
+    <div id="background">
+    	<!-- The background handler -->
+    </div>
+    <a href="http://dunethemes.tumblr.com/themes/batch" class="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Post Background}" stroke="none">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+    </a>
+	<div id="wrapper">
+        
+        <div id="content">
+            <div id="exclude" class="blogInfo">
+            	{block:IfDisplayPortrait}
+                	<a href="{BlogURL}"><img src="{PortraitURL-128}" class="portrait" /></a>
+                {/block:IfDisplayPortrait}
+            	{block:IfDisplayTitle}
+                	<h1>{Title}</h1>
+                {/block:IfDisplayTitle}
+            	{block:IfDisplayDescription}
+                	<p>{Description}</p>
+                {/block:IfDisplayDescription}
+            	<ul class="menu">
+                	{block:HasPages}	
+            				{block:Pages}
+                            	<li><a href="{URL}">{Label}</a></li>
+                            {/block:Pages}
+                	{/block:HasPages}
+            	    {block:IfDisplayAskLink}
+                    	<li><a href="/ask">ask</a></li>
+                    {/block:IfDisplayAskLink}
+                    {block:IfDisplayArchiveLink}
+            	    	<li><a href="/archive">archive</a></li>
+                    {/block:IfDisplayArchiveLink}
+            	</ul>
+                <ul class="socialMenu">
+                	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-wordpress"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitch"></i></a></li>
+                </ul>
+            </div>
+            {block:Posts}
+            {block:IndexPage}
+            {block:Text}
+            <div id="entry"><!-- Text -->
+            	{block:Title}<h1>{Title}</h1>{/block:Title}
+                {Body}
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+            &nbsp;
+            {/block:Text}
+            
+            {block:Photo}
+            <div id="entry"><!-- Photo -->
+            	<img src="{PhotoURL-500}" class="photoPost" />
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+            &nbsp;
+            {/block:Photo}
+            
+            {block:Photoset}
+            <div id="entry"><!-- Photoset -->
+            	{Photoset}
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+            &nbsp;
+            {/block:Photoset}
+            
+            {block:Quote}
+            <div id="entry"><!-- Quote -->
+            	<div id="quoteBox">
+                	{Quote}
+                </div>
+                {block:Source}
+                	<figcaption>
+                		&mdash; {Source}
+                	</figcaption>
+                {/block:Source}
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+            &nbsp;
+            {/block:Quote}
+            
+            {block:Link}
+            <div id="entry"><!-- Link -->
+            	<a href="{URL}" class="linkBox"><div id="linkBox">
+                	<h1>{Name}</h1>
+                    {block:Host}<em>{Host}</em>{/block:Host}
+                </div></a>
+                {block:Description}
+                	<figcaption>
+                		{Description}
+                	</figcaption>
+                {/block:Description}
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+            &nbsp;
+            {/block:Link}
+            
+            {block:Chat}
+            <div id="entry"><!-- Chat -->
+            	{block:Title}<h1>{Title}</h1>{/block:Title}
+                <ul class="chatPost">
+                	{block:Lines}
+                    	<li>{block:Label}<strong>{Label} </strong>{/block:Label}{Line}</li>
+                    {/block:Lines}
+                </ul>
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+            &nbsp;
+            {/block:Chat}
+            
+            {block:Audio}
+            <div id="entry"><!-- Audio -->
+            	<div class="video-container">
+                	{AudioEmbed}
+            	</div>
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+            &nbsp;
+            {/block:Audio}
+            
+            {block:Video}
+            <div id="entry"><!-- Video -->
+            	<div class="video-container">
+                	{Video-700}
+            	</div>
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 	
+            &nbsp;
+            {/block:Video}
+            
+            {block:Answer}
+            <div id="entry"><!-- Answer -->
+            	<div id="answerBox">
+                	<h1>{Asker} asked:</h1>
+                    {Question}
+                </div>
+                {Answer}
+                <div id="overlay">
+                	<ul>
+                    	<li><a href="{ReblogLink}" target="_blank" class="overlayLink"><i class="fa fa-2x fa-retweet"></i></a></li>
+                        <li><a href="{Permalink}" class="overlayLink"><i class="fa fa-2x fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+            &nbsp;
+            {/block:Answer}
+            {/block:IndexPage}
+            
+            {block:PermalinkPage}
+            {block:Text}
+            <div id="permaPost"><!-- Permalink Text -->
+            	{block:Title}<h1>{Title}</h1>{/block:Title}
+                {Body}
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Text}
+            
+            {block:Photo}
+            <div id="permaPost"><!-- Permalink Photo -->
+            	<img src="{PhotoURL-500}" class="photoPost" />
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Photo}
+            
+            {block:Photoset}
+            <div id="permaPost"><!-- Permalink Photoset -->
+            	{Photoset}
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Photoset}
+            
+            {block:Quote}
+            <div id="permaPost"><!-- Permalink Quote -->
+            	<div id="quoteBox">
+                	{Quote}
+                </div>
+                {block:Source}
+                	<figcaption>
+                		&mdash; {Source}
+                	</figcaption>
+            	{/block:Source}
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Quote}
+            
+            {block:Link}
+            <div id="permaPost"><!-- Permalink Link -->
+            	<a href="{URL}" class="linkBox"><div id="linkBox">
+                	<h1>{Name}</h1>
+                    {block:Host}<em>{Host}</em>{/block:Host}
+                </div></a>
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Link}
+            
+            {block:Chat}
+            <div id="permaPost"><!-- Permalink Chat -->
+            	<h1>Lorem Ipsum</h1>
+                <ul class="chatPost">
+                	{block:Lines}
+                    	<li><strong>{Label} </strong>{Line}</li>
+                    {/block:Lines}
+                </ul>
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Chat}
+            
+            {block:Audio}
+            <div id="permaPost"><!-- Permalink Audio -->
+            	<div class="video-container">
+                	{AudioEmbed}
+            	</div>
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Audio}
+            
+            {block:Video}
+            <div id="permaPost"><!-- Permalink Video -->
+            	<div class="video-container">
+                	{Video-700}
+            	</div>
+                {block:Caption}
+                	<figcaption>
+                		{Caption}
+                	</figcaption>
+                {/block:Caption}
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Video}
+            
+            {block:Answer}
+            <div id="permaPost"><!-- Permalink Answer -->
+            	<div id="answerBox">
+                	<h1>{Asker} asked:</h1>
+                    {Question}
+                </div>
+                {Answer}
+            </div>
+            <div id="permaPost" class="postInfo">
+                <div class="right">
+                	{ReblogButton} {LikeButton}
+                </div>
+                Posted <a href="{Permalink}">{TimeAgo}</a>
+                {block:PostNotes}
+                <h2>Notes</h2>
+                {PostNotes}
+                {/block:PostNotes}
+            </div>
+            {/block:Answer}
+            {/block:PermalinkPage}
+            {block:Pagination}
+        		<div id="pagination">
+        			{block:PreviousPage}
+        	    		<a href="{PreviousPage}" class="left">
+                		</a>
+            		{/block:PreviousPage}
+            		{block:NextPage}
+                		<a href="{NextPage}" class="right">
+                		</a>
+            		{/block:NextPage}
+        		</div>
+        	{/block:Pagination}
+            {/block:Posts}
+        </div>
+    </div>
+    
+    <script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Nsengbupv/jquery.imagesloaded.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/wUzngbuqv/jquery.masonry.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Audngbuqj/jquery.infinitescroll.min.js"></script>
+    <script>
+		(function () {
+    	var $tumblelog = $('#content');
+		$tumblelog.infinitescroll({
+        	navSelector: "#pagination",
+        	nextSelector: "#pagination a.right",
+        	itemSelector: "#entry",
+    	},
+    	function (newElements) {
+        	var $newElems = $(newElements).css({
+            	opacity: 0
+        });
+        $newElems.imagesLoaded(function () {
+           	$newElems.animate({
+               	opacity: 1
+          		});
+           	$tumblelog.masonry('appended', $newElems);
+        	});
+    	});
+    	$tumblelog.imagesLoaded(function () {
+        	$tumblelog.masonry({
+            	columnWidth: function (containerWidth) {
+                		return containerWidth / 100;
+            		}
+        		});
+    		});
+		})();
+	</script>
+</body>
+</html>
