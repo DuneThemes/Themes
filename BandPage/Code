@@ -1,0 +1,753 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{Title}</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{Favicon}" />
+    
+    <!-- Colours -->
+    	<meta name="color:Background" content="#333" />
+        <meta name="color:Title" content="#fff" />
+        <meta name="color:Title Shadow" content="#000" />
+        <meta name="color:Description" content="#666" />
+        <meta name="color:Menu" content="#666" />
+        <meta name="color:Search Background" content="#fff" />
+        <meta name="color:Accent" content="#03C" />
+        <meta name="color:Text" content="#ccc" />
+        <meta name="color:Line Colour" content="#000" />
+        
+    <!-- Mods -->
+    	<meta name="if:Display Title Shadow" content="1" />
+        <meta name="if:Display Title" content="1" />
+        <meta name="if:Display Description" content="1" />
+        <meta name="if:Display Menu" content="1" />
+        <meta name="if:Display Social Links" content="1" />
+        <meta name="if:Enable Search" content="1" />
+        <meta name="select:Description Align" content="justify" title="Justify" />
+        <meta name="select:Description Align" content="left" title="Left" />
+        <meta name="select:Description Align" content="center" title="Center" />
+        <meta name="select:Description Align" content="right" title="Right" />
+        <meta name="select:Body Width" content="wide" title="Wide" />
+        <meta name="select:Body Width" content="narrow" title="Narrow" />
+    
+    <!-- Text -->
+    	<meta name="text:Twitter" content="" />
+        <meta name="text:Facebook" content="" />
+        <meta name="text:SoundCloud" content="" />
+        <meta name="text:Instagram" content="" />
+        <meta name="text:Apple" content="" />
+        <meta name="text:BitCoin" content="" />
+        <meta name="text:PayPal" content="" />
+        <meta name="text:Flickr" content="" />
+        <meta name="text:LastFM" content="" />
+        <meta name="text:Tumblr" content="" />
+        <meta name="text:YouTube" content="" />
+        <meta name="text:WordPress" content="" />
+        <meta name="text:LinkedIn" content="" />
+        
+	<link rel="stylesheet" href="../Theme/font-awesome-4.2.0/css/font-awesome.css" />
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Lobster);
+		body{
+		  background: {color:Background};
+		  font-family: Tahoma, Geneva, sans-serif;	
+		} 
+		a{
+		  color: {color:Accent};	
+		}
+		header{
+		  text-align: center;	
+		  margin-top: 30px;
+		}
+		header h1{
+		  color: {color:Title};
+		  font-family: 'Lobster', cursive;	
+		  font-size: 70px;
+		  margin: 0;
+		}
+		{block:IfDisplayTitleShadow}
+			header h1{
+			  text-shadow: 2px 2px 2px {color:Title Shadow};	
+			}
+		{/block:IfDisplayTitleShadow}
+		header h2{
+		  max-width: 300px;
+		  position: relative;
+		  margin: 0 auto;
+		  font-size: 20px;	
+		  color: {color:Description};
+		  font-weight: 100;
+		}
+		header h2{
+		  text-align: {select:Description Align};	
+		}
+		nav ul{
+		  list-style-type: none;
+		  margin-left: -40px;
+		}
+		nav ul li{
+		  display: inline;	
+		}
+		nav ul li a{
+		  font-size: 20px;
+		  text-decoration: none;
+		  padding: 10px;
+		  text-transform: uppercase;	
+		  color: {color:Menu};
+		}
+		nav.postInfo ul li{
+		  padding-right: 10px;	
+		}
+		nav.postInfo{
+		  display: inline;	
+		}
+		#reblogLike{
+		  float: right;
+		  text-align: right;	
+		}
+		#spyGlass{
+		  cursor: pointer;
+		  color: {color:Menu};	
+		}
+		#searchArea{
+		  left: 0px;
+		  right: 0px;
+		  height: 60px;
+		  top: -60px;
+		  z-index: 99;
+		  position: absolute;
+		  background: {color:Search Background}
+		  text-align: center;
+		}
+		#top{
+		  position: relative;	
+		}
+		#search{
+		  position: relative;
+		  margin: 0 auto;
+		  top: 10px;
+		  max-width: 900px;	
+		}
+		#search input{
+		  width: 100%;
+		  height: 40px;
+		  font-size: 30px;
+		  font-weight: 100;
+		  border: 0;
+		  text-align: center;
+		  background: none;	
+		}
+		#search input:focus{
+		  border: none;
+		  outline: none;	
+		}
+		#searchClose{
+		  top: 10px;
+		  left: 10px;
+		  position: absolute;	
+		  z-index: 99;
+		  cursor: pointer;
+		}
+		#content{
+		  max-width: 900px;
+		  height: 600px;
+		  position: relative;
+		  margin: 0 auto;	
+		}
+		hr{
+		  border: solid 1px {color:Line Colour};	
+		}
+		hr.postSeperate{
+		  border: solid 1px {color:Line Colour};
+		  width: 70%;	
+		}
+		#postWrap{
+		  width: 100%;
+		  left: 0px;
+		  top: 0px;
+		  margin-bottom: 20px;
+		  color: {color:Text};
+		}
+		#postWrap h1{
+		  margin: 0;	
+		}
+		.photoPost{
+		  width: 100%;	
+		}
+		#quoteBox{
+		  position: relative;
+		  background: #5481E8;
+		}
+		#quoteBox blockquote{
+		  font-size: 36px;
+		  font-weight: 700;	
+		  margin: 0;
+		  padding: 5px;
+		  padding-left: 20px;
+		  padding-right: 20px;
+		  font-weight: 700;
+		  color: #fff;
+		  margin-bottom: 55px;
+		  text-transform: uppercase;
+		}
+		#linkBox{
+		  position: relative;
+		  background: {color:Accent};
+		  text-align: center;
+		}
+		#linkBox blockquote{
+		  font-size: 36px;
+		  font-weight: 700;	
+		  margin: 0;
+		  padding: 5px;
+		  padding-left: 20px;
+		  padding-right: 20px;
+		  font-weight: 700;
+		  color: #fff;
+		}
+		#linkBox blockquote em{
+		  font-size: 20px;
+		  font-weight: 100;
+		  text-transform: none;	
+		}
+		#linkBox #globe{
+		  top: 5px;
+		  left: 5px;
+		  position: absolute;	
+		  color: #fff;
+		}
+		#triangle-topleft {
+		  width: 0;
+		  height: 0;
+		  border-top: 50px solid #5481E8;
+		  border-right: 50px solid transparent;
+		  position: absolute;
+		  display: !important;
+		  bottom: -50px;
+		}
+		.quoteSource{
+		  text-transform: uppercase;
+		  font-size: 20px;	
+		}
+		.icon{
+		  padding-right: 5px;	
+		}
+		figcaption{
+		  margin-top: 5px;	
+		}
+		ul.chatPost{
+		  margin-left: -40px;
+		  list-style-type: none;	
+		}
+		ul.chatPost li{
+		  border-radius: 5px;
+		  padding: 5px;
+		}
+		ul.chatPost li:first-child{
+		  margin-top: -5px;	
+		}
+		ul.chatPost li:nth-child(even){
+		  background: #666;	
+		}
+		.video-container { 
+		  position: relative; 
+		  padding-bottom: 56.25%; 
+		  padding-top: 30px; 
+		  height: 0; 
+		  overflow: hidden; 
+		} 
+		.video-container iframe, 
+		.video-container object, 
+		.video-container embed { 
+		  position: absolute; 
+		  top: 0; 
+		  left: 0; 
+		  width: 100%; 
+		  height: 100%; 
+		}
+		#question{
+		  padding: 10px;
+		  background: #F76D3C;
+		  min-height: 128px;
+		  margin-bottom: 0;
+		  color: #fff;
+		}
+		#question h1{
+		  position: relative;
+		  top: -8px;	
+		  font-weight: 100;
+		  text-shadow: 2px 2px 2px #000;
+		}
+		#question p:first-of-type{
+		  margin-top: 0;	
+		}
+		.askerPortrait{
+		  max-width: 14.2%;
+		  float: left;
+		  padding-right: 10px;
+		  display: compact;
+		}
+		body.narrow{
+		  max-width: 500px;	
+		  margin: 0 auto;
+		  position: relative;
+		}
+		body.narrow #searchArea{
+		  position: fixed;
+		}
+		body.narrow #spyGlass{
+		  position: fixed;	
+		  left: 10px;
+		  top: 10px;
+		}
+		iframe{
+		  position: relative;
+		  width: 100%;	
+		}
+		#sidebarObject{
+		  width: 100%;
+		  height: auto;
+		  left: 0px;
+		  top: 0px;
+		  position: relative;
+		  margin: 0 auto;
+		  margin-bottom: 10px;
+		  border-radius: 10px;
+		  border: solid 1px #999;
+		  background: #fff;
+		}
+		#sidebarObject.pageSwitch{
+		  width: 100%;
+		  border: none;
+		  background: none;
+		  text-align: center;
+		  margin: 0 auto;
+		}
+		.newer{
+		  min-width: 100px;
+		  border: solid 1px #999;
+		  border-radius: 5px;	
+		  background: {color:Accent};
+		  padding: 5px;
+		  float: right;
+		  display: inline-block;
+		}
+		.older{
+		  min-width: 100px;
+		  padding: 5px;
+		  border: solid 1px #999;
+		  border-radius: 5px;	
+		  background: {color:Accent};
+		  float: left;
+		  display: inline-block;
+		}
+		#sidebarObject.pageSwitch a{
+		  text-decoration: none;
+		  color: red;
+		}
+		#reblogLike ul{
+		  margin-left: -40px;
+		  list-style: none;	
+		}
+		#reblogLike ul li{
+		  display: inline;	
+		}
+		.link{
+		  text-decoration: none;	
+		}
+	</style>
+	<script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
+	<script>
+    	$(document).ready(function(){
+			$('#searchArea').css('top', '-120px');
+			$('#spyGlass').click(function(){
+				$('#searchArea').animate({top: '10px'});
+				$(this).css('display', 'none');
+				$('#content').animate({top: '60px'});
+				$('#top').animate({top: '60px'});
+			});
+			$('#searchClose').click(function(){
+				$('#searchArea').animate({top: '-120px'});
+				$('#content').animate({top: '0px'});
+				$('#spyGlass').css('display', 'block');
+				$('#top').animate({top: '0px'});
+			});
+		});
+    </script>
+</head>
+
+<body class="{select:Body Width}">
+	{block:IfEnableSearch}
+    	<span id="spyGlass">
+   	 		<i class="fa fa-search"></i>
+    	</span>
+    {/block:IfEnableSearch}
+    <div id="searchArea">
+    	<span id="searchClose">
+        	<i class="fa fa-close"></i>
+        </span>
+        <div id="search">
+        	<form action="/search" method="get">
+   	 			<input type="text" name="q" value="{SearchQuery}" placeholder="Type a Search Term and Hit Enter!"/>
+			</form>
+        </div>
+    </div>
+    
+    <div id="top">
+    <header><!-- Start Header -->
+    	{block:IfDisplayTitle}
+        	<h1>{Title}</h1>
+        {/block:IfDisplayTitle}
+        {block:IfDisplayDescription}
+        	<h2>{Description}</h2>
+        {/block:IfDisplayDescription}
+        {block:IfDisplayMenu}
+            {block:HasPages}
+            	<nav>
+                	<ul>
+                    	{block:Pages}
+                        	<li><a href="{URL}">{Label}</a></li>
+                        {/block:Pages}
+                	</ul>
+            	</nav>
+            {/block:HasPages}
+        {/block:IfDisplayMenu}
+        {block:IfDisplaySocialLinks}
+            <nav>
+                <ul>
+                    {block:IfTwitter}
+                    	<li><a href="{text:Twitter}"><i class="fa fa-twitter"></i></a></li>
+                    {/block:IfTwitter}
+                    {block:IfFacebook}
+                    	<li><a href="{text:Facebook}"><i class="fa fa-facebook"></i></a></li>
+                    {/block:IfFacebook}
+                    {block:IfSoundCloud}
+                    	<li><a href="{text:SoundCloud}"><i class="fa fa-soundcloud"></i></a></li>
+                    {/block:IfSoundCloud}
+                    {block:IfInstagram}
+                    	<li><a href="{text:Instagram}"><i class="fa fa-instagram"></i></a></li>
+                    {/block:IfInstagram}
+                    {block:IfApple}
+                    	<li><a href="{text:Apple}"><i class="fa fa-apple"></i></a></li>
+                    {/block:IfApple}
+                    {block:IfBitCoin}
+                    	<li><a href="{text:BitCoin}"><i class="fa fa-btc"></i></a></li>
+                    {/block:IfBitCoin}
+                    {block:IfPayPal}
+                    	<li><a href="{text:PayPal}"><i class="fa fa-paypal"></i></a></li>
+                    {/block:IfPayPal}
+                    {block:IfFlickr}
+                    	<li><a href="{text:Flickr}"><i class="fa fa-flickr"></i></a></li>
+                    {/block:IfFlickr}
+                    {block:IfLastFM}
+                    	<li><a href="{text:LastFM}"><i class="fa fa-lastfm"></i></a></li>
+                    {/block:IfLastFM}
+                    {block:IfLinkedIn}
+                    	<li><a href="{text:LinkedIn}"><i class="fa fa-linkedin"></i></a></li>
+                    {/block:IfLinkedIn}
+                    {block:IfTumblr}
+                    	<li><a href="{text:Tumblr}"><i class="fa fa-tumblr"></i></a></li>
+                    {/block:IfTumblr}
+                    {block:IfYouTube}
+                    	<li><a href="{text:YouTube}"><i class="fa fa-youtube"></i></a></li>
+                    {/block:IfYouTube}
+                    {block:IfWordPress}
+                    	<li><a href="{text:WordPress}"><i class="fa fa-wordpress"></i></a></li>
+                    {/block:IfWordPress}
+                </ul>
+            </nav>
+        {/block:IfDisplaySocialLinks}
+    </header><!-- End Header -->
+    </div>
+    
+    <div id="content"><!-- Start Content Section -->
+    	
+        <hr class="postSeperate" />
+        {block:Posts}
+        	{block:Text}
+                <div id="postWrap"><!-- Start Text Post -->
+                    {block:Title}<h1>{Title}</h1>{/block:Title}
+                    <p>{Body}</p>
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Text Post -->
+            {/block:Text}
+            
+            {block:Photo}
+                <div id="postWrap"><!-- Start Photo Post -->
+                    <img src="{PhotoURL-500}" class="photoPost" />
+                    
+                    {block:Caption}<p>{Caption}</p>{/block:Caption}
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Photo Post -->
+            {/block:Photo}
+            
+            {block:Photoset}
+                <div id="postWrap"><!-- Start Photoset Post -->
+                    <center>{Photoset}</center>
+                    
+                    {block:Caption}<p>{Caption}</p>{/block:Caption}
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Photoset Post -->
+            {/block:Photoset}
+            
+            {block:Quote}
+                <div id="postWrap"><!-- Start Quote Post -->
+                    <div id="quoteBox">
+                        <blockquote>
+                            {Quote} 
+                            <div id="triangle-topleft">
+                        
+                            </div>
+                        </blockquote>
+                    </div>
+                    
+                    {block:Source}<span class="quoteSource">&mdash; {Source}</span>{/block:Source}
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Quote Post -->
+            {/block:Quote}
+            
+            {block:Link}
+                <div id="postWrap"><!-- Start Link Post -->
+                    <a href="{URL}" class="link">
+                        <div id="linkBox">
+                        <blockquote>
+                           {Name} <br />
+                           <em>{Host}</em>
+                        </blockquote>
+                        </div>
+                    </a>
+                    {block:Caption}<p>{Caption}</p>{/block:Caption}
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Link Post -->
+            {/block:Link}
+            
+            {block:Chat}
+                <div id="postWrap"><!-- Start Chat Post -->
+                    {block:Title}<h1>{Title}</h1>{/block:Title}
+                    <ul class="chatPost">
+                        {block:Lines}
+                        	<li>{block:Label}<strong>{Label} </strong>{/block:Label}{Line}</li>
+                        {/block:Lines}
+                    </ul>
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Chat Post -->
+           {/block:Chat}
+           
+           {block:Audio}
+                <div id="postWrap"><!-- Start Audio Post -->
+                        {AudioEmbed}
+                    
+                    {block:Caption}<p>{Caption}</p>{/block:Caption}
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Audio Post -->
+           {/block:Audio}
+           
+           {block:Video}
+                <div id="postWrap"><!-- Start Video Post -->
+                    <div class="video-container">
+                        {Video-700}
+                    </div>
+                    
+                    {block:Caption}<p>{Caption}</p>{/block:Caption}
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Video Post -->
+           {/block:Video}
+           
+           {block:Answer}
+                <div id="postWrap"><!-- Start Answer Post -->
+                    <div id="question">
+                        <img src="{AskerPortraitURL-128}" class="askerPortrait" />
+                        <h1>{Asker} asked:</h1>
+                        <p>{Question}</p>
+                    </div>
+                    
+                    <p class="answer">{Answer}</p>
+                    
+                    <hr />
+                    
+                    <span class="icon"><i class="fa fa-clock-o"></i></span><a href="{Permalink}" class="timeAgo">{TimeAgo}</a> &nbsp; 
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>{NoteCountWithLabel}
+                    <div id="reblogLike">
+                        &nbsp;
+                        <br />
+                        {block:RebloggedFrom}
+                            Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                    </div>
+                    <br />
+                    {block:HasTags}
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}	
+                    {/block:HasTags}
+                </div><!-- End Answer Post -->
+            {/block:Answer}
+        {/block:Posts}
+        {block:Pagination}
+                <div id="sidebarObject" class="pageSwitch">
+                	{block:NextPage}
+            	    <a href="{NextPage}">
+            	        <div class="older">
+                            Older
+                        </div>
+                    </a>
+                	{/block:NextPage}
+                	{block:PreviousPage}
+            		<a href="{PreviousPage}">
+            	    	<div class="newer">
+                	    	Newer
+                    	</div>
+                	</a>
+                	{/block:PreviousPage}
+                </div>
+               {/block:Pagination}
+        
+    </div><!-- End Content Section -->
+</body>
+</html>
