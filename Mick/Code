@@ -1,0 +1,988 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{Title} {block:PostTitle} - {PostTitle}{/block:PostTitle} {block:PostSummary}
+- {PostSummary}
+{/block:PostSummary}</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{Favicon}" />
+    {block:Hidden}
+        <!-- Images -->
+        <meta name="image:Banner Image" content="" />
+        
+        <!-- Colours -->
+        <meta name="color:Accent Colour" content="#DC2727" />
+        <meta name="color:Sidebar Background" content="#333333" />
+        <meta name="color:Sidebar Text" content="#ffffff" />
+        <meta name="color:Portrait Border" content="#ffffff" />
+        <meta name="color:Background Colour" content="#f3f3f3" />
+        <meta name="color:Entry Background" content="#ffffff" />
+        <meta name="color:Entry Text Colour" content="#000000" />
+        <meta name="color:Social Icons" content="#fff" />
+        
+        <!-- Layout -->
+        <meta name="if:Display Social Links" content="1" />
+        <meta name="if:Display Social Link Shader" content="1" />
+        <meta name="if:Post Shadows" content="1" />
+        <meta name="if:Portrait Border" content="1" />
+        <meta name="if:Show Ask Link" content="1" />
+        <meta name="if:Show Archive Link" content="1" />
+        <meta name="if:Infinite Scroll" content="1" />
+        <meta name="select:Number of Columns" content="two" title="Two" />
+        <meta name="select:Number of Columns" content="three" title="Three" />
+        <meta name="select:Number of Columns" content="four" title="Four" />
+        
+        <!-- Text -->
+        <meta name="text:Twitter URL" content="" />
+        <meta name="text:Facebook URL" content="" />
+        <meta name="text:Instagram URL" content="" />
+        <meta name="text:Vine URL" content="" />
+        <meta name="text:YouTube URL" content="" />
+        <meta name="text:Google Plus URL" content="" />
+        <meta name="text:SoundCloud URL" content="" />
+        <meta name="text:WordPress URL" content="" />
+        <meta name='text:Disqus Shortname' content="" />
+    {/block:Hidden}
+    <style>
+		body{
+		  font-family: Verdana, Geneva, sans-serif;
+		  background: {color:Background Colour};
+		}
+		a{
+		  color: {color:Accent Colour};	
+		}
+		#banner{
+		  left: 0px;
+		  right: 0px;
+		  top: 0px;
+		  height: 150px;
+		  position: fixed;
+		  background: {color:Accent Colour};
+		  z-index: 998;
+		  border-bottom: solid 1px {color:Sidebar Background};
+		}
+		#banner{
+		  background-image: url({image:Banner Image});   
+		}
+		#credit{
+		  bottom: 10px;
+		  right: 10px;
+		  position: fixed;
+		  z-index: 99;
+		}
+		/* Social */
+		{block:IfDisplaySocialLinks}
+		{block:IfDisplaySocialLinkShader}#social{
+		  left: 0px;
+		  bottom: 0px;
+		  right: 0px;
+		  position: absolute;
+		  color: #000;	
+		  padding: 10px;
+		  padding-left: 190px;
+		  opacity: 0.4;
+		  background: #000;
+		}
+		{/block:IfDisplaySocialLinkShader}
+		{/block:IfDisplaySocialLinks}
+		#social i{
+		  opacity: 0;
+		}
+		#socialIcons{
+		  left: 0px;
+		  bottom: 0px;
+		  right: 0px;
+		  position: absolute;
+		  color: #fff;	
+		  padding: 10px;
+		  padding-left: 190px;
+		  text-decoration: none;
+		}
+		#socialIcons a{
+		  color: {color:Social Icons};
+		  text-decoration: none;
+		}
+		#sidebar{
+		  left: 0px;
+		  top: 150px;
+		  bottom: 0px;
+		  width: 180px;
+		  padding: 22px;
+		  position: fixed;
+		  background: {color:Sidebar Background};
+		  color: {color:Sidebar Text};
+		  font-size: 13px;
+		  z-index: 999;
+		}
+		#portrait{
+		  width: 160px;
+		  height: 160px;
+		  top: -90px;
+		  position: relative;
+		  background-color: {color:Accent Colour};
+		  background: url({PortraitURL-128});
+		  background-position: center;
+		}
+		{block:IfPortraitBorder}
+		    #portrait{
+		        width: 140px;
+		        height: 140px;
+		        border: solid 8px {color:Portrait Border};
+		    }
+		{/block:IfPortraitBorder}
+		#sidebar p{
+		  top: -70px;
+		  position: relative;	
+		  line-height: 20px;
+		}
+		#sidebar ul{
+		  list-style-type: none;
+		  margin-left: -61px;
+		  position: relative;
+		  top: -60px;	
+		  margin-right: -22px;
+		}
+		#sidebar ul li{
+		  padding: 10px;
+		  text-align: left;
+		  padding-left: 20px;	
+		}
+		#sidebar ul li:hover{
+		  background: {color:Accent Colour};	
+		}
+		.menuLink{
+		  color: {color:Sidebar Text};
+		  text-transform: uppercase;
+		  text-decoration: none; 	
+		}
+		#sidebar hr{
+		  position: relative;
+		  top: -70px;
+		  border-bottom: 1px;
+		  border-color: {color:Sidebar Text};	
+		}
+		#container{
+		  left: 224px;
+		  top: 150px;
+		  right: 0px;
+		  position: absolute;	
+		}
+		#content{
+		  position: relative;
+		  margin: 0 auto;
+		}
+		#content.two{
+		  max-width: 540px;  
+		}
+		#content.four{
+		  max-width: 1090px;  
+		}
+		#content.three{
+		  max-width: 820px;  
+		}
+		
+		/* 540px  =  2 columns */
+		/* 820px  =  3 columns */
+		/* 1090px =  4 columns */
+		#entry{
+		  width: 230px;
+		  height: auto;
+		  background: {color:Entry Background};
+		  margin: 10px;	
+		  padding: 10px;
+		  border-radius: 2px;
+		  font-size: 13px;
+		  color: {color:Entry Text Colour};
+		}
+		{block:IfPostShadows}
+		    #entry{
+		        box-shadow: 2px 2px 4px 0px #333;
+		    }
+		{/block:IfPostShadows}
+		#entry h1{
+		  margin: 0;
+		  font-size: 24px;	
+		}
+		#entry p{
+		  margin-top: 8px;	
+		}
+		.imgPost{
+		  width: 108.9%;
+		  margin: -10px;
+		  position: relative;
+		  margin-bottom: 10px;	
+		}
+		#linkBox, #quoteBox{
+		  left: 0px;
+		  top: 0px;
+		  right: 0px;
+		  padding: 10px;
+		  position: relative;
+		  margin-top: -10px;
+		  margin-left: -10px;
+		  margin-right: -10px;
+		  background: #333;	
+		  display: inline-block;
+		  text-align: center;
+		  color: #fff;
+		  margin-bottom: 10px;
+		}
+		#linkBox h1, #quoteBox h1{
+		  text-transform: uppercase;	
+		}
+		#linkBox{
+		  width: 100%;
+		  position: relative;
+		}
+		#quoteBox{
+		  background: #333;
+		  text-align: left;	
+		  z-index: 99;
+		}
+		.arrow-right {
+		  width: 0; 
+	`	  height: 0; 
+		  top: -50px;
+		  position: relative;
+		  border-top: 30px solid transparent;
+		  border-bottom: 30px solid transparent;
+	      border-left: 30px solid #333;
+		  margin-bottom: -50px;
+		}
+		.source{
+		  text-transform: uppercase;	
+		}
+		ul.chatPost{
+		  margin-left: -40px;
+		  list-style-type: none;	
+		}
+		ul.chatPost li{
+		  padding: 5px;
+		  border-radius: 5px;	
+		}
+		ul.chatPost li:nth-child(even){
+		  background: #CCC;	
+		}
+		.video-container { 
+  		  position: relative; 
+  		  padding-bottom: 56.25%; 
+  		  padding-top: 30px; 
+  		  height: 0; 
+  		  overflow: hidden; 
+  		  margin-bottom: 10px;
+		}		 
+		.video-container iframe, 
+		.video-container object, 
+		.video-container embed { 
+  		  position: absolute; 
+  		  top: 0; 
+  		  left: 0; 
+  		  width: 100%; 
+  		  height: 100%; 
+  		  margin-bottom: 10px;
+		}
+		#question{
+		  position: relative;
+		  background: #333;
+		  color: #fff;	
+		  padding: 10px;
+		  margin-left: -10px;
+		  margin-top: -10px;
+		  margin-right: -10px;
+		  padding-bottom: 5px;
+		}
+		#question h1{
+		  font-size: 18px;	
+		}
+		#overlay{
+		  position: absolute;
+		  background: #333;
+		  right: 0px;
+		  color: {color:Accent Colour};
+		  top: 0px;
+		  padding: 5px;	
+		  visibility: hidden;
+		  z-index: 997;
+		}
+		#entry:hover > #overlay{
+		  visibility: visible;	
+		}
+		figcaption{
+		  position: relative;
+		  margin-top: -10px;
+		  margin-bottom: -10px;
+		}
+		#pagination{
+		  position: absolute;
+		  bottom: 20px;
+		  left: 0px;
+		  right: 0px;
+		  color: {color:Sidebar Text};
+		  padding-left: 20px;
+		  padding-right: 20px;
+		  text-align: right;	
+		}
+		#pagination .left{
+		  float: left;	
+		}
+		#pagination .left, #pagination .right{
+		  color: {color:Sidebar Text};	
+		}
+		{block:IfInfiniteScroll}
+		    #pagination{
+		      visibility: hidden;
+		    }
+		{/block:IfInfiniteScroll}
+		{block:PermalinkPage}
+		    #container{
+		      left: 230px;
+		      right: 0px;
+		      top: 150px;
+		      bottom: 0px;
+		      position: absolute;
+		    }
+		    #content{
+		      position: relative;
+		      margin: 0 auto;
+		      max-width: 300px;
+		    }
+		    #content.two{
+		      max-width: 500px;  
+		    }   
+		    #content.four{
+		      max-width: 500px;  
+		    }
+	    	#content.three{
+		      max-width: 500px;  
+		    }
+		{/block:PermalinkPage}
+		#permaPost{
+		  left: 0px;
+		  width: 100%;
+		  position: relative;
+		  padding-top: 20px;
+		}
+		#permaPost .imgPost{
+		  margin: 0;
+		  width: 100%;
+		  padding: 0;
+		  position: relative;
+		}
+		#permaPost #linkBox, #permaPost #QuotePost{
+		  margin: 0;
+		  width: 90%;
+		  position: relative;
+		}
+		#permaInfo i{
+		  margin-right: 5px;
+		}
+		#permaInfo .reblogLike{
+		  float: right;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Entry Text Colour}" stroke="none">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+         </div>
+    </a>
+    <div id="banner">
+    	{block:IfDisplaySocialLinks}
+    	<div id="social">
+        	<i class="fa fa-twitter"></i>&nbsp;
+        </div>
+    	<div id="socialIcons">
+        	{block:IfTwitterURL}
+        	    <a href="{text:Twitter URL}">
+        	        <i class="fa fa-twitter"></i>&nbsp;
+        	    </a>
+        	{/block:IfTwitterURL}
+            {block:IfFacebookURL}
+        	    <a href="{text:Facebook URL}">
+        	        <i class="fa fa-facebook"></i>&nbsp;
+        	    </a>
+        	{/block:IfFacebookURL}
+        	{block:IfInstagramURL}
+        	    <a href="{text:Instagram URL}">
+        	        <i class="fa fa-instagram"></i>&nbsp;
+        	    </a>
+        	{/block:IfInstagramURL}
+        	{block:IfVineURL}
+        	    <a href="{text:Vine URL}">
+        	        <i class="fa fa-vine"></i>&nbsp;
+        	    </a>
+        	{/block:IfVineURL}
+        	{block:IfYouTubeURL}
+        	    <a href="{text:YouTube URL}">
+        	        <i class="fa fa-youtube"></i>&nbsp;
+        	    </a>
+        	{/block:IfYouTubeURL}
+        	{block:IfWordPressURL}
+        	    <a href="{text:WordPress URL}">
+        	        <i class="fa fa-wordpress"></i>&nbsp;
+        	    </a>
+        	{/block:IfWordPressURL}
+        	{block:IfSoundCloudURL}
+        	    <a href="{text:SoundCloud URL}">
+        	        <i class="fa fa-soundcloud"></i>&nbsp;
+        	    </a>
+        	{/block:IfSoundCloudURL}
+        	{block:IfGooglePlusURL}
+        	    <a href="{text:Google Plus URL}">
+        	        <i class="fa fa-google-plus"></i>&nbsp;
+        	    </a>
+        	{/block:IfGooglePlusURL}
+        </div>
+        {/block:IfDisplaySocialLinks}
+    </div>
+    <div id="sidebar">
+    	<a href="{BlogURL}"><div id="portrait">
+        
+        </div></a>
+        
+        {block:Description}
+        <p>{Description}</p>
+        
+        <hr />
+        {/block:Description}
+        
+        <ul>
+        	{block:HasPages}
+        	    {block:Pages}
+        	        <a href="{URL}" class="menuLink"><li>{Label}</li></a>
+        	    {/block:Pages}
+        	{/block:HasPages}
+        	    {block:IfShowAskLink}
+        	        <a href="/ask" class="menuLink"><li>Ask</li></a>
+        	    {/block:IfShowAskLink}
+        	    {block:IfShowArchiveLink}
+        	        <a href="/archive" class="menuLink"><li>Archive</li></a>
+        	    {/block:IfShowArchiveLink}
+        </ul>
+        
+        {block:Pagination}
+        <div id="pagination">
+        	{block:PreviousPage}
+        	    <a href="{PreviousPage}" class="left">
+            	    <i class="fa fa-arrow-left"></i>
+                </a>
+            {/block:PreviousPage}
+            {block:NextPage}
+                <a href="{NextPage}" class="right">
+            	    <i class="fa fa-arrow-right"></i>
+                </a>
+            {/block:NextPage}
+        </div>
+        {/block:Pagination}
+        
+    </div>
+    <div id="container">
+    	<div id="content" class="{select:Number of Columns}">
+        	{block:Posts}
+        	{block:IndexPage}
+        	{block:Text}
+        	<div id="entry"><!-- Text -->
+            	{block:Title}<h1>{Title}</h1>{/block:Title}
+                <p>{Body}</p>
+                <div id="overlay">
+                	{ReblogButton} &nbsp; {LikeButton}
+                </div>
+            </div>
+            {/block:Text}
+            
+            {block:Photo}
+            <div id="entry"><!-- Photo -->
+            	<img src="{PhotoURL-500}" class="imgPost" />
+                {block:Caption}
+                    <figcaption>
+                	    {Caption}
+                    </figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                	{ReblogButton} &nbsp; {LikeButton}
+                </div>
+            </div>
+            {/block:Photo}
+            
+            {block:Photoset}
+            <div id="entry">
+                {Photoset}
+                {block:Caption}
+                    <figcaption>
+                        {Caption}
+                    </figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                    {ReblogButton} &nbsp; {LikeButton}
+                </div>
+            </div>
+            {/block:Photoset}
+            
+            {block:Link}
+            <div id="entry"><!-- Link -->
+            	<a href="{URL}">
+                	<div id="linkBox">
+                    	<h1>{Name}</h1>
+                        <em>{Host}</em>
+                    </div>
+                </a>
+                {block:Description}
+                    {Description}
+                {/block:Description}
+                {block:Caption}
+                    <figcaption>
+                	    {Caption}
+                    </figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                	{ReblogButton} &nbsp; {LikeButton}
+                </div>
+            </div>
+            {/block:Link}
+            
+            {block:Quote}
+            <div id="entry"><!-- Quote -->
+                <div id="quoteBox">
+                   	<h1>{Quote}</h1>
+                </div>
+                <div class="arrow-right">
+                
+                </div>
+                {block:Source}<h1 class="source">{Source}</h1>{/block:Source}
+                <div id="overlay">
+                	{ReblogButton} &nbsp; {LikeButton}
+                </div>
+            </div>
+            {/block:Quote}
+            
+            {block:Chat}
+            <div id="entry"><!-- Chat -->
+            	{block:Title}<h1>{Title}</h1>{/block:Title}
+                <ul class="chatPost">
+                	{block:Lines}
+                	    <li>{block:Label}<strong>{Label} </strong>{/block:Label}{Line}</li>
+                	{/block:Lines}
+                </ul>
+                <div id="overlay">
+                	{ReblogButton} &nbsp; {LikeButton}
+                </div>
+            </div>
+            {/block:Chat}
+            
+            {block:Audio}
+            <div id="entry"><!-- Audio -->
+            	<div class="video-container">
+                	{AudioEmbed}
+            	</div>
+            	{block:Caption}
+                    <figcaption>
+                	    {Caption}
+                    </figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                	{ReblogButton} &nbsp; {LikeButton} 
+                </div>
+       		</div>
+            {/block:Audio}
+            
+            {block:Video}
+            <div id="entry"><!-- Video -->
+            	<div class="video-container">
+                	{Video-500}
+            	</div>
+            	{block:Caption}
+                    <figcaption>
+                	    {Caption}
+                    </figcaption>
+                {/block:Caption}
+                <div id="overlay">
+                	{ReblogButton} &nbsp; {LikeButton}
+                </div>
+       		</div>
+            {/block:Video}
+            
+            {block:Answer}
+            <div id="entry"><!-- Answer -->
+            	<div id="question">
+                	<h1>{Asker} asked:</h1>
+                    <p>{Question}</p>
+                </div>
+                <p>{Answer}</p>
+                <div id="overlay">
+                	{ReblogButton} &nbsp; {LikeButton}
+                </div>
+            </div>
+            {/block:Answer}
+            {/block:IndexPage}
+            {block:PermalinkPage}<!-- Permalink Stuff -->
+                {block:Text}
+                    <div id="permaPost">
+                        {block:Title}<h1>{Title}</h1>{/block:Title}
+                        {Body}
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Text}
+                
+                {block:Photo}
+                    <div id="permaPost">
+                        <img src="{PhotoURL-500}" class="imgPost" />
+                        {block:Caption}
+                            <figcaption>
+                                {Caption}
+                            </figcaption>
+                        {/block:Caption}
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <div id="permaPost">
+                        <center>{Photoset}</center> 
+                        {block:Caption}
+                            <figcaption>
+                                {Caption}
+                            </figcaption>
+                        {/block:Caption}
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Photoset}
+                
+                {block:Link}
+                    <div id="permaPost">
+                        <a href="{URL}">
+                            <div id="linkBox">
+                                <h1>{Name}</h1>
+                                <em>{Host}</em>
+                            </div>
+                        </a>
+                        {block:Caption}
+                            <figcaption>
+                                {Caption}
+                            </figcaption>
+                        {/block:Caption}
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Link}
+                
+                {block:Quote}
+                    <div id="permaPost">
+                        <div id="quoteBox">
+                            <h1>{Quote}</h1>
+                        </div>
+                        <div class="arrow-right">
+                            
+                        </div>
+                        {block:Source}<h1>{Source}</h1>{/block:Source}
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Quote}
+                
+                {block:Chat}
+                    <div id="permaPost">
+                        {block:Title}<h1>{Title}</h1>{/block:Title}
+                        <ul class="chatPost">
+                	        {block:Lines}
+                	            <li>{block:Label}<strong>{Label} </strong>{/block:Label}{Line}</li>
+                	        {/block:Lines}
+                        </ul>
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Chat}
+                
+                {block:Audio}
+                    <div id="permaPost">
+                        <div class="video-container">
+                            {AudioEmbed}
+                        </div>
+                        {block:Caption}
+                            <figcaption>
+                                {Caption}
+                            </figcaption>
+                        {/block:Caption}
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Audio}
+                
+                {block:Video}
+                    <div id="permaPost">
+                        <div class="video-container">
+                            {Video-700}
+                        </div>
+                        {block:Caption}
+                            <figcaption>
+                                {Caption}
+                            </figcaption>
+                        {/block:Caption}
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Video}
+                
+                {block:Answer}
+                    <div id="permaPost">
+                        <div id="question">
+                	        <h1>{Asker} asked:</h1>
+                            <p>{Question}</p>
+                        </div>
+                        <p>{Answer}</p>
+                        <hr>
+                        <div id="permaInfo">
+                            <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}.</a>
+                            <div class="reblogLike">
+                                {ReblogButton color="black"} {LikeButton color="black"}
+                            </div>
+                        </div>
+                        {block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+    var disqus_url = '{Permalink}'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+                    </div>
+                {/block:Answer}
+            {/block:PermalinkPage}
+            {/block:Posts}
+    	</div>   
+    </div>	
+    <script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Nsengbupv/jquery.imagesloaded.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/wUzngbuqv/jquery.masonry.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Audngbuqj/jquery.infinitescroll.min.js"></script>
+    <script>
+		(function () {
+    	var $tumblelog = $('#content');
+    	$tumblelog.infinitescroll({
+        	navSelector: "#pagination",
+        	nextSelector: "#pagination a.right",
+        	itemSelector: "#entry",
+    	},
+    	function (newElements) {
+        	var $newElems = $(newElements).css({
+            	opacity: 0
+        });
+        $newElems.imagesLoaded(function () {
+           	$newElems.animate({
+               	opacity: 1
+          		});
+           	$tumblelog.masonry('appended', $newElems);
+        	});
+    	});
+    	$tumblelog.imagesLoaded(function () {
+        	$tumblelog.masonry({
+            	columnWidth: function (containerWidth) {
+                		return containerWidth / 100;
+            		}
+        		});
+    		});
+		})();
+	</script>
+</body>
+</html>
