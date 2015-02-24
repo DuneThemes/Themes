@@ -2,6 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing you link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
 	<title>{Title} {block:PostTitle} - {PostTitle}{/block:PostTitle} {block:PostSummary}
 - {PostSummary}
 {/block:PostSummary}</title>
@@ -986,3 +996,5 @@
 	</script>
 </body>
 </html>
+Status API Training Shop Blog About
+© 2015 GitHub, Inc. Terms Privacy Security Contact
