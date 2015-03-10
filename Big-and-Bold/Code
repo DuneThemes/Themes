@@ -1,0 +1,732 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing a link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    
+    <meta name="color:Text Post Top" content="#000000" />
+    <meta name="color:Photo Post Top" content="#000000" />
+    <meta name="color:Link Post Top" content="#000000" />
+    <meta name="color:Quote Post Top" content="#000000" />
+    <meta name="color:Chat Post Top" content="#000000" />
+    <meta name="color:Audio and Video Post Top" content="#000000" />
+    <meta name="color:Answer Post Top" content="#000000" />
+    <meta name="color:Post Background" content="#DFDFDF" />
+    <meta name="color:Text Color" content="#000" />
+    <meta name="color:Link Color" content="#00F" />
+    
+    <meta name="color:Custom Link Background" content="#CCC" />
+    <meta name="color:Custom Link Color" content="#fff" />
+    <meta name="color:Menu Link Background" content="#CCC" />
+    <meta name="color:Menu Text Color" content="#fff" />
+    <meta name="color:Title Background" content="#CCC" />
+    <meta name="color:Title Text Color" content="#fff" />
+    <meta name="color:Description Background" content="#CCC" />
+    <meta name="color:Description Text Color" content="#fff" />
+    
+    <meta name="color:Newer Button Background" content="#CCC" />
+    <meta name="color:Older Button Background" content="#CCC" />
+    <meta name="color:Newer Button Text" content="#000" />
+    <meta name="color:Older Button Text" content="#000" />
+    
+    <meta name="text:Custom Link 1 Text" content="" />
+    <meta name="text:Custom Link 1" content="" />
+    <meta name="text:Custom Link 2 Text" content="" />
+    <meta name="text:Custom Link 2" content="" />
+    <meta name="text:Custom Link 3 Text" content="" />
+    <meta name="text:Custom Link 3" content="" />
+    <meta name="text:Custom Link 4 Text" content="" />
+    <meta name="text:Custom Link 4" content="" />
+    
+    <meta name="text:Twitter" content="" />
+    <meta name="text:Blogger" content="" />
+    <meta name="text:WordPress" content="" />
+    <meta name="text:YouTube" content="" />
+    
+    <meta name="color:Background" content="#000" />
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+body{
+  font-family: Roboto, sans-serif;
+  background: {color:Background};
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+#wrapper{
+  max-width: 1100px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  top: 10px;	
+}
+#left{
+  height: auto;
+  width: 190px;
+  top: 18px;
+  margin-left: 0px;
+  position: fixed;	
+}
+#center{
+  width: 700px;
+  top: 0px;
+  margin: 0 auto;
+  position: relative;	
+}
+#right{
+  height: auto;
+  width: 190px;
+  top: 18px;
+  margin-left: 910px;
+  position: fixed;
+}
+#sidebarObject{
+  top: 0px;
+  position: relative;
+  width: 89.9%;
+  background: #CCC;
+  left: 0px;
+  padding: 10px;
+  margin-bottom: 10px;	
+  text-align: center;
+  border-radius: 2px;
+}
+#sidebarObject.image{
+  padding: 0px;
+  width: 100%;	
+  background: none;
+}
+#sidebarObject img{
+  width: 100%;	
+}
+.menuLink{
+  text-decoration: none;
+  color: {color:Menu Text Color};
+  font-weight: bold; 	
+}
+.menuCustomLink{
+  text-decoration: none;
+  color: {color:Custom Link Color};
+  font-weight: bold; 	
+}
+.creditLink{
+  text-decoration: none;
+  color: #fff;
+  font-size: 10pt; 	
+}
+#sidebarObject.blogTitle{
+  font-size: 20pt;	
+  background: {color:Title Background};
+}
+#sidebarObject.blogDescription{
+  font-size: 11pt;
+  color: {color:Description Text Color};
+  background: {color:Description Background};
+}
+#sidebarObject.socialLinks{
+  background: none;
+  width: 100%;	
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+#sidebarObject.socialLinks img{
+  width: 40px;	
+  border-radius: 2px;
+}
+#postWrap{
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: {color:Post Background};
+  color: {color:Text Color};
+  margin-bottom: 20px;
+  border-radius: 10px;	
+}
+a{
+  color: {color:Link Color};
+}
+#postTop{
+  width: 97.2%;
+  left: 0px;
+  top: 0px;
+  position: relative;
+  height: auto;
+  background: black;	
+  text-align: right;
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#postTop a{
+  color: #fff;	
+}
+#postTop.text{
+    background: {color:Text Post Top};
+}
+#postTop.photo{
+    background: {color:Photo Post Top};
+}
+#postTop.link{
+    background: {color:Link Post Top};
+}
+#postTop.quote{
+    background: {color:Quote Post Top};
+}
+#postTop.chat{
+    background: {color:Chat Post Top};
+}
+#postTop.audio{
+    background: {color:Audio and Video Post Top};
+}
+#postTop.video{
+    background: {color:Audio and Video Post Top};
+}
+#postTop.answer{
+    background: {color:Answer Post Top};
+}
+#postContent{
+  padding: 10px;	
+  display: block;
+}
+#postContent h1{
+  margin: 0;	
+}
+.reblog{
+  float: left;	
+}
+.notes, .timeAgo{
+  margin-left: 10px;	
+}
+#postContent.photoPost{
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;	
+}
+figcaption{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;	
+}
+figcaption.quotePost{
+  margin-left: 0px;	
+}
+figcaption.emergencyPost{
+  margin-left: 10px;	
+}
+#linkBox{
+  left: 0px;
+  width: 97.2%;
+  text-align: center;
+  background: #333;
+  padding: 10px;	
+}
+#linkBox h1{
+  font-size: 25pt;
+  text-transform: uppercase;	
+  margin: 0px;
+}
+.linkBoxLink{
+  text-decoration: none;
+  color: #fff;	
+}
+#quoteBox{
+  left: 0px;
+  width: 97.2%;
+  font-size: 16pt;
+  text-align: left;
+  background: #CCC;
+  border-radius: 5px;
+  padding: 10px;	
+}
+ul.chatPost{
+  margin-left: -40px;
+  list-style-type: none;	
+}
+ul.chatPost li{
+  padding: 5px;	
+  border-radius: 5px;
+}
+ul.chatPost li:nth-child(even){
+  background: #CCC;	
+}
+.video-container { 
+  position: relative; 
+  padding-bottom: 56.25%; 
+  padding-top: 30px; 
+  height: 0; 
+  overflow: hidden; 
+} 
+.video-container iframe, 
+.video-container object, 
+.video-container embed { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+}
+#postContent.question h1{
+  margin-left: 75px;	
+}
+.questionBox{
+  background: #3d3d3d;	
+  left: 0px;
+  right: 0px;
+  width: auto;
+  top: 0px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
+  color: #f4f4f4;
+  padding: 10px;
+}
+.questionPortrait img{
+  width: 64px;
+  position: absolute;
+  display: inline;
+}
+.questionBox p, .questionBox h1{
+  margin-left: 75px;
+  margin-bottom: -0px;	
+}
+.questionBox h1{
+  font-size: 20pt;
+  font-weight: normal;	
+  text-shadow: 2px 1px 2px #000;	
+}
+#sidebarObject.pageSwitch{
+  background: none;
+  padding-top: 0px;
+  text-transform: uppercase;	
+}
+#newer{
+  padding: 15px;
+  color: {color:Newer Button Text};
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 0px;
+  background: {color:Newer Button Background};	
+  display: block;
+}
+#older{
+  padding: 15px;
+  color: {color:Older Button Text};
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 0px;
+  background: {color:Older Button Background};
+  display: block;
+}
+#sidebarObject.credit{
+  background: #000;
+}
+#sidebarObject.customLink{
+  background: {color:Custom Link Background};
+}
+.titleLink{
+  text-decoration: none;
+  color: {color:Title Text Color};
+}
+#sidebarObject.mainMenuLink{
+  background: {color:Menu Link Background};
+}
+img {text-decoration: none; border: 0px}
+.image img {
+  max-width: 100%;
+}
+#credit{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;	
+}
+</style>
+<body>
+	<a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Menu Link Background}" stroke="none">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+         </div>
+    </a>
+    <div id="wrapper">
+    	<div id="left">
+            <a href="{BlogURL}" class="titleLink"><div id="sidebarObject" class="blogTitle">
+            	{Title}
+            </div></a>
+            {block:Description}
+            <div id="sidebarObject" class="blogDescription">
+            	{Description} 
+            </div>
+            {/block:Description}
+        	{block:IfCustomLink1}
+            <a href="{text:Custom Link 1}" class="menuCustomLink">
+            	<div id="sidebarObject" class="customLink">
+            		{text:Custom Link 1 Text}
+            	</div>
+            </a>
+            {/block:IfCustomLink1}
+            {block:IfCustomLink2}
+            <a href="{text:Custom Link 2}" class="menuCustomLink">
+            	<div id="sidebarObject" class="customLink">
+            		{text:Custom Link 2 Text}
+            	</div>
+            </a>
+            {/block:IfCustomLink2}
+            {block:IfCustomLink3}
+            <a href="{text:Custom Link 3}" class="menuCustomLink">
+            	<div id="sidebarObject" class="customLink">
+            		{text:Custom Link 3 Text}
+            	</div>
+            </a>
+            {/block:IfCustomLink3}
+            {block:IfCustomLink4}
+            <a href="{text:Custom Link 4}" class="menuCustomLink">
+            	<div id="sidebarObject" class="customLink">
+            		{text:Custom Link 4 Text}
+            	</div>
+            </a>
+            {/block:IfCustomLink4}
+            
+            {block:Pagination}
+            <div id="sidebarObject" class="pageSwitch">
+            	{block:NextPage}
+            	    <a href="{NextPage}">
+            	        <div id="older">
+                            older
+                        </div>
+                    </a>
+                {/block:NextPage}
+                {block:PreviousPage}
+            	<a href="{PreviousPage}">
+            	    <div id="newer">
+                	    newer
+                    </div>
+                </a>
+                {/block:PreviousPage}
+            </div>
+            {/block:Pagination}
+        </div>
+        
+        <div id="center">
+        	{block:Posts}
+            {block:Text}
+            <div id="postWrap">
+            	<div id="postTop" class="text">
+                    {block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent">
+                	{block:Title}<h1>{Title}</h1>{/block:Title}
+                    {Body}
+                </span>
+            </div>
+            {/block:Text}
+            
+            {block:Photo}
+            <div id="postWrap">
+            	<div id="postTop" class="photo">
+                	{block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent" class="photoPost">
+                	<img src="{PhotoURL-500}" width="100%" />
+                    {block:Caption}<figcaption>{Caption}</figcaption>{/block:Caption}
+                </span>
+            </div>
+            {/block:Photo}
+            
+            {block:Photoset}
+            <div id="postWrap">
+            	<div id="postTop" class="photo">
+                	{block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent" class="photoPost">
+                	<center><div class="image">
+			        {Photoset-500}
+		     	    </div></center>
+                    {block:Caption}<figcaption>{Caption}</figcaption>{/block:Caption}
+                </span>
+            </div>
+            {/block:Photoset}
+            
+            {block:Link}
+            <div id="postWrap">
+            	<div id="postTop" class="link">
+                	{block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent" class="photoPost">
+                	<a href="{URL}" class="linkBoxLink">
+                    	<div id="linkBox">
+                    		<h1>{Name}</h1>
+                        	{block:Host}<em>{Host}</em>{/block:Host}
+                    	</div>
+                    </a>
+                    {block:Description}<figcaption>{Description}</figcaption>{/block:Description}
+                </span>
+            </div>
+            {/block:Link}
+            
+            {block:Quote}
+            <div id="postWrap">
+            	<div id="postTop" class="quote">
+                	{block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent">
+                	<div id="quoteBox">
+                    	"{Quote}” 
+                    </div>
+                    {block:Source}- {Source}{/block:Source}
+                </span>
+            </div>
+            {/block:Quote}
+            
+            {block:Chat}
+            <div id="postWrap">
+            	<div id="postTop" class="chat">
+                	{block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent">
+                	{block:Title}<h1>{Title}</h1>{/block:Title}
+                    <ul class="chatPost">
+                  		{block:Lines}
+                    		<li>{block:Label}<strong>{Label}{/block:Label} </strong>{Line}</li>
+                  		{/block:Lines}
+                	</ul>
+                </span>
+            </div>
+            {/block:Chat}
+            
+            {block:Audio}
+            <div id="postWrap">
+            	<div id="postTop" class="audio">
+                	{block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent" class="photoPost">
+                	<div class="video-container"> 
+                    	{AudioEmbed}
+                    </div>
+                    {block:Caption}<figcaption class="emergencyPost">{Caption}</figcaption>{/block:Caption}
+                </span>
+            </div>
+            {/block:Audio}
+            
+            {block:Video}
+            <div id="postWrap">
+            	<div id="postTop" class="audio">
+                	{block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent" class="photoPost">
+                	<div class="video-container"> 
+                    	{Video-700}
+                    </div>
+                    {block:Caption}<figcaption class="emergencyPost">{Caption}</figcaption>{/block:Caption}
+                </span>
+            </div>
+            {/block:Video}
+            
+            {block:Answer}
+            <div id="postWrap">
+            	<div id="postTop" class="answer">
+                	{block:RebloggedFrom}
+                    	<span class="reblog">
+                    		Reblogged from: <a href="{ReblogParentName}">{ReblogParentURL}</a>
+                    	</span>
+                    {/block:RebloggedFrom}
+                    {block:Notes}
+                    	<span class="notes">
+                    		{NoteCountWithLabel}
+                    	</span>
+                    {/block:Notes}
+                    <span class="timeAgo">
+                    	<a href="{Permalink}">{TimeAgo}</a>
+                    </span>
+                </div>
+                <span id="postContent" class="question">
+                <div class="questionBox">
+                	<div class="questionPortrait">
+                    	<img src="{AskerPortraitURL-64}" />
+                        <h1>{Asker} asked:</h1>
+                        <p>{Question}</p>
+                    </div>
+              	</div>
+                {Answer}
+            </div>
+            {/block:Answer}
+            
+            {/block:Posts}
+        </div>
+       
+        
+        <div id="right">
+        	<a href="{BlogURL}"><div id="sidebarObject" class="image">
+            	<img src="{PortraitURL-128}" />
+            </div></a>
+            <div id="sidebarObject" class="socialLinks">
+            	{block:IfTwitter}
+                <a href="http://twitter.com/{text:Twitter}" class="linkBoxLink">
+                	<img src="http://static.tumblr.com/uv8mqxy/jj8nbeuhe/twitter-icon.png" class="socialButton" />
+                </a>
+                {/block:IfTwitter}
+                {block:IfBlogger}
+                <a href="{text:Blogger}" class="linkBoxLink">
+                	<img src="http://static.tumblr.com/uv8mqxy/LV6nbeuha/blogger-icon.png" class="socialButton" />
+                </a>
+                {/block:IfBlogger}
+                {block:IfYouTube}
+                <a href="{text:YouTube}" class="linkBoxLink">
+                	<img src="http://static.tumblr.com/uv8mqxy/Tovnbeuhl/youtube-icon.png" class="socialButton" />
+                </a>
+                {/block:IfYouTube}
+                {block:IfWordPress}
+                <a href="{text:WordPress}" class="linkBoxLink">
+                	<img src="http://static.tumblr.com/uv8mqxy/eQwnbeuhi/wordpress-icon.png" class="socialButton" />
+                </a>
+                {/block:IfWordPress}
+            </div>
+            {block:HasPages}
+            {block:Pages}
+            <a href="{URL}" class="menuLink">
+            	<div id="sidebarObject" class="mainMenuLink">
+            		{Label}
+            	</div>
+            </a>
+            {/block:Pages}
+            {/block:HasPages}
+        </div>
+    </div>
+</body>
+</html>
