@@ -1,0 +1,759 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{block:PostTitle} {PostTitle} | {/block:PostTitle}{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing a link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
+    
+    
+    {block:Hidden}
+        <meta name="color:Body" content="#DBDBDB" />
+        <meta name="color:Header" content="#141414" />
+        <meta name="color:Header Text" content="#8A8A8A" />
+        <meta name="color:Header Links" content="#FFF" />
+        <meta name="color:Menu Background" content="#999" />
+        <meta name="color:Menu Hover" content="#D6D6D6" />
+        <meta name="color:Menu Bottom Border" content="#666" />
+        <meta name="color:Post" content="#FFF" />
+        <meta name="color:Post Shadows" content="#CCC">
+        <meta name="color:Overlay" content="#333" />
+        <meta name="color:We Follow" content="#333" />
+        
+        <meta name="if:Post Shadows" content="1" />
+        <meta name="if:Show Blogroll" content="1" />
+        
+        <meta name="text:Twitter" content="" />
+        <meta name="text:Facebook" content="" />
+        <meta name="text:Instagram" content="" />
+        <meta name="text:YouTube" content="" />
+        <meta name="text:WordPress" content="" />
+        <meta name="text:Google Plus" content="" />
+        <meta name="text:Side Link" content="" />
+        <meta name="text:We Follow" content="We Follow:" />
+        
+        <meta name="image:Side Image" content="" />
+    {/block:Hidden}
+    
+    <style>
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+		body{
+		  font-family: 'Open Sans', sans-serif;
+		  background: {color:Body};
+		  padding: 0;
+		  margin: 0;	
+		}
+		#header{
+		  top: 0px;
+		  left: 0px;
+		  width: 100%;
+		  height: auto;
+		  padding-top: 20px;
+		  padding-bottom: 30px;	
+		  background: {color:Header};
+		  position: relative;
+		  text-align: center;
+		}
+		#header a{
+		  color: {color:Header Links};
+		  text-decoration: none;	
+		}
+		#header h1{
+		  font-weight: 100;
+		  margin: 5px;
+		  font-size: 45px;
+		  text-transform: uppercase;	
+		  letter-spacing: 2px;
+		  -webkit-transition: ease 1s;
+		  -moz-transition: ease 1s;
+		  -o-transition: ease 1s;
+		  transition: ease 1s;
+		}
+		#header h1:hover{
+		  letter-spacing: 0px;	
+		}
+		#header p{
+		  margin: 0 auto;
+		  position: relative;
+		  max-width: 290px;	
+		  color: {color:Header Text};
+		  margin-bottom: 10px;
+		}
+		#header .social a{
+		  padding: 5px;
+		  color: {color:Header Text};	
+		}
+		#header ul{
+		  margin-left: -40px;	
+		  list-style: none;
+		}
+		#header ul li{
+		  display: inline;
+		  text-transform: uppercase;
+		  font-weight: bold;
+		  position: relative;
+		}
+		#header.menu a{
+		  color: {color:Header};
+		}
+		#header ul li:first-child{
+		  border: none;	
+		}
+		#header.menu{
+		  background: {color:Menu Background};	
+		  padding-top: 2px;
+		  padding-bottom: 2px;
+		  border-bottom: solid 1px {color:Menu Bottom Border};
+		}
+		#header.menu ul li{
+		  padding: 18px;
+		  background: {color:Menu Background};
+		  margin-left: 30px;
+		  margin-right: 30px;
+		  -webkit-transition: ease .4s;
+		  -moz-transition: ease .4s;
+		  -o-transition: ease .4s;
+		  transition: ease .4s;
+		}
+		#header.menu ul li:hover{
+		  background: {color:Menu Hover};	
+		}
+		
+		#wrap{
+		  max-width: 1100px;
+		  position: relative;
+		  margin: 0 auto;
+		  margin-top: 20px;
+		}
+		#content{
+		  max-width: 700px;
+		  position: absolute;
+		  left: 0px;
+		  top: 0px;	
+		}
+		#sidebar{
+		  width: 300px;
+		  position: absolute;
+		  right: 50px;
+		  top: 0px;	
+		}
+		#sidebar #item{
+		  left: 0px;
+		  top: 0px;
+		  width: 100%;	
+		  position: relative;
+		  margin-bottom: 20px;
+		  height: auto;
+		}
+		#item.blogRoll{
+		  text-align: center;	
+		}
+		#sidebar #item #light{
+		  left: 0px;
+		  top: 0px;
+		  width: 300px;
+		  background: url('http://static.tumblr.com/uv8mqxy/BVDnlvl49/gradient2.png'); /* LINK TO TUMBLR HOSTED IMAGE */
+		  height: 100%;
+		  position: absolute;
+		  opacity: 0.3;	
+		}
+		#sidebar #item img{
+		  width: 100%;	
+		}
+		.entry{
+		  left: 50px;
+		  position: relative;
+		  top: 0px;
+		  width: 650px;
+		  margin-bottom: 20px;	
+		}
+		#post p, #post h1{
+		  padding-left: 15px;
+		  padding-right: 15px;	
+		}
+		#post p:last-of-type{
+		  padding-bottom: 15px;	
+		}
+		#post h1:first-of-type{
+		  padding-top: 15px;	
+		}
+		.entry #post{
+		  background: {color:Post};
+		  position: relative;
+		  left: 0px;
+		  padding: 0;	
+		}
+		{block:IfPostShadows}
+		.entry #post{
+		  box-shadow: 1px 1px 1px {color:Post Shadows};	
+		}
+		{/block:IfPostShadows}
+		.entry #post h1{
+		  margin: 0;	
+		}
+		.overlay{
+		  width: 30px;
+		  padding: 10px;
+		  position: absolute;
+		  background: {color:Overlay};
+		  left: 0px;
+		  top: 0px;	
+		  text-align: center;
+		  font-size: 18px;
+		}
+		.overlay i{
+		  padding-bottom: 5px;
+		  position: relative;	
+		}
+		#post.photo{
+		  padding: 0;	
+		  overflow: hidden;
+		}
+		#post .caption{
+		  padding: 1px;
+		  position: relative;
+		  height: auto;
+		  padding-bottom: 0px;
+		}
+		#photoWrap{
+		  width: 100%;
+		  height: auto;
+		  overflow: hidden;
+		  margin-bottom: -16px;	
+		}
+		#post.photo #photoWrap img.photoPost{
+		  width: 100%;
+		  margin-bottom: -16px;	
+		}
+		img{
+		  -webkit-transition: ease 1s;
+		  -moz-transition: ease 1s;
+		  -o-transition: ease 1s;
+		  transition: ease 1s;	
+		}
+		img:hover{
+		  -webkit-transform: scale(1.05,1.05);
+		  -moz-transform: scale(1.05,1.05);
+		  -o-transform: scale(1.05,1.05);
+		  transform: scale(1.05,1.05);	
+		}
+		.linkPost{
+		  color: {color:Post};
+		  text-decoration: none;	
+		}
+		#linkBox{
+		  background: {color:Header};
+		  left: -15px;
+		  top: 0px;
+		  max-width: 860px;
+		  padding: 15px;
+		  text-align: center;
+		  padding-bottom: 25px;
+		}
+		#linkBox h1{
+		  text-transform: uppercase;
+		  font-size: 40px;	
+		  font-weight: 100;
+		}
+		#quoteBox{
+		  left: 0px;
+		  right: 0px;
+		  top: 0px;
+		  background: {color:Header};
+		  padding: 30px;
+		  font-size: 40px;
+		  word-spacing: 3px;
+		  color: {color:Post};	
+		}
+		.quoteSource{
+		  font-size: 24px;
+		  margin-top: 0;	
+		}
+		#triangle-topleft {
+		  width: 0;
+		  height: 0;
+		  border-top: 50px solid {color:Header};
+		  border-right: 50px solid transparent;
+		  position: relative;
+		  display: !important;
+		  bottom: 0px;
+		  left: 30px;
+		  z-index: 3;
+		}
+		ul.chatPost{
+		  list-style: none;
+		  margin-left: 0px;
+		  padding: 15px;	
+		}
+		ul.chatPost li{
+		  padding: 5px;
+		  margin-top: 10px;
+		  border-radius: 2px;	
+		}
+		ul.chatPost li:nth-child(even){
+		  background: #EAEAEA;	
+		}
+		ul.chatPost li:first-child{
+		  margin-top: -10px;	
+		}
+		.video-container { 
+		  position: relative; 
+		  padding-bottom: 56.25%; 
+		  padding-top: 30px; 
+		  height: 0; 
+		  overflow: hidden; 
+		} 
+		.video-container iframe, 
+		.video-container object, 
+		.video-container embed { 
+		  position: absolute; 
+		  top: 0; 
+		  left: 0; 
+		  width: 100%; 
+		  height: 100%; 
+		}
+		#answer{
+		  background: {color:Header};
+		  color: {color:Post};	
+		}
+		#answer p:first-of-type{
+		  margin-top: 0;	
+		}
+		#sidebar #item img.following:hover{
+		  -webkit-transform: none;	
+		}
+		#sidebar #item img.following{
+		  width: 60px;
+		  border-radius: 200px;
+		  margin: 5px;
+		  box-shadow: 1px 1px 2px #666;	
+		}
+		#sidebar #item a.following{
+		  text-decoration: none;
+		}  
+		#pagination{
+		  position: relative;
+		  margin: 0 auto;	
+		  left: 50px;
+		}
+		#pagination a{
+		  padding: 10px;
+		  margin-bottom: 30px;
+		  background: {color:Post};
+		  color: {color:Header};
+		  font-size: 20px;
+		  text-decoration: none;	
+		}
+		{block:IfPostShadows}
+			#pagination a{
+			  box-shadow: 1px 1px 1px {color:Post Shadows};		
+			}
+		{/block:IfPostShadows}
+		#pagination .left{
+		  float: left;	
+		}
+		#pagination .right{
+		  float: right;	
+		}
+		#post.photo p{
+		    margin-bottom: 0;
+		    padding-top: 10px;
+		}
+		.overlay iframe{
+		    margin-bottom: -3px;
+		    cursor: pointer;
+		}
+		.overlay a{
+		    color: #CCCCCC;
+		    font-size: 20px;
+		    margin-bottom: 5px;
+		    text-decoration: none;
+		    font-weight: bold;
+		}
+		 ol.notes li.note img.avatar{
+		    margin-right: 10px;
+		}
+		#post iframe{
+		    width: 100%;
+		    height; 100%;
+		}
+		.credit{
+		  position: fixed;
+		  right: 10px;
+		  bottom: 10px;	
+		}
+	</style>
+</head>
+
+<body>
+	<a href="http://dunethemes.tumblr.com" class="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Header}" stroke="none">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+    </a>
+    <div id="header">
+    	<a href="/"><h1>{Title}</h1></a>
+        <p>{Description}</p>
+        <span class="social">
+            {block:IfTwitter}
+            	<a href="{text:Twitter}"><i class="fa fa-twitter"></i></a>
+            {/block:IfTwitter}
+            
+            {block:IfFacebook}
+            	<a href="{text:Facebook}"><i class="fa fa-facebook"></i></a>
+            {/block:IfFacebook}
+            
+            {block:IfInstagram}
+            	<a href="{text:Instagram}"><i class="fa fa-instagram"></i></a>
+            {/block:IfInstagram}
+            
+            {block:IfYouTube}
+            	<a href="{text:YouTube}"><i class="fa fa-youtube"></i></a>
+            {/block:IfYouTube}
+            
+            {block:IfWordPress}
+            	<a href="{text:WordPress}"><i class="fa fa-wordpress"></i></a>
+            {/block:IfWordPress}
+            
+            {block:IfGooglePlus}
+            	<a href="{text:Google Plus}"><i class="fa fa-google-plus"></i></a>
+            {/block:IfGooglePlus}
+        </span>
+    </div>
+        <div id="header" class="menu">
+            {block:HasPages}
+            <ul>
+                {block:Pages}
+                	<a href="{URL}"><li>{Label}</li></a>
+                {/block:Pages}
+            </ul>
+            {/block:HasPages}
+        </div>
+    
+    <div id="wrap">
+    	<div id="sidebar">
+        	{block:IfSideLink}
+                <a href="{text:Side Link}">
+                    <div id="item">
+                        <div id="light">
+                            
+                        </div>
+                        <img src="{image:Side Image}" />
+                    </div>
+                </a>
+            {/block:IfSideLink}
+            
+            {block:IfShowBlogroll}
+                {block:Following}
+                    <div id="item" class="blogRoll">
+                        <h1 style="font-weight: 100; color: {color:We Follow};">{text:We Follow}</h1>
+                        {block:Followed}
+                            <a href="{FollowedURL}" class="following">
+                                <img src="{FollowedPortraitURL-64}" class="following" title="{FollowedName}" />
+                            </a>
+                        {/block:Followed}
+                    </div>
+                {/block:Following}
+            {/block:IfShowBlogroll}
+        </div>
+    	<div id="content">
+            {block:Posts}
+                {block:Text}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post">
+                            {block:Title}<h1>{Title}</h1>{/block:Title}
+                            {Body}
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+                {/block:Text}
+                
+                {block:Photo}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post" class="photo">
+                            <div id="photoWrap">
+                                <img src="{PhotoURL-500}" class="photoPost" />
+                            </div>
+                            {Caption}
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post" class="photo">
+                            <center>
+                                {Photoset}
+                            </center>
+                            {Caption}
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+                {/block:Photoset}
+                
+                {block:Link}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post">
+                            <a href="{URL}" class="linkPost">
+                                <div id="linkBox">
+                                    <h1>{Name}</h1>
+                                    {block:Host}<em>{Host}</em>{/block:Host}
+                                </div>
+                            </a>
+                            {block:Description}<p class="caption">{Description}</p>{/block:Description}
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+                {/block:Link}
+                
+                {block:Quote}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post">
+                            <div id="quoteBox">
+                                {Quote} 
+                            </div>
+                            {block:Source}
+                            	<div id="triangle-topleft">
+                                	
+                            	</div>
+                            	<p class="quoteSource">&mdash; {Source}</p>
+                            {/block:Source}
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+                {/block:Quote}
+                
+                {block:Chat}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post">
+                            {block:Title}<h1>{Title}</h1>{/block:Title}
+                            <ul class="chatPost">
+                                {block:Lines}
+                                	<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
+                                {/block:Lines}
+                            </ul>
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+                {/block:Chat}
+                
+                {block:Audio}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post">
+                            <div class="video-container">
+                                {AudioEmbed}
+                            </div>
+                            {block:Caption}<p class="caption">{Caption}</p>{/block:Caption}
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+                {/block:Audio}
+                
+                {block:Video}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post">
+                            <div class="video-container">
+                                {Video-500}
+                            </div>
+                            {block:Caption}<p class="caption">{Caption}</p>{/block:Caption}
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+            	{/block:Video}
+                
+                {block:Answer}
+                    <div class="entry">
+                        <div class="overlay">
+                            <a href="{ReblogURL}">
+                                <i class="fa fa-retweet"></i>
+                            </a>
+                            {LikeButton color="grey"}
+                            <a href="{permalink}#notes">
+                                {NoteCount}
+                            </a>
+                        </div>
+                        <div id="post">
+                            <div id="answer">
+                                <h1>{Asker} asked</h1>
+                                {Question}
+                            </div>
+                            {Answer}
+                        </div>
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                    </div>
+            	{/block:Answer}
+            {/block:Posts}
+            {block:Pagination}
+                <div id="pagination">
+                    {block:NextPage}
+                        <a href="{NextPage}" class="right">
+                            Older
+                        </a>
+                    {/block:NextPage}
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="left">
+                            Newer
+                        </a>
+                    {/block:PreviousPage}
+                </div>
+            {/block:Pagination}
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+		$(document).ready(function(){
+			$('.entry').mouseenter(function(){
+				$(this).children('.overlay').animate({left: '-50px'});
+			});
+			$('.entry').mouseleave(function(){
+				$(this).children('.overlay').animate({left: '0px'});
+			});
+		});
+		$('#item').mouseenter(function(){
+			$(this).children('#light').animate({opacity: '0'});
+		});
+		$('#item').mouseleave(function(){
+			$(this).children('#light').animate({opacity: '0.3'});
+		});
+	</script>
+</body>
+</html>
