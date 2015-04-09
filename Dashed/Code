@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing a link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{block:PostTitle} {PostTitle} | {/block:PostTitle} {Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    
+    {block:Hidden}
+    	
+        <!-- Colour -->
+        	<meta name="color:Background" content="#FBFBFB" />
+            <meta name="color:Post" content="#FFF" />
+            <meta name="color:Accent" content="#09C" />
+            <meta name="color:Dash" content="#000000" />
+            <meta name="color:Copyright" content="#999" />
+            
+        <!-- Modify -->
+        	<meta name="select:Description Align" content="justify" title="Justify" />
+            <meta name="select:Description Align" content="left" title="Left" />
+            <meta name="select:Description Align" content="center" title="Center" />
+            <meta name="select:Description Align" content="right" title="Right" />
+            
+            <meta name="select:Post Layout" content="grid" title="Grid" />
+            <meta name="select:Post Layout" content="single" title="Single" />
+            
+            <meta name="if:Display Copyright" content="1" />
+        
+    {/block:Hidden}
+    <style>
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+		body{
+		  padding: 0;
+		  margin: 0;	
+		  font-family: 'Open Sans', sans-serif;
+		  background: {color:Background};
+		}
+		#top{
+		  position: relative;
+		  top: 0px;
+		  text-align: center;
+		  padding: 20px;
+		  padding-top: 20px;
+		}
+		.portrait{
+		  width: 128px;
+		  border-radius: 200px;
+		  border: dashed 2px {color:Dash};	
+		}
+		#top p{
+		  max-width: 240px;
+		  margin: 0 auto;
+		  position: relative;	
+		}
+		#top p.justify{
+		  text-align: justify;	
+		}
+		#top p.left{
+		  text-align: left;	
+		}
+		#top p.center{
+		  text-align: center;	
+		}
+		#top p.right{
+		  text-align: right;	
+		}
+		#top h1{
+		  line-height: 10px;	
+		}
+		#top a{
+		  color: {color:Dash};
+		  text-decoration: none;	
+		}
+		#dashSpan{
+		  border-top: dashed 2px {color:Dash};
+		  border-bottom: dashed 2px {color:Dash};	
+		  position: relative;
+		  text-align: center;
+		  padding: 5px;
+		}
+		#dashSpan ul{
+		  margin-left: -40px;
+		  list-style: none;
+		}
+		#dashSpan ul li{
+		  display: inline;
+		  padding: 10px;
+		  background: {color:Accent};
+		  border-radius: 2px;
+		  color: {color:Post};
+		  margin: 5px;	
+		}
+		#dashSpan a{
+		  color: {color:Post};
+		  text-decoration: none;	
+		}
+		#dashSpan.footer{
+		  height: auto;
+		  position: relative;
+		  margin-top: 30px;
+		  margin-bottom: 10px;	
+		}
+		#dashSpan.footer .left{	
+		  width: 300px;
+		  background: none;
+		  text-align: left;
+		}
+		#dashSpan.footer .left .portrait{
+		  width: 50px;	
+		}
+		#dashSpan.footer .left ul{
+		  left: 60px;
+		  position: relative;
+		  margin-top: -40px;
+		  width: 900px;
+		  font-size: 14px;	
+		}
+		#dashSpan.footer .right{
+		  float: right;
+		  margin-top: -70px;
+		  position: relative;
+		  background: none;
+		}
+		#dashSpan.footer .right input[type="text"]{
+		  padding: 10px;	
+		}
+		#dashSpan.footer .right input[type="submit"]{
+		  padding: 12px;
+		  background: {color:Accent};
+		  color: {color:Post};
+		  border: none;	
+		}
+		#copyright{
+		  position: relative;
+		  left: 0px;
+		  top: 0px;
+		  width: 100%;
+		  text-align: center;
+		  color: {color:Copyright};
+		  padding: 10px;	
+		}
+		#copyright a{
+		  color: {color:Copyright};
+		  text-decoration: none;	
+		}
+		#dashSpan.pagination{
+		  border: none;
+		  text-align: center;	
+		}
+		.left, .right{
+		  padding: 10px;
+		  background: {color:Accent};
+		  color: {color:Post};
+		  margin: 10px;
+		  text-align: center;	
+		}
+		#content{
+		  margin: 0 auto;
+		  top: 20px;
+		  position: relative;
+		  max-width: 95%;
+		  margin-bottom: 30px;
+		}
+		#entry{
+		  width: 280px;
+		  height: auto;
+		  background: {color:Post};
+		  margin: 15px;
+		  border: solid 1px #BBB;
+		}
+		#entry h1, #entry p{
+		  margin-left: 15px;
+		  margin-right: 15px;	
+		}
+		#entry h1{
+		  font-size: 30px;	
+		}
+		.photoPost{
+		  width: 100%;
+		}
+		#entry p.caption{
+		  padding: 10px;	
+		}
+		#quoteBox{
+		  background: #CCC;
+		  text-transform: uppercase;
+		  font-weight: bold;
+		  padding: 15px;
+		}
+		#quoteBox.grid{
+		  width: 250px;	
+		}
+		#linkBox{
+		  padding: 15px;
+		  background: #666;
+		  text-align: center;
+		}
+		#linkBox.grid{
+		  width: 250px;	
+		}
+		#linkBox h1{
+		  font-size: 20px;
+		  margin: 3px;
+		}
+		#linkBox em{
+		  font-size: 12px;	
+		}
+		.linkBox{
+		  text-decoration: none;	
+		  color: {color:Post};
+		}
+		.chatPost{
+		  margin: 10px;	
+		}
+		ul.chatPost li{
+		  padding: 5px;
+		  margin-left: -40px;
+		  list-style: none;
+		}
+		ul.chatPost li:nth-child(even){
+		  background: #EAEAEA;	
+		}
+		ul.chatPost li:first-child{
+		  margin-top: -10px;	
+		}
+		.video-container { 
+  		  position: relative; 
+  		  padding-bottom: 56.25%; 
+  		  padding-top: 30px; 
+  		  height: 0; 
+  		  overflow: hidden; 
+		  margin-bottom: 10px;
+		}		 
+		.video-container iframe, 
+		.video-container object, 
+		.video-container embed { 
+  		  position: absolute; 
+  		  top: 0; 
+  		  left: 0; 
+  		  width: 100%; 
+  		  height: 100%; 
+  		  margin-bottom: 10px;
+		}
+		#answerBox{
+		  font-size: 16px;
+		  background: #333;
+		  color: {color:Post};
+		  position: relative;
+		  padding: 15px;
+		}
+		#answerBox.grid{
+		  width: 250px;	
+		}
+		#answerBox h1{
+		  font-size: 16px;	
+		}
+		#answerBox p{
+		  text-transform: none;
+		  font-weight: normal;	
+		}
+		.overlay{
+		  position: absolute;
+		  top: 0px;
+		  right: 0px;
+		  background: #333;
+		  color: {color:Post};	
+		  visibility: hidden;
+		  padding: 10px;
+		}
+		.overlayLink{
+		  color: {color:Post};	
+		}
+		#credit{
+		  bottom: 10px;
+		  right: 10px;
+		  position: fixed;
+		  z-index: 99;
+		}
+		#perma{
+		  display: none;	
+		}
+		{block:PermalinkPage}
+			.overlay{
+			  display: none;	
+			}
+			#content{
+			  width: 600px;	
+			}
+			#entry.single, #entry.grid{
+			  width: 600px;	
+			}
+			#linkBox, #quoteBox, #answerBox{
+			  width: 570px;	
+			}
+			#perma{
+			  width: 600px;
+			  position: absolute;
+			  margin: 0 auto;
+			  left: 0px;	
+			  margin-top: 0px;
+			  z-index: 99;
+			}
+			ol.notes{
+			  display: block;	
+			}
+			ol.notes img{
+			  width: 16px;	
+			}
+			#perma.right{
+			  float: right;
+			  position: relative;
+			  background: none;	
+			}
+			.right i{
+			  color: {color:Dash};	
+			  margin: 0px;
+			}
+			#perma h1{
+			  font-weight: 100;	
+			}
+		{/block:PermalinkPage}
+		#content.grid{
+		  width: 95%;	
+		}
+		#entry.grid{
+		  width: 280px;
+		  position: relative;	
+		}
+		#content.single{
+		  max-width: 600px;	
+		}
+		#entry.single{
+		  width: 600px;	
+		}
+		#linkBox.single, #quoteBox.single, #answerBox.single{
+		  width: 570px;	
+		}
+		#dashSpan.pagination{
+		  display: none;	
+		}
+		#entry.single .video-container{
+		  width: 500px;
+		}
+		#entry.grid > .overlay{
+		  display: block;	
+		}
+		#entry.single > .overlay{
+		  display: block;	
+		}
+	</style>
+</head>
+
+<body>
+	<a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Accent}" stroke="none">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+         </div>
+    </a>
+    
+    <div id="top">
+    	<a href="{BlogURL}">
+        	<img src="{PortraitURL-128}" class="portrait" />
+        </a>
+        <a href="{BlogURL}"><h1>{Title}</h1></a>
+        <p class="{select:Description Align}">{Description}</p>
+    </div>
+    
+    {block:HasPages}
+        <div id="dashSpan">
+            <ul>
+                {block:Pages}
+                    <a href="{URL}"><li>{Label}</li></a>
+                {/block:Pages}
+            </ul>
+        </div>
+    {/block:HasPages}
+    
+    <div id="content" class="{select:Post Layout}">
+    	{block:Posts}
+        
+            {block:Text}
+                <div id="entry" class="{select:Post Layout}"><!-- Text -->
+                    {block:Title}<h1>{Title}</h1>{/block:Title}
+                    <p>{Body}</p>
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div>
+            {/block:Text}
+            
+            {block:Photo}
+                <div id="entry" class="{select:Post Layout}"><!-- Photo -->
+                    <img src="{PhotoURL-500}" class="photoPost" />
+                    {block:Caption}
+                        {Caption}
+                    {/block:Caption}
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div> 
+            {/block:Photo}
+            
+            {block:Photoset}
+                <div id="entry" class="{select:Post Layout}"><!-- Photo -->
+                    <center>
+                        {Photoset}
+                    </center>
+                    {block:Caption}
+                        {Caption}
+                    {/block:Caption}
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div> 
+            {/block:Photoset}
+            
+            {block:Quote}
+                <div id="entry" class="{select:Post Layout}"><!-- Quote -->
+                    <div id="quoteBox" class="{select:Post Layout}">
+                        {Quote}
+                    </div>
+                    {block:Source}
+                        <p class="caption">
+                            &mdash; {Source}
+                        </p>
+                    {/block:Source}
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div> 
+            {/block:Quote}
+            
+            {block:Link}
+                <div id="entry" class="{select:Post Layout}"><!-- Link -->
+                    <a href="{URL}" class="linkBox"><div id="linkBox" class="{select:Post Layout}">
+                        <h1>{Name}</h1>
+                        <em>{Host}</em>
+                    </div></a>
+                    {block:Description}
+                        {Description}
+                    {/block:Description}
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div> 
+            {/block:Link}
+            
+            {block:Chat}
+                <div id="entry" class="{select:Post Layout}"><!-- Chat -->
+                    {block:Title}<h1>{Title}</h1>{/block:Title}
+                    <ul class="chatPost">
+                        {block:Lines}
+                        	<li>{block:Label}<strong>{Label} </strong>{/block:Label}{Line}</li>
+                        {/block:Lines}
+                    </ul>
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div> 
+            {/block:Chat}
+            
+            {block:Audio}
+                <div id="entry" class="{select:Post Layout}"><!-- Audio -->
+                    <div class="video-container">
+                        {AudioEmbed}
+                    </div>
+                    {block:Caption}
+                        {Caption}
+                    {/block:Caption}
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div> 
+            {/block:Audio}
+            
+            {block:Video}
+                <div id="entry" class="{select:Post Layout}"><!-- Video -->
+                    <div class="video-container">
+                        {Video-500}
+                    </div>
+                    {block:Caption}
+                        {Caption}
+                    {/block:Caption}
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div> 
+            {/block:Video}
+            
+            {block:Answer}
+                <div id="entry" class="{select:Post Layout}"><!-- Answer -->
+                    <div id="answerBox" class="{select:Post Layout}">
+                        <h1>{Asker} asked:</h1>
+                        <p>{Question}</p>
+                    </div>
+                    {Answer}
+                    <div id="perma">
+                        &nbsp;
+                        <span class="right">
+                            {ReblogButton}
+                            {LikeButton}
+                        </span>
+                        <br />
+                        {block:PostNotes}
+                            <h1>Notes</h1>
+                            {PostNotes-16}
+                        {/block:PostNotes}
+                    </div>
+                </div>
+            {/block:Answer}
+            
+    	{/block:Posts}
+    </div>
+    
+        {block:Pagination}
+            <div id="dashSpan" class="pagination">
+                
+                {block:NextPage}
+                    <a href="{NextPage}" class="left">
+                        Older
+                    </a>
+                {/block:NextPage}
+                
+                {block:PreviousPage}
+                    <a href="{PreviousPage}" class="right">
+                        Newer
+                    </a>
+                {/block:PreviousPage}
+                
+            </div>
+        {/block:Pagingation}
+    
+    <div id="dashSpan" class="footer">
+        <div class="left">
+        	<img src="{PortraitURL-128}" class="portrait" />
+            {block:HasPages}
+                <ul>
+                    {block:Pages}
+                    	<a href="{URL}"><li>{Label}</li></a>
+                    {/block:Pages}
+                </ul>
+            {/block:HasPages}
+        </div>
+        <div class="right">
+            <form action="/search" method="get">
+                <input type="text" name="q" value="{SearchQuery}" placeholder="Search the Blog!"/>
+                <input type="submit" value="Search"/>
+			</form>
+        </div>
+    </div>
+    {block:IfDisplayCopyright}
+        <span id="copyright">
+            <center>All content copyright of &copy;<a href="{BlogURL}">{Title}</a></center>
+        </span>
+    {/block:IfDisplayCopyright}
+    
+    <script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/Nsengbupv/jquery.imagesloaded.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/wUzngbuqv/jquery.masonry.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/Audngbuqj/jquery.infinitescroll.min.js"></script>
+    <script>
+		(function () {
+    	var $tumblelog = $('#content');
+    	$tumblelog.infinitescroll({
+        	navSelector: "#dashSpan.pagination",
+        	nextSelector: "#dashSpan.pagination a.left",
+        	itemSelector: "#entry",
+    	},
+    	function (newElements) {
+        	var $newElems = $(newElements).css({
+            	opacity: 0
+        });
+        $newElems.imagesLoaded(function () {
+           	$newElems.animate({
+               	opacity: 1
+          		});
+           	$tumblelog.masonry('appended', $newElems);
+        	});
+    	});
+    	$tumblelog.imagesLoaded(function () {
+        	$tumblelog.masonry({
+            	columnWidth: function (containerWidth) {
+                		return containerWidth / 100;
+            		}
+        		});
+    		});
+		})();
+	</script>
+</body>
+</html>
