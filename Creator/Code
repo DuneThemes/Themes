@@ -1,0 +1,1784 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/gvunna6e1/creditshake.css" />
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing a link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
+    
+    {block:Hidden}
+    	
+        <!-- Meta | Customization -->
+        	<!-- Colours -->
+            	<meta name="color:Background" content="#1E4BB7" /> <!-- body -->
+                <meta name="color:Sidebar" content="#363636" /> <!-- #side -->
+                <meta name="color:Sidebar Control Background" content="#1E1E1E" /> <!-- #side #controls -->
+                <meta name="color:Sidebar Controls No Hover" content="#999" /> <!-- #side #controls .fa jQuery (mouseleave) -->
+                <meta name="color:Sidebar Controls Hover" content="#E8E8E8" /> <!-- #side #controls .fa jQuery (mouseenter) -->
+                <meta name="color:Sidebar Line Break" content="#B3B3B4" /> <!-- #side hr -->
+                <meta name="color:Sidebar Social Links Background" content="#1A1A1A" /> <!-- #side .social a -->
+                <meta name="color:Sidebar Social Links Icons No Hover" content="#363636" /> <!-- #side .social a .fa-stack i:last-child -->
+                <meta name="color:Sidebar Social Links Icons Hover" content="#FFF" /> <!-- #side .social a .fa-stack i:last-child:hover -->
+                <meta name="color:Sidebar Social Links Shadow" content="#414141" /> <!-- #side .social a .fa-stack i:first-child (shadow) -->
+                <meta name="color:Sidebar Search Background" content="#AEAEAE" /> <!-- #side #search -->
+                <meta name="color:Sidebar Search Border" content="#232323>" /> <!-- #side #search -->
+                <meta name="color:Sidebar Search Submit Background" content="#1E4BB7" /> <!-- #side #search submit (background + border) -->
+                <meta name="color:Sidebar Search Submit Text" content="#FFF" /><!-- #side #search submit -->
+                <meta name="color:Sidebar Search Input Background" content="#FFF" /> <!-- #side #search input (background + border) -->
+                <meta name="color:Sidebar Description" content="#999" /> <!-- #side #me p.description -->
+                <meta name="color:Sidebar Regular Links" content="#FFF" /> <!-- #side #me p.description a -->
+                <meta name="color:Sidebar Menu Border" content="#333" /> <!-- #side #menu ul -->
+                <meta name="color:Sidebar Menu Background" content="#FFF" /> <!-- #side #menu ul li -->
+                <meta name="color:Sidebar Menu Text" content="#000" /> <!-- #side #menu a -->
+                <meta name="color:Sidebar Menu Link Bottom Border" content="#CCC" /> <!-- #side #menu ul li -->
+                <meta name="color:Sidebar Blogroll Shadows" content="#1E1E1E" /> <!-- #side #blogroll img -->
+                <meta name="color:Entry Background" content="#FFF" /> <!-- #entry -->
+                <meta name="color:Entry Post Titles" content="#232323" /> <!-- #entry a.title -->
+                <meta name="color:Entry PostInfo Background" content="#CCC" /> <!-- #entry .postInfo -->
+                <meta name="color:Entry PostInfo Top Border" content="#999" /> <!-- #entry .postInfo -->
+                <meta name="color:Entry PostInfo Buttons" content="#333" /> <!-- #entry .postInfo .share + a -->
+                <meta name="color:Entry Share Background" content="#FFF" /> <!-- #entry .postInfo #share -->
+                <meta name="color:Entry Share Border" content="#CCC" /> <!-- #entry .postInfo #share -->
+                <meta name="color:Entry Share Title Background" content="#E0E0E0" /> <!-- #entry .postInfo #share .title -->
+                <meta name="color:Entry Share Title Border" content="#999" /> <!-- #entry .postInfo #share .title -->
+                <meta name="color:Entry Share Icons" content="#333" /> <!-- #entry .postInfo #share .twitter/.facebook/.permalink .icon -->
+                <meta name="color:Entry Link Post Text" content="#333" /> <!-- #entry a.linkPost -->
+                <meta name="color:Entry Link and Quote Background" content="#999" /> <!-- #entry div.linkPost + div.quotePost -->
+                <meta name="color:Entry Quote Text" content="#333" /> <!-- #entry div.quotePost -->
+                <meta name="color:Entry Even Chat Line Background" content="#F2F2F2" /> <!-- #entry ul.chatPost li:nth-child(even) -->
+                <meta name="color:Entry Ask Background" content="#252525" /> <!-- #entry .ask -->
+                <meta name="color:Entry Ask Text" content="#C5C5C5" /> <!-- #entry .ask + .ask a + .ask h1 -->
+                <meta name="color:Pagination Button Background" content="#FFF" /> <!-- #pagination a -->
+                <meta name="color:Pagination Button Text" content="#1E4BB7" /> <!-- #pagination a -->
+                <meta name="color:To Top Button Background" content="#FFF" /> <!-- #toTop -->
+                <meta name="color:To Top Button Icon" content="#666" /> <!-- #toTop -->
+                                 
+            <!-- Options -->  
+            	<meta name="if:Rounded Edges" content="1" />
+                <meta name="if:Show Searchbar" content="1" />
+                <meta name="if:Show Description Separator" content="1" />
+                <meta name="if:Show Even Chat Background" content="1" />
+                <meta name="if:Show To Top Button" content="1" />
+                <meta name="if:Show PostInfo Icons" content="1" />
+                <meta name="if:Enable Share Options" content="1" />
+                <meta name="if:Show Blogroll" content="0" />
+                
+                <meta name="select:Sidebar Position" content="absolute" title="Scrollable" />
+                <meta name="select:Sidebar Position" content="fixed" title="Fixed" />
+                
+                <meta name="select:Description Align" content="justify" title="Justify" />
+                <meta name="select:Description Align" content="left" title="Left" />
+                <meta name="select:Description Align" content="center" title="Center" />
+                <meta name="select:Description Align" content="right" title="Right" />
+                
+                <meta name="select:Post Gap" content="small" title="Small" />
+                <meta name="select:Post Gap" content="medium" title="Medium" />
+                <meta name="select:Post Gap" content="large" title="Large" />
+                <meta name="select:Post Gap" content="extralarge" title="Extra Large" />
+                
+            <!-- Images -->
+            	<meta name="image:Background" content="" />
+                
+            <!-- Text -->
+            	<meta name="text:Twitter" content="" />
+                <meta name="text:Facebook" content="" />
+                <meta name="text:Instagram" content="" />
+                <meta name="text:YouTube" content="" />
+                <meta name="text:WordPress" content="" />
+                <meta name="text:SoundCloud" content="" />
+                <meta name="text:Stack Overflow" content="" />
+                <meta name="text:Google Plus" content="" />
+                <meta name="text:Twitch" content="" />
+                <meta name="text:Behance" content="" />
+                <meta name="text:Reddit" content="" />
+                <meta name="text:Vine" content="" />
+                <meta name="text:Spotify" content="" />
+                <meta name="text:Delicious" content="" />
+                <meta name="text:DeviantArt" content="" />
+                <meta name="text:Skype" content="" />
+                <meta name="text:LinkedIn" content="" />
+                <meta name="text:Pinterest" content="" />
+                <meta name="text:Dribbble" content="" />
+                <meta name="text:Vimeo" content="" />
+                <meta name="text:Flickr" content="" />
+                <meta name="text:Github" content="" />
+                <meta name="text:Foursquare" content="" />
+                <meta name="text:Stack Exchange" content="" />
+                <meta name="text:Twitter Widget" content="" />
+                <meta name="text:Snap Widget Code" content="" />
+        
+    {/block:Hidden}
+    <style>
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+		body{
+		  font-family: 'Open Sans', sans-serif;
+		  background: url({image:Background});
+		  background-size: cover;
+		  background-attachment: fixed;
+		  background-color: {color:Background};
+		}
+		#wrap{
+		  max-width: 850px;
+		  height: 300px;
+		  top: 40px;
+		  position: relative;
+		  margin: 0 auto;	
+		}
+		#side{
+		  width: 270px;
+		  margin-top: 40px;
+		  margin-left: 0px;
+		  background: {color:Sidebar};
+		  text-align: center;
+		  padding: 15px;
+		}
+		#side.fixed{
+		  position: fixed;	
+		}
+		#side.absolute{
+		  position: absolute;	
+		}
+		#side a{
+		  text-decoration: none;	
+		}
+		#side a h1{
+		  color: #FFF;
+		  font-size: 16px;
+		  text-transform: uppercase;
+		  text-shadow: 2px 2px 2px #333;
+		  margin-bottom: 20px;
+		}
+		#side #controls{
+		  background: {color:Sidebar Control Background};
+		  width: 270px;
+		  position: relative;	
+		  left: -15px;
+		  padding: 15px;
+		  font-size: 25px;
+		  cursor: default;
+		  text-align: center;
+		}
+		#side #controls i{
+		  margin-left: 15px;
+		  margn-right: 15px;	
+		  cursor: pointer;
+		  color: #999;
+		}
+		#side #controls .fa-heart{
+		  display: none;	
+		}
+		#side hr{
+		  width: 40%;
+		  background: none;
+		  border-bottom: {color:Sidebar Line Break};	
+		  margin-bottom: 15px;
+		  display: none;
+		}
+		#side .social a{
+		  color: {color:Sidebar Social Links Background};	
+		}
+		#side .social a .fa-stack i:last-child:hover{
+		  color: {color:Sidebar Social Links Icons Hover};	
+		}
+		#side .social a .fa-stack i:last-child{
+		  color: {color:Sidebar Social Links Icons No Hover};	
+		}
+		#side .social a .fa-stack i:first-child{
+		  text-shadow: .5px .5px 1px {color:Sidebar Social Links Shadow};	
+		}
+		#side #search{
+		  top: 15px;
+		  left: -15px;
+		  width: 270px;
+		  position: relative;
+		  background: {color:Sidebar Search Background};
+		  padding: 15px;
+		  border-top: solid 1px {color:Sidebar Search Border};	
+		  display: none;
+		}
+		#side #search input{
+		  margin: 5px;	
+		  padding: 5px;
+		  outline: 0;
+		}
+		#side #search input[type="submit"]{
+		  background: {color:Sidebar Search Submit Background};
+		  border: solid {color:Sidebar Search Submit Background};
+		  color: {color:Sidebar Search Submit Text};	
+		}
+		#side #search input[type="text"]{
+		  border: solid {color:Sidebar Search Input Background};
+		  background: {color:Sidebar Search Input Background};	
+		}
+		#side #me p.description{
+		  color: {color:Sidebar Description};	
+		  width: 250px;
+		  margin: 0 auto;
+		  position: relative;
+		}
+		#side #me p.justify{
+		  text-align: justify;	
+		}
+		#side #me p.center{
+		  text-align: center;	
+		}
+		#side #me p.left{
+		  text-align: left;	
+		}
+		#side #me p.right{
+		  text-align: right;	
+		}
+		#side #me p.description a{
+		  color: {color:Sidebar Regular Links};	
+		}
+		#side #me p:first-of-type{
+		  margin-top: 15px;	
+		}
+		#side #me p:last-of-type{
+		  margin-bottom: 15px;	
+		}
+		#side #menu{
+		  text-align: left;	
+		}
+		#side #menu a{
+		  color: {color:Sidebar Menu Text};	
+		}
+		#side #menu ul{
+		  list-style: none;
+		  border: solid 1px {color:Sidebar Menu Border}
+		  margin-bottom: 0px;
+		}
+		#side #menu ul li{
+		  padding: 15px;
+		  margin-left: -40px;
+		  background: {color:Sidebar Menu Background};
+		  border-bottom: solid 1px #CCC;	
+		}
+		#side #menu ul li .chev{
+		  float: right;
+		}
+		#side #blogroll{
+		  padding-top: 15px;
+		  display: none;	
+		}
+		#side #blogroll img{
+		  width: 55px;
+		  border-radius: 200px;
+		  margin: 3px;
+		  box-shadow: 2px 2px 2px {color:Sidebar Blogroll Shadows}	
+		}
+		#side #twitter{
+		  top: 15px;	
+		  position: relative;
+		  margin-bottom: 15px;
+		  display: none;
+		}
+		#side #twitter iframe{
+		  height: 300px;	
+		}
+		#side #instagram{
+		  top: 15px;
+		  position: relative;
+		  margin-bottom: 10px;	
+		  display: none;
+		}
+		#content{
+		  right: 0px;
+		  top: 0px;
+		  width: 500px;
+		  position: absolute;
+		}
+		#entry{
+		  left: 0px;
+		  top: 0px;
+		  padding: 15px;
+		  background: {color:Entry Background};
+		  position: relative;
+		}
+		#entry.small{
+		  margin-bottom: 20px;	
+		}
+		#entry.medium{
+		  margin-bottom: 40px;	
+		}
+		#entry.large{
+		  margin-bottom: 70px;	
+		}
+		#entry.extralarge{
+		  margin-bottom: 100px;	
+		}
+		#entry h1{
+		  margin: 0;	
+		}
+		#entry a.title{
+		  text-decoration: none;	
+		  color: {color:Entry Post Titles};
+		}
+		#entry .postInfo{
+		  left: -15px;
+		  position: relative;
+		  background: {color:Entry PostInfo Background};
+		  width: 470px;
+		  padding: 15px;
+		  margin-bottom: -15px;
+		  border-top: solid 1px {color:Entry PostInfo Top Border};	
+		  font-size: 12px;
+		}
+		#entry .postInfo a i, #entry .postInfo .share i{
+		  margin-right: 5px;
+		  display: none;	
+		}
+		#entry .postInfo .share, #entry .postInfo a{
+		  display: inline;	
+		  margin-right: 15px;
+		  font-weight: bold;
+		  text-decoration: none;
+		  color: {color:Entry PostInfo Buttons};
+		  cursor: pointer;
+		}
+		#entry .postInfo .share{
+		  float: right;	
+		  display: none;
+		}
+		#entry .postInfo #share{
+		  bottom: 48px;
+		  position: absolute;
+		  right: 0px;
+		  background: {color:Entry Share Background};
+		  padding: 15px;
+		  border: solid 1px {color:Entry Share Border};
+		  display: none;
+		}
+		#entry .postInfo #share i{
+		  display: block;	
+		}
+		#entry .postInfo #share .title{
+		  font-size: 18px;
+		  background: {color:Entry Share Title Background};
+		  position: absolute;
+		  left: 0px;
+		  top: 0px;
+		  right: 0px;
+		  padding: 15px;
+		  border-bottom: solid 1px {color:Entry Share Title Border};	
+		}
+		#entry .postInfo #share .title .close{
+		  display: inline;
+		  float: right;
+		  margin-top: 4px;
+		  cursor: pointer;	
+		}
+		#entry .postInfo #share .twitter{
+		  margin-top: 50px;	
+		}
+		#entry .postInfo #share .twitter, 
+		#entry .postInfo #share .facebook,
+		#entry .postInfo #share .permalink{
+		  font-size: 18px;	
+		  margin-bottom: 10px;
+		}
+		#entry .postInfo #share .twitter .icon, 
+		#entry .postInfo #share .facebook .icon,
+		#entry .postInfo #share .permalink .icon{
+		  display: inline;
+		  float: right;	
+		  font-size: 10px;
+		  margin-left: 10px;
+		  color: {color:Entry Share Icons};
+		  -webkit-transition: ease .5s;
+		  -moz-transition: ease .5s;
+		  -o-transition: ease .5s;
+		  transition: ease .5s;
+		}
+		#entry .postInfo #share .twitter:hover > .icon{
+		  color: #4099ff;	
+		}
+		#entry .postInfo #share .facebook:hover > .icon{
+		  color: #3b5998;	
+		}
+		#entry img.photoPost{
+		  width: 100%;	
+		}
+		#entry a.linkPost{
+		  color: {color:Entry Link Post Text};
+		  text-decoration: none;	
+		}
+		#entry div.linkPost, #entry div.quotePost{
+		  left: -15px;
+		  padding: 15px;
+		  top: -15px;
+		  position: relative;
+		  background: {color:Entry Link and Quote Background};
+		  width: 470px;
+		  text-align: center;
+		  margin-bottom: -15px;
+		  color: {color:Entry Quote Text};	
+		}
+		#entry div.quotePost{
+		  text-align: left;
+		  font-size: 12px;	
+		  color: {color:Entry Quote Text};
+		}
+		#entry div.quotePost p{
+		  padding: 15px;
+		}
+		#entry ul.chatPost{
+		  margin-left: -40px;
+		  list-style: none;	
+		}
+		#entry ul.chatPost li{
+		  padding: 5px;	
+		}
+		#entry .video-container { 
+  		  position: relative; 
+  		  padding-bottom: 56.25%; 
+  		  padding-top: 30px; 
+  		  height: 0; 
+  		  overflow: hidden; 
+		}		 
+		#entry .video-container iframe, 
+		#entry .video-container object, 
+		#entry .video-container embed { 
+  		  position: absolute; 
+  		  top: 0; 
+  		  left: 0; 
+  		  width: 100%; 
+  		  height: 100%; 
+		}
+		#entry .ask{
+		  left: -15px;
+		  top: -15px;
+		  padding: 15px;
+		  width: 470px;
+		  background: {color:Entry Ask Background};
+		  position: relative;
+		  color: {color:Entry Ask Text};
+		  margin-bottom: -18px;
+		}
+		#entry .ask a, #entry .ask h1{
+		  color: {color:Entry Ask Text};
+		  text-decoration: none;
+		  font-weight: 100;	
+		}
+		#entry .ask img{
+		  width: 85px;
+		  display: inline;
+		  float: left;
+		  margin-right: 15px;	
+		}
+		#pagination{
+		  with: 100%;
+		  margin: 0 auto;
+		  position: relative;	
+		}
+		#pagination a{
+		  padding: 15px;
+		  background: {color:Pagination Button Background};
+		  color: {color:Pagination Button Text};
+		  text-decoration: none;
+		  margin-bottom: 40px;
+		  font-weight: bold;
+		}
+		#pagination a.left{
+		  float: left;	
+		}
+		#pagination a.right{
+		  float: right;	
+		}
+		#toTop{
+		  padding: 15px;
+		  position: fixed;
+		  right: 150px;
+		  bottom: 30px;
+		  background: {color:To Top Button Background};
+		  color: {color:To Top Button Icon};	
+		  cursor: pointer;
+		  visibility: hidden;
+		}
+		#entry.perma{
+		  margin-bottom: 50px;	
+		  background: none;
+		}
+		#entry.perma a.tag{
+		  margin-right: 10px;	
+		  color: {color:Entry Background};
+		}
+		#entry.perma h1{
+		  color: {color:Entry Background};	
+		  margin-top: 15px;
+		}
+		ol.notes li.note, ol.notes li.note a{
+		  color: {color:Entry Background};	
+		}
+		ol.notes li.note img.avatar{
+		  margin-right: 10px;	
+		}
+		/* === CUSTOMIZATION === */
+		{block:IfRoundedEdges}
+			#side, #entry, #pagination a, #toTop{
+			  border-radius: 3px;	
+			}
+			#side #search input, #entry ul.chatPost li{
+			  border-radius: 2px;	
+			}
+			#entry .postInfo #share .title{
+			  border-top-left-radius: 5px;
+			  border-top-right-radius: 5px;	
+			}
+			#entry div.linkPost, #entry div.quotePost{
+			  border-top-left-radius: 2px;
+			  border-top-right-radius: 2px;	
+			}
+			#entry .ask{
+			  border-top-left-radius: 3px;
+			  border-top-right-radius: 3px;	
+			}
+			#entry .postInfo #share{
+			  border-top-left-radius: 5px;	
+			}
+			#entry .postInfo{
+			  border-bottom-left-radius: 3px;
+			  border-bottom-right-radius: 3px;	
+			}
+			#side #search{
+			  border-bottom-left-radius: 3px;
+			  border-bottom-right-radius: 3px;	
+			}
+		{/block:IfRoundedEdges}
+		{block:IfShowSearchbar}
+			#side #search{
+			  display: block;	
+			}
+		{/block:IfShowSearchbar}
+		{block:if:ShowDescriptionSeparator}
+			#side hr{
+			  display: block;	
+			}
+		{/block:if:ShowDescriptionSeparator}
+		{block:IfShowEvenChatBackground}
+			#entry ul.chatPost li:nth-child(even){
+			  background: {color:Entry Even Chat Line Background};	
+			}
+		{/block:IfShowEvenChatBackground}
+		{block:IfShowToTopButton}
+			#toTop{
+			  visibility: visible;	
+			}
+		{/block:IfShowToTopButton}
+		{block:IfShowPostInfoIcons}
+			#entry .postInfo a i, #entry .postInfo .share i{
+			  display: inline;	
+			}
+		{/block:IfShowPostInfoIcons}
+		{block:IfEnableShareOptions}
+			#entry .postInfo .share{	
+			  display: inline;
+			}
+		{/block:IfEnableShareOptions}
+		{block:IfShowBlogroll}
+			#side #controls .fa-heart{
+			  display: inline;	
+			}
+			#side #blogroll{
+			  display: block;	
+			}
+		{/block:IfShowBlogroll}
+		{block:IfTwitterWidget}
+			#side #controls .fa-twitter{
+			  display: inline;	
+			}
+			#side #twitter{
+			  display: block;	
+			}
+		{/block:IfTwitterWidget}
+		{block:IfSnapWidgetCode}
+			#side #controls .fa-instagram{
+			  display: inline;	
+			}
+			#side #instagram{
+			  display: block;	
+			}
+		{/block:IfSnapWidgetCode}
+	</style>
+</head>
+
+<body>
+    <a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Entry Background}" stroke="none">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+         </div>
+    </a>
+    <div id="toTop">
+    	<i class="fa fa-chevron-up"></i>
+    </div>
+    <div id="wrap">
+    	<div id="side" class="{select:Sidebar Position}">
+        	<a href="{BlogURL}">
+            	<h1>{Title}</h1>
+            </a>
+            
+            <div id="controls"><!-- Start | Sidebar Section Switcher -->
+            	
+                <i class="fa fa-user"></i>
+                
+                {block:HasPages}
+                	<i class="fa fa-bars"></i>
+                {/block:HasPages}
+                
+                {block:IfShowBlogroll}
+                	<i class="fa fa-heart"></i>
+                {/block:IfShowBlogroll}
+                
+                {block:IfTwitterWidget}
+                	<i class="fa fa-twitter"></i>
+                {/block:IfTwitterWidget}
+                
+                {block:IfSnapWidgetCode}
+                	<i class="fa fa-instagram"></i>
+                {/block:IfSnapWidgetCode}
+                
+            </div><!-- End | Sidebar Section Switcher -->
+            
+            <div id="me"><!-- Start | Me -->
+                <p class="description {select:Description Align}">{Description}</p>
+                <hr />
+                <div class="social">
+                    {block:IfTwitter}
+                        <a href="{text:Twitter Username}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfTwitter}
+                    {block:IfFacebook}
+                        <a href="{text:Facebook}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfFacebook}
+                    {block:IfInstagram}
+                        <a href="{text:Instagram}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfInstagram}
+                    {block:IfYouTube}
+                        <a href="{text:YouTube}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfYouTube}
+                    {block:IfWordPress}
+                        <a href="{text:WordPress}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-wordpress fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfWordPress}
+                    {block:IfSoundCloud}
+                        <a href="{text:SoundCloud}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfSoundCloud}
+                    {block:IfStackOverflow}
+                        <a href="{text:Stack Overflow}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfStackOverflow}
+                    {block:IfGooglePlus}
+                        <a href="{text:Google Plus}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfGooglePlus}
+                    {block:IfTwitch}
+                        <a href="{text:Twitch}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-twitch fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfTwitch}
+                    {block:ifBehance}
+                        <a href="{text:Behance}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-behance fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfBehance}
+                    {block:IfReddit}
+                        <a href="{text:Reddit}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfReddit}
+                    {block:IfVine}
+                        <a href="{text:Vine}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-vine fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfVine}
+                    {block:IfSpotify}
+                        <a href="{text:Spotify}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfSpotify}
+                    {block:IfDelicious}
+                        <a href="{text:Delicious}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-delicious fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfDelicious}
+                    {block:IfDeviantArt}
+                        <a href="{text:DeviantArt}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-deviantart fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfDeviantArt}
+                    {block:IfSkype}
+                        <a href="{text:Skype}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-skype fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfSkype}
+                    {block:IfLinkedIn}
+                        <a href="{text:LinkedIn}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfLinkedIn}
+                    {block:IfPinterest}
+                        <a href="{text:Pinterest}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfPinterest}
+                    {block:IfDribbble}
+                        <a href="{text:Dribbble}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-dribbble fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfDribbble}
+                    {block:IfVimeo}
+                        <a href="{text:Vimeo}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-vimeo-square fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfVimeo}
+                    {block:IfFlickr}
+                        <a href="{text:Flickr}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-flickr fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfFlickr}
+                    {block:IfGithub}
+                        <a href="{text:Github}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfGithub}
+                    {block:IfFoursquare}
+                        <a href="{text:Foursquare}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-foursquare fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfFoursquare}
+                    {block:IfStackExchange}
+                        <a href="{text:Stack Exchange}">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfStackExchange}
+                </div>
+            </div> <!-- End | Me -->
+            
+            {block:HasPages}
+                <div id="menu"> <!-- Start | Menu -->
+                    <ul class="menu">
+                        {block:Pages}
+                            <a href="{URL}">
+                                <li>{Label} <span class="chev"><i class="fa fa-chevron-right"></i></span></li>
+                            </a>
+                        {/block:Pages}
+                    </ul>
+                </div> <!-- End | Menu -->
+            {/block:HasPages}
+            
+            <div id="blogroll"> <!-- Start | Blogroll -->
+                {block:Following}
+                	<a href="{FollowedURL}">
+                    	<img src="{FollowedPortraitURL-68}" title="{FollowedName}"/>
+                    </a>
+                {/block:Following}
+            </div> <!-- End | Blogroll -->
+            
+            <div id="twitter"> <!-- Start | Twitter -->
+            	{text:Twitter Widget}
+            </div> <!-- End | Twitter -->
+           
+            <div id="instagram"> <!-- Start | Instagram -->
+                {text:Snap Widget Code}
+            </div> <!-- End | Instagram -->
+            
+            <div id="search"> <!-- Start | Search -->
+                <form action="/search" method="get">
+                    <input type="text" name="q" value="{SearchQuery}" placeholder="Search the Blog!" />
+                    <input type="submit" value="Search"/>
+                </form>
+            </div> <!-- End | Search -->
+            
+        </div>
+        
+        <div id="content"><!-- Start | Content -->
+        	{block:Posts}
+                
+                {block:Text}
+                    <div id="entry" class="{select:Post Gap}"><!-- Text Post -->
+                        {block:Title}
+                            <a href="{Permalink}" class="title">
+                                <h1>{Title}</h1>
+                            </a>
+                        {/block:Title}
+                        {Body}
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Text}
+                
+                {block:Photo}
+                    <div id="entry" class="{select:Post Gap}"><!-- Photo Post -->
+                        <img src="{PhotoURL-500}" class="photoPost" />
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <div id="entry" class="{select:Post Gap}"><!-- Photo Post -->
+                        <center>
+                        	{Photoset}
+                        </center>
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Photoset}
+                
+                {block:Link}
+                    <div id="entry" class="{select:Post Gap}"><!-- Link Post -->
+                        <a href="{URL}" class="linkPost">
+                            <div class="linkPost">
+                                <h1>{Name}</h1>
+                                {block:Host}
+                                	<em>{Host}</em>
+                                {/block:Host}
+                            </div>
+                        </a>
+                        {block:Description}
+                        	{Description}
+                        {/block:Description}
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Link}
+                
+                {block:Quote}
+                    <div id="entry" class="{select:Post Gap}"><!-- Quote Post -->
+                        <div class="quotePost">
+                            <h1>{Quote}</h1>
+                        </div>
+                        {block:Source}
+                            <p>&mdash; {Source}</p>
+                        {/block:Source}
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Quote}
+                
+                {block:Chat}
+                    <div id="entry" class="{select:Post Gap}"><!-- Chat Post -->
+                        {block:Title}
+                            <a href="{Permalink}" class="title">
+                                <h1>{Title}</h1>
+                            </a>
+                        {/block:Title}
+                        <ul class="chatPost">
+                            {block:Lines}
+                            	<li>
+                                    {block:Label}
+                                        <strong>
+                                            {Label} 
+                                        </strong>
+                                    {/block:Label} 
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Chat}
+                
+                {block:Audio}
+                    <div id="entry" class="{select:Post Gap}"><!-- Audio Post -->
+                        <div class="video-container">
+                            {AudioEmbed}
+                        </div>
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Audio}
+                
+                {block:Video}
+                    <div id="entry" class="{select:Post Gap}"><!-- Video Post -->
+                        <div class="video-container">
+                            {Video-500}
+                        </div>
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Video}
+                
+                {block:Answer}
+                    <div id="entry" class="{select:Post Gap}"><!-- Answer Post -->
+                        <div class="ask">
+                            <img src="{AskerPortraitURL-64}" />
+                            <h1>{Asker} asked</h1>
+                            {Question}
+                        </div>
+                        {Answer}
+                        <div class="postInfo">
+                            <a href="{Permalink}">
+                                <i class="fa fa-calendar"></i> {TimeAgo}
+                            </a>
+                            {block:NoteCount}
+                                <a href="{Permalink}#notes">
+                                    <i class="fa fa-pencil"></i> {NoteCountWithLabel}
+                                </a>
+                            {/block:NoteCount}
+                            {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}">
+                                    <i class="fa fa-retweet"></i> Reblogged from {ReblogParentName}
+                                </a>
+                            {/block:RebloggedFrom}
+                            <div class="share">
+                                <i class="fa fa-share"></i> Share
+                            </div>
+                            <div id="share">
+                                <div class="title">
+                                    Share
+                                    <div class="close">
+                                        <i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                                <a href="https://twitter.com/intent/tweet?text={PostTitle}&url={Permalink}" target="new">
+                                    <div class="twitter">
+                                        Twitter 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-twitter fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={Permalink}" target="new">
+                                    <div class="facebook">
+                                        Facebook 
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-facebook fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{Permalink}">
+                                    <div class="permalink">
+                                        Permalink
+                                        <div class="icon">
+                                            <span class="fa-stack fa-lg">
+                                              <i class="fa fa-square-o fa-stack-2x"></i>
+                                              <i class="fa fa-globe fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                        <div id="entry" class="perma">
+                            {block:HasTags}
+                            	{block:Tags}
+                                	<a href="{TagURL}" class="tag">#{Tag}</a>
+                                {/block:Tags}
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <h1 id="notes">Notes</h1>
+                                {PostNotes-16}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:PermalinkPage}
+            	{/block:Answer}
+            {/block:Posts}
+            
+            {block:Pagination}
+                <div id="pagination"><!-- Start | Pagination -->
+                    
+                    {block:NextPage}
+                        <a href="{NextPage}" class="left">
+                            Back
+                        </a>
+                    {/block:NextPage}
+                    
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="right">
+                            Next
+                        </a>
+                    {/block:PreviousPage}
+                    
+                </div><!-- End | Pagination -->
+            {/block:Pagination}
+            
+        </div><!-- End | Content -->
+    </div>	
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+		$(document).ready(function(){ // START | SIDEBAR FUNCTIONS 
+			$('#side #me').show();
+			$('#side #menu').hide();
+			$('#side #blogroll').hide();
+			$('#side #twitter').hide();
+			$('#side #instagram').hide();
+			
+			$('#controls .fa').mouseenter(function(){
+				$(this).css('color', '{color:Sidebar Controls Hover}');
+			});
+			$('#controls .fa').mouseleave(function(){
+				$(this).css('color', '{color:Sidebar Controls No Hover}');
+			});
+			
+			
+			$('#controls .fa-user').click(function(){
+				$('#side #me').show();
+				$('#side #menu').hide();
+				$('#side #blogroll').hide();
+				$('#side #twitter').hide();
+				$('#side #instagram').hide();
+			});
+			
+			$('#controls .fa-bars').click(function(){
+				$('#side #menu').show();
+				$('#side #me').hide();
+				$('#side #blogroll').hide();
+				$('#side #twitter').hide();
+				$('#side #instagram').hide();
+			});
+			
+			$('#controls .fa-heart').click(function(){
+				$('#side #blogroll').show();
+				$('#side #me').hide();
+				$('#side #menu').hide();
+				$('#side #twitter').hide();
+				$('#side #instagram').hide();
+			});
+			
+			$('#controls .fa-twitter').click(function(){
+				$('#side #twitter').show();
+				$('#side #me').hide();
+				$('#side #menu').hide();
+				$('#side #blogroll').hide();
+				$('#side #instagram').hide();
+			});
+			
+			$('#controls .fa-instagram').click(function(){
+				$('#side #instagram').show();
+				$('#side #me').hide();
+				$('#side #menu').hide();
+				$('#side #blogroll').hide();
+				$('#side #twitter').hide();
+			});
+		}); // END | SIDEBAR FUNCTIONS
+		
+		$(document).ready(function(){ // SHARE BUTTON FUNCTIONS
+			$('#share').hide();
+			$('.share').click(function(){
+				$(this).parent('.postInfo').children('#share').show();	
+			})
+			$('.close').click(function(){
+				$(this).parent('.title').parent('#share').hide();
+			});
+		});
+		
+		$(document).ready(function(){ // SCROLL TO TOP FUNCTION
+			$('#toTop').hide();
+			$(document).scroll(function() {
+				  var y = $(this).scrollTop();
+				  if (y > 800) {
+				  	  $('#toTop').fadeIn();
+				  } else {
+					  $('#toTop').fadeOut();
+				  }
+			});
+			$('#toTop').click(function(){
+				$('html, body').animate({scrollTop:0}, 'slow');
+				return false;
+			}); 
+		});
+	</script>
+</body>
+</html>
