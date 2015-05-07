@@ -1,0 +1,557 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/gvunna6e1/creditshake.css" />
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing a link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
+    
+    {block:Hidden}
+    	
+        <meta name="color:Background" content="#000" />
+        <meta name="color:Content" content="#C39" />
+        <meta name="if:Show Portrait" content="1" />
+        
+    {/block:Hidden}
+    <style>
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+		body{
+		  background: {color:Background};
+		  font-family: 'Open Sans', sans-serif;	
+		  color: {color:Content};
+		}
+		#wrap{
+		  max-width: 630px;
+		  position: relative;
+		  margin: 0 auto;
+		  height: 400px;	
+		}
+		#side{
+		  margin-left: 0px;
+		  margin-top: 70px;
+		  position: fixed;
+		  width: 170px;
+		  text-align: center;
+		  padding: 15px;	
+		  border: solid 1px {color:Content};
+		}
+		#side .portrait{
+		  width: 100%;	
+		}
+		#side h1{
+		  font-weight: normal;
+		  font-size: 27px;	
+		  margin-bottom: -5px;	
+		}
+		#side a.title{
+		  text-decoration: none;
+		  color: {color:Content};
+		}
+		#side select{
+		  padding: 8px;
+		  text-align: left;	
+		}
+		#content{
+		  left: 240px;
+		  width: 390px;
+		  height: 400px;
+		  top: 70px;
+		  position: absolute;
+		}
+		#entry{
+		  position: relative;
+		  padding: 15px;
+		  border: solid 1px {color:Content};
+		  margin-bottom: 20px;
+		  width: 358px;	
+		}
+		#entry h1{
+		  margin: 0;	
+		}
+		#entry a.title{
+		  margin: 0 auto;	
+		  position: relative;
+		  color: {color:Content};
+		  text-decoration: none;
+		}
+		#entry img.photoPost{
+		  width: 100%;	
+		}
+		#entry .linkPost{
+		  text-decoration: none;
+		  color: {color:Content};	
+		}
+		#entry #linkBox{
+		  text-align: center;	
+		}
+		#entry #quoteBox{
+		  color: {color:Content};
+		  font-size: 30px;
+		  border-left: solid 1px {color:Content};
+		  padding-left: 15px;
+		  margin-bottom: 10px;
+		}
+		#entry p{
+		  margin-bottom: 0;	
+		}
+		ul.chatPost{
+		  margin-left: -40px;
+		  list-style: none;	
+		}
+		ul.chatPost li{
+		  padding: 5px;	
+		}
+		ul.chatPost li:nth-child(even){
+		  background: {color:Content};
+		  color: {color:Background};	
+		}
+		.video-container { 
+  		  position: relative; 
+  		  padding-bottom: 56.25%; 
+  		  height: 0;
+		  margin: 0px; 
+  		  overflow: hidden;
+		}		 
+		.video-container iframe, 
+		.video-container object, 
+		.video-container embed { 
+  		  position: absolute; 
+  		  top: 0; 
+  		  left: 0; 
+  		  width: 100%; 
+  		  height: 100%; 
+		}
+		#ask{
+		  background: {color:Content};
+		  color: {color:Background};
+		  padding: 15px;
+		  margin-left: -15px;
+		  margin-top: -15px;
+		  width: 359px;
+		  position: relative;
+		  border-top-left-radius: 10px;
+		  border-top-right-radius: 10px;	
+		}
+		#ask img{
+		  float: left;
+		  display: inherit;
+		  width: 50px;
+		  margin-right: 10px;	
+		}
+		#entry hr{
+		  border: solid 2px {color:Background};	
+		}
+		#entry .postInfo{
+		  font-size: 14px;	
+		  border-top: solid 1px {color:Content};
+		  padding: 15px;
+		  margin-top: 15px;
+		  margin-left: -15px;
+		  width: 359px;
+		  padding-bottom: 0;
+		}
+		#entry .postInfo a{
+		  color: {color:Content};	
+		}
+		#entry .postInfo .right{
+		  float: right;	
+		}
+		#side, #entry, .portrait, img.photoPost{
+		  border-radius: 10px;	
+		}
+		#pagination{
+		  display: none;	
+		}
+		::-webkit-scrollbar{
+		  width: .4em;
+		  background: {color:Background};
+		  border-left: solid 1px {color:Content};
+		  border-right: solid 1px {color:Content};
+		}
+		::-webkit-scrollbar-thumb{
+		  width: 2em;	
+		  background: {color:Content};
+		}
+		ol.notes li.note, ol.notes li.note a{
+		  color: {color:Entry Background};	
+		}
+		ol.notes li.note img.avatar{
+		  margin-right: 10px;	
+		}
+	</style>
+</head>
+
+<body>
+	<a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Content}" stroke="none">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+         </div>
+    </a>
+    <div id="wrap">
+    	<div id="side">
+        	{block:IfShowPortrait}
+                <a href="{BlogURL}">
+                    <img src="{PortraitURL-128}" class="portrait" />
+                </a>
+            {/block:IfShowPortrait}
+            <a href="{BlogURL}" class="title" >
+            	<h1>
+                	{Title}
+                </h1>
+            </a>
+            <p>{Description}</p>
+            {block:HasPages}
+                <select onChange="window.location.href=this.value">
+                    <option value="" disabled selected>Navigation</option>
+                    {block:Pages}
+                    	<option value="{URL}">{Label}</option>
+                    {/block:Pages}
+                </select>
+            {/block:HasPages}
+        </div>
+        <div id="content">
+        	{block:Posts}
+                {block:Text}
+                    <div id="entry">
+                        {block:Title}
+                            <a href="{Permalink}" class="title">
+                                <h1>{Title}</h1>
+                            </a>
+                        {/block:Title}
+                        {Body}
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Text}
+                
+                {block:Photo}
+                    <div id="entry">
+                        <img src="{PhotoURL-500}" class="photoPost" />
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <div id="entry">
+                        <center>
+                        	{Photoset}
+                        </center>
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Photoset}
+                
+                {block:Link}
+                    <div id="entry">
+                        <a href="{URL}" class="linkPost">
+                            <div id="linkBox">
+                                <h1>{Name}</h1>
+                                {block:Host}
+                                	<em>{Host}</em>
+                                {/block:Host}
+                            </div>
+                        </a>
+                        {block:Description}
+                        	{Description}
+                        {/block:Description}
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Link}
+                
+                {block:Quote}
+                    <div id="entry">
+                        <div id="quoteBox">
+                            {Quote}
+                        </div>
+                        {block:Source}
+                        	&mdash; {Source}
+                        {/block:Source}
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Quote}
+                
+                {block:Chat}
+                    <div id="entry">
+                        {block:Title}
+                            <a href="{Permalink}" class="title">
+                                <h1>{Title}</h1>
+                            </a>
+                        {/block:Title}
+                        <ul class="chatPost">
+                            {block:Lines}
+                            	<li>{block:Label}<strong>{Label} </strong>{/block:Label}{Line}</li>
+                            {/block:Lines}
+                        </ul>
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Chat}
+                
+                {block:Video}
+                    <div id="entry">
+                        <div class="video-container">
+                            {Video-500}
+                        </div>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Video}
+                
+                {block:Audio}
+                    <div id="entry">
+                        <div class="video-container">
+                            {AudioEmbed}
+                        </div>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Audio}
+                
+                {block:Answer}
+                    <div id="entry">
+                        <div id="ask">
+                            <img src="{AskerPortraitURL-64}" />
+                            <h1>{Asker} asked:</h1>
+                            {Question}
+                        </div>
+                        {Answer}
+                        <div class="postInfo">
+                            Posted <a href="{Permalink}">{TimeAgo}</a>
+                            {block:RebloggedFrom}
+                            	Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                            <div class="right">
+                                {block:NoteCount}
+                                	<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </div>
+                        </div>
+                    </div>
+                    {block:PermalinkPage}
+                    	<div id="entry">
+                        	<h1 id="notes">Notes</h1>
+                            {PostNotes-16}
+                        </div>
+                    {/block:PermalinkPage}
+                {/block:Answer}
+            {/block:Posts}
+            
+            {block:Pagination}
+                <div id="pagination">
+                    {block:NextPage}
+                        <a href="{NextPage}" class="right">
+                            Next
+                        </a>
+                    {/block:NextPage}
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="left">
+                            Back
+                        </a>
+                    {/block:PreviousPage}
+                </div>
+            {/block:Pagination}
+        </div>
+    </div>
+    <script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Nsengbupv/jquery.imagesloaded.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/wUzngbuqv/jquery.masonry.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Audngbuqj/jquery.infinitescroll.min.js"></script>
+    <script>
+		(function () {
+    	var $tumblelog = $('#content');
+    	$tumblelog.infinitescroll({
+        	navSelector: "#pagination",
+        	nextSelector: "#pagination a.right",
+        	itemSelector: "#entry",
+    	},
+    	function (newElements) {
+        	var $newElems = $(newElements).css({
+            	opacity: 0
+        });
+        $newElems.imagesLoaded(function () {
+           	$newElems.animate({
+               	opacity: 1
+          		});
+           	$tumblelog.masonry('appended', $newElems);
+        	});
+    	});
+    	$tumblelog.imagesLoaded(function () {
+        	$tumblelog.masonry({
+            	columnWidth: function (containerWidth) {
+                		return containerWidth / 100;
+            		}
+        		});
+    		});
+		})();
+	</script>
+</body>
+</html>
