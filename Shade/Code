@@ -5,6 +5,18 @@
 	<title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/gvunna6e1/creditshake.css" />
+    <link rel="shortcut icon" href="{Favicon}" />
+    
+    <!-- 
+	    | 
+	    | Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com). 
+	    | Do not redistribute or claim as your own. 
+        | Redux edits are allowed, providing a link to Dune Themes 
+	    | (http://dunethemes.tumblr.com) is provided. 
+	    | 
+	    | Thanks for downloading! 
+	    | 
+	-->
 	
     <!-- Colours -->
     	<meta name="color:Background" content="#D4D4D4" />
@@ -599,12 +611,7 @@
             </div>
             {/block:Pagination}
             
-            <!-- Credit -->
-            <a href="#">
-            	<div id="credit">
-            		Theme
-            	</div>	
-            </a>
+
         </div>
     </div>
     <script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
