@@ -1,225 +1,244 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<!-- 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/gvunna6e1/creditshake.css" />
+    <link rel="shortcut icon" href="{Favicon}" />
+    
+    <!-- 
 	    | 
 	    | Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com). 
 	    | Do not redistribute or claim as your own. 
-        | Redux edits are allowed, providing you link to Dune Themes 
+        | Redux edits are allowed, providing a link to Dune Themes 
 	    | (http://dunethemes.tumblr.com) is provided. 
 	    | 
 	    | Thanks for downloading! 
 	    | 
 	-->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>{Title}</title>
-    <link rel="shortcut icon" href="{Favicon}" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
-    
-  <!-- Background -->
-    <meta name="image:Background" content="http://static.tumblr.com/uv8mqxy/olvnkfhtq/background.png" />
-    <meta name="select:Background" content="auto" title="Auto" />
-    <meta name="select:Background" content="contain" title="Contain" />
-    <meta name="select:Background" content="cover" title="Cover" />
-    <meta name="if:Fixed Background" content="1" />
-    <meta name="color:Background" content="#000000" />
-    
-  <!-- Colours -->
-  	<meta name="color:Posts" content="#E8E8E8" />
-    <meta name="color:Menu" content="#E8E8E8" />
-    <meta name="color:Accent" content="#e74c3c" />
-    <meta name="color:Post Text" content="#000000" />
-    <meta name="color:Custom Link Text" content="#000000" />
-  
-  <!-- Text -->
-  	<meta name="text:Custom Link 1 Title" content="" />
-    <meta name="text:Custom Link 1 URL" content="" />
-    
-    <meta name="text:Custom Link 2 Title" content="" />
-    <meta name="text:Custom Link 2 URL" content="" />
-    
-    <meta name="text:Custom Link 3 Title" content="" />
-    <meta name="text:Custom Link 3 URL" content="" />
-    
-    <meta name="text:Custom Link 4 Title" content="" />
-    <meta name="text:Custom Link 4 URL" content="" />
-    
-    <meta name="text:Custom Link 5 Title" content="" />
-    <meta name="text:Custom Link 5 URL" content="" />
-    
-    <meta name="text:Custom Link 6 Title" content="" />
-    <meta name="text:Custom Link 6 URL" content="" />
-    
-    <meta name="text:Custom Link 7 Title" content="" />
-    <meta name="text:Custom Link 7 URL" content="" />
-    
-    <meta name="text:Custom Link 8 Title" content="" />
-    <meta name="text:Custom Link 8 URL" content="" />
-    
-    <meta name="text:Custom Link 9 Title" content="" />
-    <meta name="text:Custom Link 9 URL" content="" />
-    
-    <meta name="text:Custom Link 10 Title" content="" />
-    <meta name="text:Custom Link 10 URL" content="" />
-    
-    <meta name="text:Twitter URL" content="" />
-    <meta name="text:Facebook URL" content="" />
-    <meta name="text:Instagram URL" content="" />
-    <meta name="text:YouTube URL" content="" />
-    <meta name="text:WordPress URL" content="" />
-    
-  <!-- Other -->  
-    <meta name="if:Custom Link Hover Effect" content="1" />
-    <meta name="select:Description Align" content="justify" title="Justify" />
-    <meta name="select:Description Align" content="left" title="Left" />
-    <meta name="select:Description Align" content="center" title="Center" />
-    <meta name="select:Description Align" content="right" title="Right" />
-    <meta name="if:Display Portrait" content="1" />
-    <meta name="if:Display Title" content="1" />
-    <meta name="if:Display Description" content="1" />
-    <meta name="if:Animate Links" content="1" />
-    
-    <script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
-    <script>
-		$(document).ready(function(){
-  			if ( $(window).width() > 1024){
-				$('#left').delay('slow').animate({right: '560px'}, 600);
-				$('#right').delay('slow').animate({left: '560px'}, 600);
- 			 };
-		});
-	</script>
-    <style>
+	
+    <!-- Colours -->
+    	<meta name="color:Background" content="#D4D4D4" />
+    	<meta name="color:Links" content="#000" />
+        <meta name="color:Posts" content="#fff" />
+        <meta name="color:Text" content="#000" />
+        <meta name="color:Sidebar" content="#fff" />
+        <meta name="color:Menu Links" content="#000" />
+        <meta name="color:Shadows" content="#999" />
+    <!-- Layout Options -->
+    	<meta name="if:Shadows" content="1" />
+        <meta name="if:Fixed Sidebar" content="1" />
+        <meta name="if:Display Ask Link" content="1" />
+        <meta name="if:Display Archive Link" content="1" />
+        <meta name="if:Display Title" content="1" />
+        <meta name="select:Title Align" content="titleLeft" title="Left" />
+        <meta name="select:Title Align" content="titleCenter" title="Center" />
+        <meta name="select:Title Align" content="titleRight" title="Right" />
+	<style>
+		@font-face{
+		  font-family: 'Helvetica Neue';
+		  src: url(HelveticaNeue-Extended.otf);	
+		}
 		body{
-          background-color: {color:Background};
-		  background-attachment: scroll;
-		  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-		  background-size: {select:Background};
-		  background-image: url({image:Background});
+		  padding: 0;
+		  margin: 0;
+		  font-family: Verdana, Geneva, sans-serif;
+		  background: {color:Background};	
 		}
 		a{
-		  color: {color:Accent};	
-		}
-		{block:IfFixedBackground}
-			body{
-			  background-attachment: fixed;	
+		  color: {color:Links};	
+		} 
+		{block:IfShadows}
+			#entry.single, nav ul li, #description, #sidebar, .newer, .older{
+		  	  box-shadow: 1px 1px 1px {color:Shadows};
 			}
-		{/block:IfFixedBackground}
-		#wrap{
-		  position: relative;
-		  max-width: 700px;
-		  margin: 0 auto;	
-		  height: 300px;
-		  top: 60px;
+		{/block:IfShadows}
+		#title{
+		  font-family: 'Helvetica Neue';
+		  width: 520px;
+		  top: 0px;
+		  margin-bottom: 10px;
+		  text-transform: uppercase;
+		  left: 0px;
+		  position: relative;	
+		  font-size: 40px;
+		  font-weight: bold;
 		}
-		#content{
-		  max-width: 400px;
-		  height: 300px;
-		  position: relative;
-		  margin: 0 auto;	
+		.titleLeft{
+		  text-align: left;	
 		}
-		/* === CUSTOM LINK STYLES === */
-		#left, #right{
-		  width: auto;
+		.titleCenter{
+		  text-align: center;	
+		}
+		.titleRight{
+		  text-align: right;	
+		}
+		#wrapper{
+		  width: 700px;
+		  height: 200px;
+		  position: relative;
+		  margin: 0 auto;
+		  top: 100px;
+		}
+		#sidebar{
+		  margin-left: 0px;
+		  margin-top: 170px;
+		  width: 120px;
+		  height: 40px;
 		  position: absolute;
-		  height: auto;
-		  top: -26px;
-		  padding: 10px;
-		  top: 0px;
-		  z-index: 1;
-		}
-		#right{
-		  left: 400px;
-		}
-		#left{
-		  right: 400px;	
-		}
-		#left ul, #right ul{
-		  list-style-type: none;
-		  margin-left: -40px;
-		}
-		#left ul li, #right ul li{
-		  padding: 10px;
-		  padding-top: 2px;
-		  padding-bottom: 2px;
-		  color: {color:Custom Link Text};
-		  background: {color:Posts};
-		  white-space: nowrap;	
-		  -webkit-transition: ease .6s;
-		  position: relative;
-		  margin: 4px;
-		  margin-left: -10px;
-		  margin-right: -10px;
-		  letter-spacing: 2px;
-		}
-		#left ul li{
-		  text-align: right;
-		  padding-left: 40px;	
-		}
-		#right ul li{
-		  padding-right: 40px;	
-		}
-		{block:IfCustomLinkHoverEffect}
-		#left ul li:hover, #right ul li:hover{
-		  background: {color:Accent};
-		  -webkit-transition: ease .6s;	
-		}
-		{/block:IfCustomLinkHoverEffect}
-		.customLink{
-		  text-decoration: none;
-		  color: #000;	
-		}
-		
-		/* === ENTRY STYLES === */
-		#entry, #ent{
-		  padding: 15px;
-		  padding-bottom: 10px;
-		  max-width: 370px;
-		  position: relative;
-		  color: {color:Post Text};
-		  background: {color:Posts};
-		  top: 0px;
-		  margin-bottom: 10px;
-		  left: 0px;	
-		}
-		#entry h1, #entry p, #ent h1, #ent p{
-		  margin: 0;
-		  margin-bottom: 5px;
-		  padding: 0;	
-		}
-		.photoPost{
-		  width: 100%;	
-		  margin-bottom: 10px;
-		}
-		#linkBox{
-		  position: relative;
-		  margin-left: -15px;
-		  margin-top: -15px;
-		  margin-bottom: 10px;
-		  padding: 15px;
+		  color: {color:Sidebar Text};
+		  background: {color:Sidebar};
 		  text-align: center;
-		  background: #000;
-		  color: #E8E8E8;
-		  width: 100%;	
+		  padding: 10px;
+		  padding-top: 60px; 
 		}
-		.linkBox{
+		{block:IfFixedSidebar}
+			#sidebar{
+			  position: fixed;	
+			}
+		{/block:IfFixedSidebar}
+		#portrait{
+		  border: solid 3px {color:Background};
+		  top: -70px;
+		  position: absolute;
+		  left: 2px;	
+		  width: 130px;
+		  height: 130px;
+		  border-radius: 200px;
+		  background: url('{PortraitURL-128}');
+		  background-size: cover;
+		  background-position: center;
+		  display: inline-block;
+		  color: {color:Sidebar Text};
+		}
+		#description{
+		  background: {color:Sidebar};
+		  position: relative;
+		  top: 0px;
+		  left: -10px;
+		  width: 120px;
+		  padding-right: 10px;
+		  padding-left: 10px;
+		  padding-bottom: 10px;
+		  text-align: center;
+		  margin-bottom: -10px;	
+		}
+		nav{
+		  position: relative;
+		  top: 0px;
+		  left: -10px;
+		  width: 140px;
+		  text-align: center;	
+		}
+		nav ul{
+		  margin-left: -40px;
+		  list-style-type: none; 	
+		}
+		nav ul li{
+		  background: {color:Sidebar};
+		  padding: 5px;
+		  margin-top: 5px;	
+		}
+		nav a{
+		  color: {color:Menu Links};
 		  text-decoration: none; 	
 		}
-		#quoteBox{
-		  font-size: 10px;	
+		#content{
+		  left: 160px;
+		  top: 0px;
+		  position: absolute;
+		  width: 500px;
+		  height: 200px;	
 		}
-		ul.chat{
+		#entry.single{
+		  width: 500px;
+		  position: relative;
+		  margin: 0 auto;
+		  top: 0px;
+		  width: 500px;
+		  background: {color:Posts};
+		  color: {color:Text};
+		  padding: 10px;	
+		  margin-bottom: 10px;
+		}
+		.postInfo{
+		  font-size: small;	
+		}
+		.right{
+		  float: right;	
+		}
+		#entry h1{
+		  margin: 0;
+		  line-height: 0.8;
+		  font-family: 'Helvetica Neue';	
+		  text-transform: uppercase;
+		}
+		.imagePost{
+		  margin-left: -10px;
+		  width: 520px;
+		  position: relative;
+		  margin-top: -10px;
+		  margin-bottom: -10px;	
+		}
+		.imagePostCaption{
+	 	  padding-top: 16px;	
+		}
+		#entry.single hr{
+		  border: none;
+		  border-bottom: solid 1px #ccc;
+		}
+		#linkBox{
+		  margin-left: -10px;
+		  margin-top: -10px;
+		  width: 500px;
+		  background: #000;
+		  text-align: center;
+		  color: #fff;
+		  padding: 10px;
+		  padding-top: 20px;
+		  padding-bottom: 20px;	
+		  margin-bottom: 10px;
+		}
+		.linkBox{
+		  color: #fff;
+		  text-decoration: none;	
+		}
+		#linkBox h1{
+		  font-family: 'Helvetica Neue';
+		  margin: 10px;	
+		}
+		.linkExtract{
+		  margin-left: 40px;
+		  padding-left: 10px;
+		  border-left: solid 2px #999;
+		  margin-right: 50px;
+		  margin-bottom: 10px;	
+		}
+		#quoteBox h1{
+		  line-height: 0.9;
+		  margin: 10px;	
+		}
+		.source{
+		  margin-left: 10px;	
+		}
+		ul.chatPost{
 		  margin-left: -40px;
-		  list-style: none;
+		  list-style: none;	
 		}
-		ul.chat li{
+		ul.chatPost li{
 		  border-radius: 2px;
-		  padding: 5px;	
+		  padding: 5px;
 		}
-		ul.chat li:nth-child(even){
-		  background: #CCC;
+		ul.chatPost li:nth-child(even){
+		  background: #DBDBDB;	
 		}
-		ul.chat li:first-child{
-		  margin-top: -15px;	
+		ul.chatPost li:first-child{
+		  padding-top: 0;	
+		}
+		ul.chatPost li strong{
+		  font-family: 'Helvetica Neue';
+		  text-transform: uppercase;	
 		}
 		.video-container { 
   		  position: relative; 
@@ -227,8 +246,7 @@
   		  padding-top: 30px; 
   		  height: 0; 
   		  overflow: hidden; 
-		  margin-bottom: 10px;
-		}		 
+		} 
 		.video-container iframe, 
 		.video-container object, 
 		.video-container embed { 
@@ -237,131 +255,66 @@
   		  left: 0; 
   		  width: 100%; 
   		  height: 100%; 
-  		  margin-bottom: 10px;
 		}
-		/* === BLOG INFORMATION STYLES === */
-		#ent.blogInfo{
-		  text-align: center;
-		  z-index: 2;	
-		  background: {color:Posts};
-		}
-		#ent.blogInfo p{
-		  position: relative;
-		  margin: 0 auto;
-		  width: 200px;
-		  text-align: {select:Description Align};	
-		}
-		#mainMenu{
-		  top: -50px;
-		  width: 400px;
-		  position: absolute;
-		  margin-left: -15px;	
-		}
-		#mainMenu ul{
-		  margin-left: -40px;	
-		  list-style-type: none;
-		}
-		#mainMenu ul li{
-		  display: inline;	
-		  margin: 20px;
-		}
-		#mainMenu a{
-		  color: {color:Menu};
-		  text-decoration: none;	
-		}
-		.portrait{
-		  width: 128px;
-		  border-radius: 200px;	
-		}
-		#ent.blogInfo h1 a{
-		  color: #000;
-		  text-decoration: none;	
-		}
-		
-		/* === SOCIAL LINKS === */
-		#social{
-		  right: 10px;
-		  bottom: 10px;
-		  position: fixed;	
-		}
-		#social a{
-		  color: {color:Posts};	
-		  text-decoration: none;
-		  font-weight: 100;
-		  font-size: 20px;
-		  margin: 10px;
-		}
-		{block:IfNotAnimateLinks} /* Active if Animate Links is Off */
-		#left{
-		  right: 560px;	
-		}
-		#right{
-		  left: 560px;	
-		}
-		{/block:IfNotAnimateLinks}
-		hr{
-		  border: none;
-		  border-bottom: solid 1px #333;	
-		}
-		#entry i{
-		  margin-right: 5px;	
-		}
-		.reblogLike{
-		  float: right;	
-		}
-		#pagination{
-		  position: absolute;
-		  bottom: 20px;
-		  left: 0px;
-		  right: 0px;
-		  color: #fff;
-		  padding-left: 20px;
-		  padding-right: 20px;
-		  text-align: right;	
-		  display: none;
-		}
-		#pagination .left{
-		  float: left;	
-		}
-		#pagination .left, #pagination .right{
+		#askBox{
+		  background: #000;
+		  margin-left: -10px;
+		  margin-top: -10px;
+		  width: 500px;
+		  padding: 10px;
 		  color: #fff;	
 		}
-		#entry, #ent{
-		  width: 400px;
+		.askerPortrait{
+		  float: left;	
+		  width: 90px;
+		  margin-right: 10px;
+		  position: relative;
 		}
-		#entry iframe{
-		  width: 100%;
+		.askerName{
+		  font-size: 25px;
+		  margin: 1;	
+		}
+		#askBox p{
+		  margin: 5px;	
+		}
+		#pagination{
+		  width: 520px;
+		  margin: 0 auto;
+		  position: relative;
+		  visibility: hidden;
+		}
+		.newer, .older{
+		  padding: 10px;
+		  text-align: center;	
+		  background: {color:Posts};
+		  position: relative;
+		  margin-bottom: 20px;
+		  font-family: 'Helvetica Neue';
+		  text-transform: uppercase;
+		}
+		.newer{
+		  float: left;	
+		}
+		.older{
+		  float: right;	
+		}
+		.newerLink, .olderLink{
+		  text-decoration: none;
+		  color: {color:Text};
 		}
 		#credit{
-		  right: 10px;
-		  bottom: 10px;
-		  position: fixed;	
+		  bottom: 0px;
+		  right: 0px;
+		  position: fixed;
+		  background: #666;
+		  color: #fff;
+		  text-align: center;
+		  padding: 5px;
+		  border-top-left-radius: 3px;	
 		}
-		{block:IfTwitterURL}
-		    #credit{
-		        bottom: 35px;
-		    }
-		{/block:IfTwitterURL}
-		{block:IfFacebookURL}
-		    #credit{
-		        bottom: 35px;
-		    }
-		{/block:IfFacebookURL}
-		{block:IfInstagramURL}
-		    #credit{
-		        bottom: 35px;
-		    }
-		{/block:IfInstagramURL}
-		{block:IfYouTubeURL}
-		    #credit{
-		        bottom: 35px;
-		    }
-		{/block:IfYouTubeURL}
-		{block:IfWordPressURL}
-		    #credit{
-		        bottom: 35px;
-		    }
-		{/block:IfWordPressURL}
+		.audioPost{
+		  padding-top: 10px;	
+		}
 	</style>
 </head>
 
@@ -372,7 +325,7 @@
                      width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
                      preserveAspectRatio="xMidYMid meet">>
                  <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
-                    fill="{color:Posts}" stroke="none">
+                    fill="#fff" stroke="none">
                     <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
                     -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
                     54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
@@ -391,246 +344,285 @@
              </svg>
          </div>
     </a>
-    <div id="wrap">
-    	<div id="left">
-        	<ul>
-            	{block:IfCustomLink1Title}
-                	<a href="{text:Custom Link 1 URL}" class="customLink"><li>{text:Custom Link 1 Title}</li></a>
-                {/block:IfCustomLink1Title}
-                {block:IfCustomLink2Title}
-                	<a href="{text:Custom Link 2 URL}" class="customLink"><li>{text:Custom Link 2 Title}</li></a>
-                {/block:IfCustomLink2Title}
-                {block:IfCustomLink3Title}
-                	<a href="{text:Custom Link 3 URL}" class="customLink"><li>{text:Custom Link 3 Title}</li></a>
-                {/block:IfCustomLink3Title}
-                {block:IfCustomLink4Title}
-                	<a href="{text:Custom Link 4 URL}" class="customLink"><li>{text:Custom Link 4 Title}</li></a>
-                {/block:IfCustomLink4Title}
-                {block:IfCustomLink5Title}
-                	<a href="{text:Custom Link 5 URL}" class="customLink"><li>{text:Custom Link 5 Title}</li></a>
-                {/block:IfCustomLink5Title}
-            </ul>
+    <div id="wrapper">
+    	<div id="sidebar">
+        	<a href="{BlogURL}"><div id="portrait">
+            
+            </div></a>
+            <div id="description">
+            	<p>{Description}</p>
+            </div>
+            <nav>
+        		<ul>
+            		{block:HasPages}
+                    	{block:Pages}
+                        	<a href="{URL}"><li>{Label}</li></a>
+                        {/block:Pages}
+                    {/block:HasPages}
+                    {block:IfDisplayAskLink}
+                		<a href="/ask"><li>Ask</li></a>
+                    {/block:IfDisplayAskLink}
+                	{block:IfDisplayArchiveLink}
+                    	<a href="#"><li>Archive</li></a>
+                    {/block:IfDisplayArchiveLink}
+            	</ul>
+        	</nav>
         </div>
         
         <div id="content">
-        	<div id="ent" class="blogInfo"><!-- START | BLOG INFOMATION -->
-            	{block:HasPages}
-                    <div id="mainMenu">
-                        <ul>
-                            {block:Pages}
-                            	<li>
-                                	<a href="{URL}">
-                                    	{Label}
-                                    </a>
-                                </li>
-                            {/block:Pages}
-                        </ul>
-                    </div>
-                {/block:HasPages}
-                {block:IfDisplayPortrait}
-                <a href="{BlogURL}">
-                	<img src="{PortraitURL-128}" class="portrait" />
-                </a>
-                {/block:IfDisplayPortrait}
-                {block:IfDisplayTitle}
-                <h1><a href="{BlogURL}">{Title}</a></h1>
-                {/block:IfDisplayTitle}
-                {block:IfDisplayDescription}
-                <p>{Description}</p>
-                {/block:IfDisplayDescription}
-            </div><!-- END | BLOG INFORMATION -->
-            
+        	{block:IfDisplayTitle}
+            	<div id="title" class="{select:Title Align}">
+            		{Title}
+            	</div>
+            {/block:IfDisplayTitle}
             {block:Posts}
             {block:Text}
-            <div id="entry"><!-- Text Post -->
-            	{block:Title}<h1>{Title}</h1>{/block:Title}
+            <div id="entry" class="single"><!-- Text Post -->
+                {block:Title}<h1>{Title}</h1>{/block:Title}
                 {Body}
                 <hr />
-                <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}</a>.
-                <div class="reblogLike">
-                	{ReblogButton size="15" color="black"}
+                <div class="postInfo">
+                	<i class="fa fa-clock-o"></i> Posted <a href="{Permalink}">{TimeAgo}</a>
+                	<div class="right">
+                		{ReblogButton color="black"} {LikeButton color="black"}
+                	</div>
+                	<br />
+                	{block:HasTags}
+                    	<i class="fa fa-tags"></i> #<a href="{TagURL}">{Tag}</a>
+                    {/block:HasTags}
+                    <br />
+                    {block:RebloggedFrom}
+                    	Reblogged from <a href="{ReblogParentURL">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
                 </div>
             </div>
             {/block:Text}
             
             {block:Photo}
-            <div id="entry"><!-- Photo Post -->
-            	<img src="{PhotoURL-500}" class="photoPost" />
+            <div id="entry" class="single"><!-- Photo Post -->
+                <img src="{Photo-500}" class="imagePost" />
                 {block:Caption}
-                	<p>{Caption}</p>
+                	<figcaption class="imagePostCaption">
+                		{Caption}
+                	</figcaption>
                 {/block:Caption}
                 <hr />
-                <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}</a>.
-                <div class="reblogLike">
-                	{ReblogButton size="15" color="black"}
+                <div class="postInfo">
+                	<i class="fa fa-clock-o"></i> Posted <a href="{Permalink}">{TimeAgo}</a>
+                	<div class="right">
+                		{ReblogButton color="black"} {LikeButton color="black"}
+                	</div>
+                	<br />
+                	{block:HasTags}
+                    	<i class="fa fa-tags"></i> #<a href="{TagURL}">{Tag}</a>
+                    {/block:HasTags}
+                    <br />
+                    {block:RebloggedFrom}
+                    	Reblogged from <a href="{ReblogParentURL">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
                 </div>
             </div>
             {/block:Photo}
             
-            {block:Photoset}
-            <div id="entry"><!-- Photo Post -->
-            	<center>{Photoset}</center>
-                {block:Caption}
-                	<p>{Caption}</p>
-                {/block:Caption}
-                <hr />
-                <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}</a>.
-                <div class="reblogLike">
-                	{ReblogButton size="15" color="black"}
-                </div>
-            </div>
-            {/block:Photoset}
-            
             {block:Link}
-            <div id="entry"><!-- Link Post -->
-            	<a href="{URL}" {Target} class="linkBox">
+            <div id="entry" class="single"><!-- Link Post -->
+            	<a href="{URL}" target="{Target}" class="linkBox">
                 	<div id="linkBox">
-                    	<h1>{Name}</h1>
-                        {block:Host}<em>{Host}</em>{/block:Host}
-                    </div>
+                		<h1>{Name}</h1>
+                    	{block:Host}<em>{Host}</em>{/block:Host}
+                	</div>
                 </a>
                 {block:Description}
-                	<p>{Description}</p>
+                	<figcaption class="linkExtract">
+                		{Description}
+                	</figcaption>
                 {/block:Description}
-                {block:Caption}
-                	<p>{Caption}</p>
-                {/block:Caption}
                 <hr />
-                <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}</a>.
-                <div class="reblogLike">
-                	{ReblogButton size="15" color="black"}
+                <div class="postInfo">
+                	<i class="fa fa-clock-o"></i> Posted <a href="{Permalink}">{TimeAgo}</a>
+                	<div class="right">
+                		{ReblogButton color="black"} {LikeButton color="black"}
+                	</div>
+                	<br />
+                	{block:HasTags}
+                    	<i class="fa fa-tags"></i> #<a href="{TagURL}">{Tag}</a>
+                    {/block:HasTags}
+                    <br />
+                    {block:RebloggedFrom}
+                    	Reblogged from <a href="{ReblogParentURL">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
                 </div>
             </div>
             {/block:Link}
             
             {block:Quote}
-            <div id="entry"><!-- Quote Post -->
+            <div id="entry" class="single"><!-- Quote Post -->
             	<div id="quoteBox">
                 	<h1>{Quote}</h1>
+                    {block:Source}
+                    	<div class="source">
+                    		&mdash; {Source}
+                    	</div>              
+                	{/block:Source}
                 </div>
-                {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
                 <hr />
-                <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}</a>.
-                <div class="reblogLike">
-                	{ReblogButton size="15" color="black"}
+                <div class="postInfo">
+                	<i class="fa fa-clock-o"></i> Posted <a href="{Permalink}">{TimeAgo}</a>
+                	<div class="right">
+                		{ReblogButton color="black"} {LikeButton color="black"}
+                	</div>
+                	<br />
+                	{block:HasTags}
+                    	<i class="fa fa-tags"></i> #<a href="{TagURL}">{Tag}</a>
+                    {/block:HasTags}
+                    <br />
+                    {block:RebloggedFrom}
+                    	Reblogged from <a href="{ReblogParentURL">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
                 </div>
             </div>
             {/block:Quote}
             
             {block:Chat}
-            <div id="entry"><!-- Chat Post -->
+            <div id="entry" class="single"><!-- Chat Post -->
             	{block:Title}<h1>{Title}</h1>{/block:Title}
-                <ul class="chat">
+                <ul class="chatPost">
                 	{block:Lines}
-                    	<li>{block:Label}<strong>{Label} </strong>{/block:Label}{Line}</li>
+                    	<li>{block:Label}<strong>{Label}</strong>{/block:Label}{Line}</li>
                     {/block:Lines}
                 </ul>
                 <hr />
-                <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}</a>.
-                <div class="reblogLike">
-                	{ReblogButton size="15" color="black"}
+                <div class="postInfo">
+                	<i class="fa fa-clock-o"></i> Posted <a href="{Permalink}">{TimeAgo}</a>
+                	<div class="right">
+                		{ReblogButton color="black"} {LikeButton color="black"}
+                	</div>
+                	<br />
+                	{block:HasTags}
+                    	<i class="fa fa-tags"></i> #<a href="{TagURL}">{Tag}</a>
+                    {/block:HasTags}
+                    <br />
+                    {block:RebloggedFrom}
+                    	Reblogged from <a href="{ReblogParentURL">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
                 </div>
             </div>
             {/block:Chat}
             
             {block:Audio}
-            <div id="entry"><!-- Audio Post -->
-            	<div class="video-container">
-                	{AudioEmbed}
-            	</div>
+            <div id="entry" class="single"><!-- Audio Post -->
+                {AudioEmbed}
                 {block:Caption}
-                	<p>{Caption}</p>
+                	<figcaption class="audioPost">
+                		{Caption}
+                	</figcaption>
                 {/block:Caption}
                 <hr />
-                <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}</a>.
-                <div class="reblogLike">
-                	{ReblogButton size="15" color="black"}
+                <div class="postInfo">
+                	<i class="fa fa-clock-o"></i> Posted <a href="{Permalink}">{TimeAgo}</a>
+                	<div class="right">
+                		{ReblogButton color="black"} {LikeButton color="black"}
+                	</div>
+                	<br />
+                	{block:HasTags}
+                    	<i class="fa fa-tags"></i> #<a href="{TagURL}">{Tag}</a>
+                    {/block:HasTags}
+                    <br />
+                    {block:RebloggedFrom}
+                    	Reblogged from <a href="{ReblogParentURL">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
                 </div>
             </div>
             {/block:Audio}
             
             {block:Video}
-            <div id="entry"><!-- Video Post -->
-            	<div class="video-container">
-                	{Video-500}
+            <div id="entry" class="single"><!-- Video Post -->     	
+                <div class="video-container">
+            		{Video-500}
             	</div>
                 {block:Caption}
-                	<p>{Caption}</p>
+                	<figcaption class="audioPost">
+                		{Caption}
+                	</figcaption>
                 {/block:Caption}
                 <hr />
-                <i class="fa fa-clock-o"></i>Posted <a href="{Permalink}">{TimeAgo}</a>.
-                <div class="reblogLike">
-                	{ReblogButton size="15" color="black"}
+                <div class="postInfo">
+                	<i class="fa fa-clock-o"></i> Posted <a href="{Permalink}">{TimeAgo}</a>
+                	<div class="right">
+                		{ReblogButton color="black"} {LikeButton color="black"}
+                	</div>
+                	<br />
+                	{block:HasTags}
+                    	<i class="fa fa-tags"></i> #<a href="{TagURL}">{Tag}</a>
+                    {/block:HasTags}
+                    <br />
+                    {block:RebloggedFrom}
+                    	Reblogged from <a href="{ReblogParentURL">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
                 </div>
-            </div>	
+            </div>
             {/block:Video}
-            {/block:Posts} 
-        </div>
-        
-        <div id="right">
-        	<ul>
-            	{block:IfCustomLink6Title}
-                	<a href="{text:Custom Link 6 URL}" class="customLink"><li>{text:Custom Link 6 Title}</li></a>
-                {/block:IfCustomLink6Title}
-                {block:IfCustomLink7Title}
-                	<a href="{text:Custom Link 7 URL}" class="customLink"><li>{text:Custom Link 7 Title}</li></a>
-                {/block:IfCustomLink7Title}
-                {block:IfCustomLink8Title}
-                	<a href="{text:Custom Link 8 URL}" class="customLink"><li>{text:Custom Link 8 Title}</li></a>
-                {/block:IfCustomLink8Title}
-                {block:IfCustomLink9Title}
-                	<a href="{text:Custom Link 9 URL}" class="customLink"><li>{text:Custom Link 9 Title}</li></a>
-                {/block:IfCustomLink9Title}
-                {block:IfCustomLink10Title}
-                	<a href="{text:Custom Link 10 URL}" class="customLink"><li>{text:Custom Link 10 Title}</li></a>
-                {/block:IfCustomLink10Title}
-            </ul>
+            
+            {block:Answer}
+            <div id="entry" class="single"><!-- Answer Post -->
+            	<div id="askBox">
+                	<img src="{AskerPortraitURL-182}" class="askerPortrait" />
+                    <h1 class="askerName">{Asker} asked:</h1>
+                	<p>{Question}</p>
+                </div>
+                <p>{Answer}</p>
+                <hr />
+                <div class="postInfo">
+                	<i class="fa fa-clock-o"></i> Posted <a href="{Permalink}">{TimeAgo}</a>
+                	<div class="right">
+                		{ReblogButton color="black"} {LikeButton color="black"}
+                	</div>
+                	<br />
+                	{block:HasTags}
+                    	<i class="fa fa-tags"></i> #<a href="{TagURL}">{Tag}</a>
+                    {/block:HasTags}
+                    <br />
+                    {block:RebloggedFrom}
+                    	Reblogged from <a href="{ReblogParentURL">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
+                </div>
+            </div>
+            {/block:Answer}
+            {/block:Posts}
+            
+            <!-- Pagination -->
+            {block:Pagination}
+            <div id="pagination">
+            	{block:PreviousPage}
+                	<a href="{PreviousPage}" class=".newerLink">
+                		<div class="newer">
+                			Newer
+                		</div>
+                	</a>
+                {/block:PreviousPage}
+                
+                {block:NextPage}
+                	<a href="{NextPage}" class=".olderLink">
+                		<div class="older">
+                			Older
+                		</div>
+                	</a>
+                {/block:NextPage}
+            </div>
+            {/block:Pagination}
+            
+
         </div>
     </div>
-    
-    <div id="social">
-    	{block:IfTwitterURL}
-        	<a href="{text:Twitter URL}"><i class="fa fa-twitter"></i></a>
-        {/block:IfTwitterURL}
-        {block:IfFacebookURL}
-        	<a href="{text:Facebook URL}"><i class="fa fa-facebook"></i></a>
-        {/block:IfFacebookURL}
-        {block:IfInstagramURL}
-        	<a href="{text:Instagram URL}"><i class="fa fa-instagram"></i></a>
-        {/block:IfInstagramURL}
-        {block:IfYouTubeURL}
-        	<a href="{text:YouTube URL}"><i class="fa fa-youtube"></i></a>
-        {/block:IfYouTubeURL}
-        {block:IfWordPressURL}
-        	<a href="{text:WordPress URL}"><i class="fa fa-wordpress"></i></a>
-        {/block:IfWordPressURL}
-    </div>
-    
-    {block:Pagination}
-    	<div id="pagination">
-    		{block:PreviousPage}
-        		<a href="{PreviousPage}" class="left">
-       	    		<i class="fa fa-arrow-left"></i>
-           		</a>
-       		{/block:PreviousPage}
-       		{block:NextPage}
-           		<a href="{NextPage}" class="right">
-       	    		<i class="fa fa-arrow-right"></i>
-           		</a>
-       		{/block:NextPage}
-    	</div>
-    {/block:Pagination}
-   
-	<script src="http://static.tumblr.com/uv8mqxy/Nsengbupv/jquery.imagesloaded.min.js"></script>
-	<script src="http://static.tumblr.com/uv8mqxy/wUzngbuqv/jquery.masonry.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
 	<script src="http://static.tumblr.com/uv8mqxy/Audngbuqj/jquery.infinitescroll.min.js"></script>
     <script>
 		(function () {
     	var $tumblelog = $('#content');
     	$tumblelog.infinitescroll({
         	navSelector: "#pagination",
-        	nextSelector: "#pagination a.right",
-        	itemSelector: "#entry",
+        	nextSelector: "#pagination a.newerLink",
+        	itemSelector: "#entry.single",
     	},
     	function (newElements) {
         	var $newElems = $(newElements).css({
