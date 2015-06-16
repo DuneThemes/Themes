@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/gvunna6e1/creditshake.css" />
+    
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing a link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
+    
+    {block:Hidden}
+    	
+        <!-- Colours -->
+        	<meta name="color:Background" content="#fff" />
+            <meta name="color:Text" content="#000" />
+            <meta name="color:Post Separator" content="#DBDBDB" />
+            <meta name="color:Menu Links" content="#666" />
+            <neta name="color:Links" content="#0000EE" />
+        
+        <!-- Options -->
+        	<meta name="if:Animate Title" content="1" />
+            <meta name="if:Hide Post Icon" content="0" />
+        
+        <!-- Text -->
+        	<meta name="text:Google Font" content="Open Sans" />
+        
+    {/block:Hidden}
+    
+    <style>
+		@import url(http://fonts.googleapis.com/css?family={text:Google Font});
+		
+		/* === Global Styles === */
+		body{
+		  font-family: '{text:Google Font}';
+		  background: {color:Background};	
+		}
+		#wrapper{
+		  max-width: 500px;
+		  position: relative;
+		  height: 400px;
+		  margin: 0 auto;	
+		  top: 80px;
+		}
+		
+		a{
+		  color: {color:Links};
+		}
+		
+		/* === Header Styles === */
+		#header{
+		  width: 100%;
+		  position: relative;
+		}
+		#header h1, #header p{
+		  font-size: 16px;
+		  margin: 0;	
+		  -webkit-transition: ease 1s;
+		  -moz-transition: ease 1s;
+		  -o-transition: ease 1s;
+		  transition: ease 1s;
+		}
+		{block:IfAnimateTitle}
+			#header h1:hover{
+			  letter-spacing: 3px;	
+			}
+		{/block:IfAnimateTitle}
+		#header p{
+		  max-width: 50%;	
+		}
+		
+		/* === Header Navigation === */
+		#header nav{
+		  position: absolute;
+		  right: 10px;
+		  top: 10px;	
+		}
+		#header nav ul{
+		  list-style: none;	
+		}
+		#header a{
+		  text-decoration: none;	
+		} 
+		#header nav ul li{
+		  padding-left: 6px;	
+		  text-align: right;
+		  margin-bottom: 4px;
+		}
+		#header nav ul li, #header nav ul li a{	
+		  -webkit-transition: ease 1s;
+		  -moz-transition: ease 1s;
+		  -o-transition: ease 1s;
+		  transition: ease 1s;	
+		}
+		
+		/* === Content / Entry Styles === */
+		#content{
+		  width: 100%;
+		  position: relative;
+		  height: 100px;
+		  top: 30px;	
+		}
+		#entry{
+		  width: 100%;
+		  position: relative;	
+		  margin-bottom: 50px;
+		  top: 30px;
+		}
+		#icon{
+		  left: -40px;
+		  top: 4px;
+		  position: absolute;	
+		}
+		#icon img{
+		  width: 30px;	
+		}
+		#entry h1{
+		  font-size: 20px;	
+		  margin: 0;
+		  font-weight: 100;
+		}
+		#entry hr{	
+		  width: 70%;
+		  margin-top: 20px;
+		}
+		a.title{
+		  text-decoration: none;	
+		}
+		
+		/* === Photo Post Styles === */
+		.photoPost{
+		  width: 100%;	
+		}
+		
+		/* === Quote Post Styles === */
+		.quotePost{
+		  font-size: 30px;	
+		  text-align: justify;
+		}
+		
+		/* === Link Post Styles === */
+		.linkPost{
+		  text-decoration: none;	
+		}
+		.linkPost em{
+		  text-decoration: underline;	
+		}
+		#linkBox{
+		  text-align: center;
+		  padding: 10px;	
+		}
+		#linkBox h1{
+		  font-size: 25px;
+		  margin-bottom: 10px;	
+		}
+		
+		/* === Chat Post Styles === */
+		ul.chatPost{
+		  list-style: none;	
+		  margin-left: -30px;
+		}
+		ul.chatPost li{
+		  margin-bottom: 5px;
+		}
+		
+		/* === Audio / Video Post Styles === */
+		#entry .video-container { 
+  		  position: relative; 
+  		  padding-bottom: 56.25%; 
+  		  padding-top: 30px; 
+  		  height: 0; 
+  		  overflow: hidden; 
+		}		 
+		#entry .video-container iframe, 
+		#entry .video-container object, 
+		#entry .video-container embed { 
+  		  position: absolute; 
+  		  top: 0; 
+  		  left: 0; 
+  		  width: 100%; 
+  		  height: 100%; 
+		}
+		
+		/* === Answer Post Styles === */
+		#answer{
+		  padding-bottom: 10px;	
+		}
+		#answer h1{
+		  display: block;	
+		  margin-bottom: 10px;
+		}
+		#answer h1 a{
+		  text-decoration: none;
+		  font-weight: bold;	
+		}
+		#answer blockquote{
+		  padding-left: 10px;	
+		}
+		
+		/* === pagination Link Styles === */
+		#pagination{
+		  width: 100%;
+		  position: relative;	
+		}
+		#pagination a{
+		  text-decoration: none;	
+		  margin-bottom: 30px;
+		}
+		#pagination a.right{
+		  float: right;	
+		}
+		#pagination a.left{
+		  float: left;	
+		}
+		
+		/* === Customization === */
+		
+		{block:IfHidePostIcon}
+			#icon{
+			  display: none;	
+			}
+		{/block:IfHidePostIcon}
+		
+		/* === Colours === */
+		#header a{
+		  color: {color:Text};	
+		}
+		#header nav ul li{
+		  border-left: solid 1px {color:Menu Links};
+		}
+		#header nav ul a{
+		  color: {color:Menu Links};	
+		}
+		#header nav ul li:hover, #header nav ul li a:hover{
+		  color: {color:Text};	
+		}
+		a.title{
+		  color: {color:Text};	
+		}
+		#entry hr{
+		  border: solid 1px {color:Post Separator};
+		}
+		.linkPost{
+		  color: {color:Text};
+		}
+		#linkBox{
+		  border: dashed 1px {color:Text};	
+		}
+		#answer{
+		  border-bottom: solid 1px {color:Post Separator};
+		}
+		#answer h1 a{
+		  color: {color:Text};	
+		}
+		#answer blockquote{
+		  border-left: solid 1px {color:Post Separator};
+		}
+		#pagination a{
+		  color: {color:Text};	
+		}
+		
+	</style>
+</head>
+
+<body>
+	<a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Text}">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+         </div>
+    </a>
+    <div id="wrapper">
+    	
+        <div id="header">
+        	
+        	
+            <a href="{BlogURL}">
+                <h1>{Title}</h1>
+            </a>
+            
+            <p>{Description}</p>
+            
+            {block:HasPages}
+                <nav>
+                    <ul>
+                        {block:Pages}
+                        	<li><a href="{URL}">{Label}</a></li>
+                        {/block:Pages}
+                    </ul>
+                </nav>
+            {/block:HasPages}
+            
+        </div>
+        
+        <div id="content">
+        	{block:Posts}
+                
+                {block:Text}
+                    <div id="entry"><!-- Start Text Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/Ciknq1b8z/letters22.png" />
+                            </div>
+                        </a>
+                        {block:Title}
+                        	<a href="{Permalink}" class="title"><h1>{Title}</h1></a>
+                        {/block:Title}
+                        {Body}
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <hr />
+                    </div><!-- End Text Post -->
+                {/block:Text}
+                
+                {block:Photo}
+                    <div id="entry"><!-- Start Photo Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/W06nq1b8n/photography39.png" />
+                            </div>
+                        </a>
+                        <img src="{PhotoURL-500}" class="photoPost" />
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <hr />
+                    </div><!-- End Photo Post -->
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <div id="entry"><!-- Start Photo Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/W06nq1b8n/photography39.png" />
+                            </div>
+                        </a>
+                        <center>
+                        	{Photoset}
+                        </center>
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <hr />
+                    </div><!-- End Photo Post -->
+                {/block:Photoset}
+                
+                {block:Quote}
+                    <div id="entry"><!-- Start Quote Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/28Cnq1b8h/inverted_commas.png" />
+                            </div>
+                        </a>
+                        <div class="quotePost">
+                            {Quote}
+                        </div>
+                        {block:Source}
+                        	&mdash; {Source}
+                        {/block:Source}
+                        <hr />
+                    </div><!-- End Quote Post -->
+                {/block:Quote}
+                
+                {block:Link}
+                    <div id="entry"><!-- Start Link Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/yclnq1b87/chain13.png" />
+                            </div>
+                        </a>
+                        <a href="{URL}" class="linkPost">
+                            <div id="linkBox">
+                                <h1>{Name}</h1>
+                                {block:Host}<em>{Host}</em>{/block:Host}
+                            </div>
+                        </a>
+                        {block:Description}
+                        	<blockquote>
+                            	{Description}
+                            </blockquote>
+                        {/block:Description}
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                    </div><!-- End Link Post -->
+                {/block:Link}
+                
+                {block:Chat}
+                    <div id="entry"><!-- Start Chat Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/kPxnq1b80/messages10.png" />
+                            </div>
+                        </a>
+                        {block:Title}
+                        	<a href="{Permalink}" class="title"><h1>{Title}</h1></a>
+                        {/block:Title}
+                        <ul class="chatPost">
+                            {block:Lines}
+                            	<li>
+                                    {block:Label}
+                                    	<strong>{Label} </strong>
+                                    {/block:Label}
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                        <hr />
+                    </div><!-- End Chat Post -->
+                {/block:Chat}
+                
+                {block:Audio}
+                    <div id="entry"><!-- Start Audio Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/qfSnq1b7d/radio12.png" />
+                            </div>
+                        </a>
+                        <div class="video-container">
+                            {AudioEmbed}
+                        </div>
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <hr />
+                    </div><!-- End Audio Post -->
+                {/block:Audio}
+                
+                {block:Video}
+                    <div id="entry"><!-- Start Video Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/c0hnq1b77/cinema68.png" />
+                            </div>
+                        </a>	
+                        <div class="video-container">
+                            {Video-500}
+                        </div>
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                        <hr />
+                    </div><!-- End Video Post -->
+                {/block:Video}
+                
+                {block:Answer}
+                    <div id="entry"><!-- Start Answer Post -->
+                        <a href="{Permalink}">
+                            <div id="icon">
+                                <img src="http://static.tumblr.com/uv8mqxy/eeSnq1b6w/questions6.png" />
+                            </div>
+                        </a>
+                        <div id="answer">
+                            <h1>{Asker} asked:</h1>
+                            <blockquote>{Question}</blockquote>
+                        </div>
+                        {Answer}
+                        <hr />
+                    </div><!-- End Answer Post -->
+                {/block:Answer}
+                
+                {block:PermalinkPage}
+                	<div id="entry" style="top: 0;">
+                    	{ReblogButton}{LikeButton}
+                        {block:PostNotes}
+                        	{PostNotes}
+                        {/block:PostNotes}
+                    </div>
+                {/block:PermalinkPage}
+            
+            {/block:Posts}
+            
+            {block:Pagination}
+                <div id="pagination"><!-- Start Pagination-->
+                
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="left">
+                            Previous
+                        </a>
+                    {/block:PreviousPage}
+                    
+                    {block:NextPage}
+                        <a href="{NextPage}" class="right">
+                            Next
+                        </a>
+                    {/block:NextPage}
+                    
+                </div><!-- End Pagination -->
+            {/block:Pagination}
+            
+        </div>
+        
+    </div>
+</body>
+</html>
