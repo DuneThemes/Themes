@@ -1,0 +1,1023 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/gvunna6e1/creditshake.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <!-- 
+    	|
+        |  Theme designed and developed by Dune Themes (http://dunethemes.tumblr.com).
+        |  Do not redistribute or claim as your own.
+        |  Redux edits are allowed, providing a link to Dune Themes 
+        |  (http://dunethemes.tumblr.com) is provided. 
+        |  
+        |  Thanks for downloading! 
+        | 
+    -->
+    
+    {block:Hidden}
+    	
+        <!-- Layout -->
+        	<!-- Sidebar -->
+            	<meta name="if:Animate Portrait" content="1" />
+                <meta name="if:Portrait Shadow" content="1" />
+                <meta name="if:Text Shadow" content="1" />
+                <meta name="if:Show Portrait" content="1" />
+                
+                <meta name="select:Sidebar Align" content="alignCenter" title="Center" />
+                <meta name="select:Sidebar Align" content="alignLeft" title="Left" />
+                <meta name="select:Sidebar Align" content="alignRight" title="Right" />
+                <meta name="select:Sidebar Align" content="alignJustify" title="Justify" />
+                
+                <meta name="select:Menu Style" content="default" title="Default" />
+                <meta name="select:Menu Style" content="defaultNoBack" title="Default Without Background" />
+                <meta name="select:Menu Style" content="list" title="List" />
+                <meta name="select:Menu Style" content="listNoBack" title="List Without Background" />
+                
+                <meta name="select:Tint Amount" content="0.0" title="Nothing" />
+                <meta name="select:Tint Amount" content="0.1" title="Smallest Amount" />
+                <meta name="select:Tint Amount" content="0.2" title="Light" />
+                <meta name="select:Tint Amount" content="0.3" title="Shaded" />
+                <meta name="select:Tint Amount" content="0.4" title="Some Hue" />
+                <meta name="select:Tint Amount" content="0.5" title="Half" />
+                <meta name="select:Tint Amount" content="0.6" title="Some Colour" />
+                <meta name="select:Tint Amount" content="0.7" title="Colourised" />
+                <meta name="select:Tint Amount" content="0.8" title="Quite a Lot" />
+                <meta name="select:Tint Amount" content="0.9" title="Too Much?" />
+                <meta name="select:Tint Amount" content="1" title="Complete Coverage" />
+                
+                
+            <!-- Content -->
+            	<!-- {select:Grid Columns} relates to both #content and #entry -->
+            	<meta name="select:Grid Columns" content="one" title="One" /> 
+                <meta name="select:Grid Columns" content="two" title="Two" />
+                <meta name="select:Grid Columns" content="three" title="Three" />
+                <meta name="select:Grid Columns" content="four" title="Four" />
+                
+                <meta name="select:Overlay Style" content="slide" title="Slide In" />
+                <meta name="select:Overlay Style" content="fadeIn" title="Fade In" />
+                
+                <meta name="select:Overlay Position" content="topRight" title="Top Right" />
+                <meta name="select:Overlay Position" content="topLeft" title="Top Left" />
+                <meta name="select:Overlay Position" content="bottomRight" title="Bottom Right" />
+                <meta name="select:Overlay Position" content="bottomLeft" title="Bottom Left" />
+                
+                <meta name="select:Entry Border Style" content="shadow" title="Shadow" />
+                <meta name="select:Entry Border Style" content="none" title="Nothing" />
+                
+                <meta name="if:Show Like Button" content="1" />
+                <meta name="if:Show Reblog Button" content="1" />
+            
+        <!-- Colours -->
+        	<!-- Sidebar -->
+            	<meta name="color:Menu Primary" content="#FFF" />
+                <meta name="color:Menu Secondary" content="#000" />
+                <meta name="color:Sidebar Shadow" content="#111" />
+                <meta name="color:Sidebar Shadow" content="#333" />
+                <meta name="color:Sidebar Content Shadow" content="#000" />
+                <meta name="color:Sidebar Background" content="#000" />
+                <meta name="color:Sidebar Tint" content="#000" />
+                <meta name="color:Sidebar Text" content="#fff" />
+                
+            <!-- Content -->
+            	<meta name="color:Overlay" content="#3B3B3B" />
+                <meta name="color:Post Background" content="#fff" />
+                <meta name="color:Post Text" content="#000" />
+                <meta name="color:Post Shadows" content="#3B3B3B" />
+                <meta name="color:Content Shadows" content="#C8C8C8" />
+                <meta name="color:Link Post Colour" content="#000" />
+                <meta name="color:Subtle Accent" content="#F4F4F4" />
+        
+        <!-- Images -->
+        	<!-- Sidebar -->
+            	<meta name="image:Sidebar Background" content="http://static.tumblr.com/uv8mqxy/cS8npdjlo/moutainsfade.jpg" />
+                
+            <!-- Content -->
+            	<meta name="image:Content Background" content="http://static.tumblr.com/uv8mqxy/ncXnpdjlm/snow_hills.jpg" />        
+        
+    {/block:Hidden}
+    <style>
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+		body{
+		  font-family: 'Open Sans', sans-serif;
+		}
+		.overlay{
+		  position: absolute;
+		  text-align: center;
+		  opacity: 0;
+		}
+		.overlay a{
+		  color: #fff; /* Remains white. */
+		  text-decoration: none;	
+		}
+		.overlay #buttons ul{
+		  list-style: none;
+		  margin: 0px;	
+		  margin-left: -40px;
+		}
+		.overlay #buttons ul li{
+		  padding: 10px;
+		  padding-bottom: 0;	
+		}
+		.overlay #buttons ul li:last-child{
+		  padding-bottom: 10px;	
+		}
+		#entry:hover > .overlay.slide{
+		  margin: 0;	
+		}
+		#entry:hover > .overlay{
+		  opacity: 1;
+		  z-index: 99;	
+		}
+		#left{
+		  top: 0px;
+		  bottom: 0px;
+		  left: 0px;
+		  width: 200px;
+		  padding: 15px;
+		  position: fixed;
+		}
+		#left #info{
+		  z-index: 4;
+		  position: relative;
+		  top: 40px;	
+		}
+		#left #info a{
+		  text-decoration: none;	
+		}
+		#left #info .menu{
+		  margin-left: -40px;
+		  list-style: none;
+		}
+		#left #info .menu li a{
+		  padding: 5px;
+		  margin: 5px;
+		  font-weight: bold;
+		  font-size: 14px;
+		  text-decoration: none;
+		  text-shadow: none;
+		}
+		#left #info .menu.default li, #left #info .menu.default a{ /* === Menu | Default Layout === */
+		  display: inline-block;
+		}
+		#left #info .menu.defaultNoBack li, #left #info .menu.defaultNoBack a{ /* === Menu | Default with no Background Layout === */
+		  display: inline-block;
+		  background: none;
+		  margin: 0;
+		}
+		#left #info .menu.list li{ /* === Menu | List Layout === */
+		  display: marker;
+		  margin: 15px;	
+		}
+		#left #info .menu.listNoBack li, #left #info .menu.listNoBack a{ /* === Menu | List with no Background Layout === */
+		  display: marker;
+		  margin: 15px;
+		  background: none;
+		}
+		
+		#left #background{
+	      left: 0px;
+		  top: 0px;
+		  bottom: 0px;
+		  width: 100px;
+		  position: absolute;
+		  z-index: 2;
+		}
+		#left #background #image{
+		  left: 0px;
+		  top: 0px;
+		  width: 230px;
+		  height: auto;
+		  bottom: 0px;
+		  position: absolute;
+		}
+		#left #background #fade{
+		  left: 0px;
+		  top: 0px;
+		  width: 230px;
+		  height: auto;
+		  bottom: 0px;
+		  position: absolute;
+		}
+		#left img{
+		  border-radius: 200px;	
+		  width: 128px;
+		}
+		#content{
+		  left: 260px;
+		  top: -10px;
+		  width: 78%;
+		  bottom: -40px;
+		  position: fixed;	
+		}
+		#entry{
+		  position: relative;	
+		  margin: 15px;
+		  overflow: hidden;
+		}
+		
+		#entry .text{
+		  padding: 15px;
+		}
+		#entry .text.caption p{
+		  margin-top: 0px;
+		  margin-bottom: -1px;	
+		}
+		#entry .text h1{
+		  font-size: 18px;	
+		}
+		#entry .text a.title{
+		  text-decoration: none;	
+		}
+		#entry #link{
+		  left: 0px;
+		  top: 0px;
+		  right: 0px;
+		  position: relative;
+		  margin: 5px;
+		  text-align: center;
+		  padding: 15px;
+		  font-size: 18px;
+		  font-weight: bold;
+		}
+		#entry a.link{
+		  text-decoration: none;	
+		}
+		#entry #link em{
+		  font-size: 12px;
+		  font-weight: 100;	
+		  text-decoration: underline;
+		}
+		#entry #quote{
+		  top: 0px;
+		  right: 0px;
+		  left: 0px;
+		  position: relative;
+		  margin: 15px;
+		  padding: 10px;
+		  font-size: 18px;	
+		}
+		#entry ul.chat{
+		  list-style: none;
+		  margin-left: -40px;	
+		}
+		#entry ul.chat li{
+		  padding: 5px;	
+		}
+		#entry ul.chat li:last-child{
+		  margin-bottom: -15px;	
+		}
+		#entry .video-container { 
+  		  position: relative; 
+  		  padding-bottom: 56.25%; 
+  		  padding-top: 30px; 
+  		  height: 0; 
+  		  overflow: hidden; 
+		}		 
+		#entry .video-container iframe, 
+		#entry .video-container object, 
+		#entry .video-container embed { 
+  		  position: absolute; 
+  		  top: 0; 
+  		  left: 0; 
+  		  width: 100%; 
+  		  height: 100%; 
+		}
+		#entry .text .question{	
+		  padding-bottom: 10px;
+		  margin-bottom: 10px;
+		}
+		
+		.photoPost{
+		  width: 100%;	
+		}
+		#pagination{
+		  width: 96%;
+		  position: relative;
+		  margin: 0 auto;
+		  margin-left: 30px;
+		  display: none;
+		}
+		#pagination a{
+		  padding: 10px;
+		  text-align: center;	
+		}
+		#pagination a.left{
+		  float: left;	
+		}
+		#pagination a.right{
+		  float: right;	
+		}
+		/* Customizable Elements */
+		
+			/* Number of Columns */
+			
+				/* One */
+				#content.one{
+				  width: 600px;
+				  margin: 0 auto;
+				  margin-left: 210px;
+				  position: relative;	
+				}
+				#entry.one{
+				  width: 600px;
+				  margin: 0 auto;
+				  position: relative;
+				  margin-top: 30px;
+				  margin-bottom: 20px;	
+				}
+				/* Two */
+				#content.two{
+				  width: 69.6%;
+				  left: 330px;
+				}
+				#entry.two{
+				  width: 430px;	
+				}
+				
+				/* Three */
+				#content.three{
+				  width: 76%;
+				  left: 280px;
+				}
+				#entry.three{
+				  width: 300px;	
+				}
+				
+				/* Four */
+				#content.four{
+				  width: 77.1%;  	
+				}
+				#entry.four{
+				  width: 219.6px;	
+				}
+			
+			/* Alignment of Sidebar */
+			#left.alignLeft{
+			  text-align: left;	
+			}
+			#left.alignCenter{
+			  text-align: center;	
+			}
+			#left.alignRight{
+			  text-align: right;	
+			}
+			#left.alignJustify{
+			  text-align: justify;	
+			}
+			
+			li.reblog{
+			  display: none;  	
+			}
+			
+			{block:IfShowReblogButton}
+				/* Show/Hide Reblog Button */
+				li.reblog{
+				  display: list-item;	
+				}
+			{/block:IfShowReblogButton}
+			
+			li.like{
+				display: none;	
+			}
+			
+			{block:IfShowLikeButton}
+				/* Show/Hide Like Button */
+				li.like{
+				  display: list-item;	
+				}
+			{/block:IfShowLikeButton}
+			
+			/* Overlay Apperance Style */
+			.overlay.fadeIn{
+			  -webkit-transition: ease .5s;
+			  -moz-transition: ease .5s;
+			  -o-transition: ease .5s;
+			  transition: ease .5s;	
+			}
+			.overlay.slide{
+			  -webkit-transition: linear .5s;
+			  -moz-transition: linear .5s;
+			  -o-transition: linear .5s;
+			  transition: linear .5s;	
+			}
+			.overlay.slide.topRight{
+			  margin-right: -90px;
+			  opacity: 1;
+			  position: absolute;	
+			}
+			.overlay.slide.topLeft{
+			  margin-left: -90px;
+			  opacity: 1;
+			  position: absolute;	
+			}
+			.overlay.slide.bottomRight{
+			  margin-right: -90px;
+			  opacity: 1;
+			  position: absolute;	
+			}
+			.overlay.slide.bottomLeft{
+			  margin-left: -90px;
+			  opacity: 1;
+			  position: absolute;	
+			}
+			
+			/* Overlay Location */
+			
+				/* Top Left */
+				.overlay.topLeft{
+				  top: 0px;
+				  left: 0px;	
+				}
+				/* Top Right */
+				.overlay.topRight{
+				  top: 0px;
+				  right: 0px;	
+				}
+				/* Bottom Left */
+				.overlay.bottomLeft{
+				  bottom: 0px;
+				  left: 0px;	
+				}
+				/* Bottom Right */
+				.overlay.bottomRight{
+				  bottom: 0px;
+				  right: 0px;	
+				}
+			
+			
+			/* Animation of Portrait */
+			{block:IfAnimatePortrait}
+				#left #info img:hover{
+				  -webkit-animation: portSpin 1.4s;	
+				}
+			{/block:IfAnimatePortrait}
+			@-webkit-keyframes portSpin{
+			  0%{
+				-webkit-transform: rotate(0deg);  
+			  }
+			  100%{
+				-webkit-transform: rotate(360deg);
+			  }
+			}
+			
+			{block:IfPortraitShadow}
+				/* Portrait Shadow */
+				#left #info img{
+				  box-shadow: 1px 1px 1px {color:Sidebar Content Shadow}; /* Also shadow colour */	
+				}
+			{/block:IfPortraitShadow}
+			
+			{block:IfTextShadow}
+				/* Sidebar Text Shadow */
+				#left #info{
+				  text-shadow: 1px 1px 1px {color:Sidebar Content Shadow}; /* Also shadow colour */
+				}
+			{/block:IfTextShadow}
+			
+			/* Entry Shadows or Not */
+			#entry.none{
+			  -webkit-box-shadow: none;
+			  -moz-box-shadow:    none;
+			  box-shadow:         none;	
+			  border: none;
+			}
+			#entry.shadow{
+			  -webkit-box-shadow: 0px 5px 15px 0px {color:Post Shadows}; 
+			  -moz-box-shadow:    0px 5px 15px 0px {color:Post Shadows}; /* These are also the shadow colour */
+			  box-shadow:         0px 5px 15px 0px {color:Post Shadows};	
+			}
+			
+			/* Backgroud Images */
+			
+				/* Body Background */
+				/* Note - Image overides colour */
+				body{
+				  background: {color:Content Background};
+				  background: url({image:Content Background});
+				  background-size: cover;
+				  background-attachment: fixed;	
+				}
+				
+				/* Sidebar Background */
+				/* Note - Image overides colour */
+				#left #background #image{
+				  background: {color:Sidebar Background};
+				  background: url({image:Sidebar Background});
+				  background-size: cover;
+				}
+				
+				/* Sidebar Tint */
+				#left #background #fade{
+				  background: {color:Sidebar Tint}; /* Tint Colour */
+				  opacity: {select:Tint Amount}; /* Tint Ammount */ 
+				}
+		/* Colours */
+		.overlay{
+		  background: {color:Overlay};	/* Hover-to-Show Entry Overlay Background */
+		}
+		#left{
+		  box-shadow: 0px 0px 1px 1px {color:Sidebar Shadow}; /* Sidebar Shadow */
+		  border-right: solid 1px {color:Sidebar Border}; /* Sidebar Right Side Border */
+		}
+		#left #info, #left #info a{
+		  color: {color:Sidebar Text}; /* Sidebar Text Colour */	
+		}
+		
+		#left #info .menu li a{
+		  background: {color:Menu Primary}; /* Menu White */	
+		}
+		
+		#left #info .menu.default li, #left #info .menu.default a{ /* Default Menu Style */
+		  color: {color:Menu Secondary}; /* Menu Black */	
+		}
+		
+		#left #info .menu.defaultNoBack li, #left #info .menu.defaultNoBack a{ /* Default with no Background Style */
+		  color: {color:Menu Primary}; /* Menu White */
+		  text-shadow: 1px 1px 1px {color:Menu Secondary}; /* Menu Black */
+ 		}
+		
+		#left #info .menu.list li, #left #info .menu.list li a{ /* List Menu Style */
+		  color: {color:Menu Secondary}; /* Menu Black */
+		}
+		
+		#left #info .menu.listNoBack li, #left #info .menu.listNoBack a{ /* List with no Background Style */
+		  color: {color:Menu Primary}; /* Menu White */
+		  text-shadow: 1px 1px 1px {color:Menu Secondary}; /* Menu Black */
+		}
+		
+		#entry{
+		  background: {color:Post Background}; /* Entry Background Colour */
+		  color: {color:Post Text}; /* Entry Text Colour */
+		}
+		#entry .text a.title{
+		  color: {color:Post Text}; /* Entry Title Colour */	
+		}
+		#entry #link{
+		  border: solid 2px {color:Link Post Colour}; /* Entry Link Box */
+		}
+		#entry a.link{
+		  color: {color:Link Post Colour}; /* Entry Link Text */
+		}
+		#entry #quote{
+		  border-left: solid 2px {color:Subtle Accent}; /* Quote Push Border Colour */	
+		}
+		#entry ul.chat li:nth-child(even){
+		  background: {color:Subtle Accent}; /* Even Chat Line Background Colour */
+		}
+		#entry .text .question{
+		  border-bottom : solid 2px {color:Subtle Accent}; /* Question/Answer Seperator Colour */
+		}
+		
+		{block:PermalinkPage}
+			/* === Permalink Page Styles === */
+			#content.one, #content.two, #content.three, #content.four{
+			  width: 600px;
+			  margin: 0 auto;
+			  margin-left: 210px;
+			  position: relative;	
+			}
+			#entry.one, #entry.two, #entry.three, #entry.four{
+			  width: 600px;
+			  margin: 0 auto;
+			  position: relative;
+			  margin-top: 40px;	
+			}
+			.overlay{
+			  display: none;	
+			}
+			#entry.permalink{
+			  padding: 15px;	
+			  margin-top: 10px;
+			  width: 570px;
+			}
+			#entry.permalink h1{
+			  font-size: 18px;	
+			}
+			#entry.permalink ol.notes{
+			  margin-left: 0px;	
+			}
+			#entry.permalink ol.notes a{
+			  color: {color:Post Text};	
+			}
+			#entry.permalink ol.notes li.note img.avatar{
+			  width: 15px;
+			  display: inline;	
+			}
+		{/block:PermalinkPage}
+	</style>
+</head>
+
+<body>
+	<a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="50.000000pt" height="20.000000pt" viewBox="0 0 154.000000 88.000000"
+                     preserveAspectRatio="xMidYMid meet">>
+                 <g transform="translate(0.000000,88.000000) scale(0.100000,-0.100000)"
+                    fill="{color:Post Text}" stroke="none">
+                    <path d="M515 838 c-4 -18 -30 -88 -57 -155 l-50 -122 -67 6 c-41 3 -82 1
+                    -104 -6 -86 -29 -176 -130 -212 -241 -72 -218 88 -396 256 -285 36 24 37 24
+                    54 5 43 -48 129 -43 198 12 21 16 39 28 41 27 1 -2 10 -16 19 -31 17 -27 80
+                    -53 108 -44 8 2 26 7 41 10 61 13 129 102 157 201 8 30 8 41 -2 47 -21 13 -26
+                    9 -48 -34 -36 -72 -109 -138 -154 -138 -24 0 -18 74 14 165 52 149 143 336
+                    167 345 41 16 258 22 379 11 66 -6 153 -21 193 -33 40 -11 75 -18 78 -15 4 3
+                    8 25 11 49 5 52 -20 98 -69 125 -29 16 -57 18 -213 17 -112 -1 -209 -7 -257
+                    -16 l-78 -15 0 37 c0 31 -7 44 -35 69 -38 33 -82 49 -94 35 -4 -5 -18 -44 -31
+                    -86 l-24 -78 -44 0 -44 0 6 34 c9 49 -7 81 -57 110 -58 35 -74 33 -82 -6z
+                    m151 -214 c13 -3 24 -10 24 -14 0 -5 -14 -44 -30 -87 -17 -43 -46 -136 -65
+                    -206 -21 -80 -43 -141 -58 -161 -30 -39 -88 -72 -112 -62 -39 15 6 164 126
+                    417 45 93 66 128 77 124 7 -3 25 -8 38 -11z m-333 -206 c16 -12 16 -20 -8
+                    -112 -14 -54 -25 -118 -25 -142 0 -40 -3 -46 -41 -70 -50 -31 -93 -27 -134 14
+                    -25 25 -27 32 -22 87 5 68 22 107 70 162 58 66 120 90 160 61z"/>
+                 </g>
+             </svg>
+         </div>
+    </a>
+    
+    <div id="left" class="{select:Sidebar Align}">
+    
+    	<div id="info">
+        
+        	{block:IfShowPortrait}
+                <a href="{BlogURL}">
+                    <img src="{PortraitURL-128}" />
+                </a>
+            {/block:IfShowPortrait}
+            
+            <a href="{BlogURL}"><h1>{Title}</h1></a>
+            
+            <p>{Description}</p>
+            
+            {block:HasPages}
+                <ul class="menu {select:Menu Style}">
+                    {block:Pages}
+                    	<li><a href="{URL}">{Label}</a></li>
+                    {/block:Pages}
+                </ul>
+            {/block:HasPages}
+        
+        </div>
+        
+        <div id="background">
+        	
+            <div id="image">
+            	
+            </div>
+            
+            <div id="fade">
+            	
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <div id="content" class="{select:Grid Columns}">
+    	
+        {block:Posts}
+            
+            {block:Text}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Text Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                            <ul>
+                                <li class="reblog">
+                                    {ReblogButton color="white"}
+                                </li>
+                                <li class="like">
+                                    {LikeButton color="white"}
+                                </li>
+                                <li class="permalink">
+                                    <a href="{Permalink}">
+                                        <i class=" fa fa-link"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text">
+                        {block:Title}
+                            <a href="{Permalink}" class="title">
+                                <h1>{Title}</h1>
+                            </a>
+                        {/block:Title}
+                        {Body}
+                    </div>
+                </div>
+            {/block:Text}
+            
+            {block:Photo}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Photo Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                                <ul>
+                                    <li class="reblog">
+                                        {ReblogButton color="white"}
+                                    </li>
+                                    <li class="like">
+                                        {LikeButton color="white"}
+                                    </li>
+                                    <li class="permalink">
+                                        <a href="{Permalink}">
+                                            <i class=" fa fa-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <img src="{PhotoURL-500}" class="photoPost" />
+                    {block:Caption}
+                        <div class="text caption">
+                            {Caption} 
+                        </div>
+                    {/block:Caption}
+                </div>
+            {/block:Photo}
+            
+            {block:Photoset}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Photo Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                                <ul>
+                                    <li class="reblog">
+                                        {ReblogButton color="white"}
+                                    </li>
+                                    <li class="like">
+                                        {LikeButton color="white"}
+                                    </li>
+                                    <li class="permalink">
+                                        <a href="{Permalink}">
+                                            <i class=" fa fa-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <center>
+                    	{Photoset}
+                    </center>
+                    {block:Caption}
+                        <div class="text caption">
+                            {Caption} 
+                        </div>
+                    {/block:Caption}
+                </div>
+            {/block:Photoset}
+            
+            {block:Link}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Link Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                                <ul>
+                                    <li class="reblog">
+                                        {ReblogButton color="white"}
+                                    </li>
+                                    <li class="like">
+                                        {LikeButton color="white"}
+                                    </li>
+                                    <li class="permalink">
+                                        <a href="{Permalink}">
+                                            <i class=" fa fa-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <a href="{URL}" class="link">
+                        <div id="link">
+                            {Name} <br />
+                            <em>{Host}</em>
+                        </div>
+                    </a>
+                    <div class="text caption">
+                        {block:Description}
+                        	{Description}
+                        {/block:Description}
+                        {block:Caption}
+                        	{Caption}
+                        {/block:Caption}
+                    </div>
+                </div>
+            {/block:Link}
+            
+            {block:Quote}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Quote Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                                <ul>
+                                    <li class="reblog">
+                                        {ReblogButton color="white"}
+                                    </li>
+                                    <li class="like">
+                                        {LikeButton color="white"}
+                                    </li>
+                                    <li class="permalink">
+                                        <a href="{Permalink}">
+                                            <i class=" fa fa-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div id="quote">
+                        {Quote}
+                    </div>
+                    {block:Source}
+                        <div class="text caption">
+                            &mdash; {Source}
+                        </div>
+                    {/block:Source}
+                </div>
+            {/block:Quote}
+            
+            {block:Chat}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Chat Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                                <ul>
+                                    <li class="reblog">
+                                        {ReblogButton color="white"}
+                                    </li>
+                                    <li class="like">
+                                        {LikeButton color="white"}
+                                    </li>
+                                    <li class="permalink">
+                                        <a href="{Permalink}">
+                                            <i class=" fa fa-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="text">
+                        {block:Title}
+                            <a href="{Permalink}" class="title">
+                                <h1>{Title}</h1>
+                            </a>
+                        {/block:Title}
+                        <ul class="chat">
+                            {block:Lines}
+                            	<li><strong>{block:Label}{Label}{/block:Label} </strong>{Line}</li>
+                            {/block:Lines}
+                        </ul>
+                    </div>
+                </div>
+            {/block:Chat}
+            
+            {block:Video}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Video Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                                <ul>
+                                    <li class="reblog">
+                                        {ReblogButton color="white"}
+                                    </li>
+                                    <li class="like">
+                                        {LikeButton color="white"}
+                                    </li>
+                                    <li class="permalink">
+                                        <a href="{Permalink}">
+                                            <i class=" fa fa-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="video-container">
+                        {Video-500}
+                    </div>
+                    {block:Caption}
+                        <div class="text caption">
+                            {Caption}
+                        </div>
+                    {/block:Caption}
+                </div>
+            {/block:Video}
+            
+            {block:Audio}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Audio Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                                <ul>
+                                    <li class="reblog">
+                                        {ReblogButton color="white"}
+                                    </li>
+                                    <li class="like">
+                                        {LikeButton color="white"}
+                                    </li>
+                                    <li class="permalink">
+                                        <a href="{Permalink}">
+                                            <i class=" fa fa-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="video-container">
+                        {AudioEmbed}
+                    </div>
+                    {block:Caption}
+                        <div class="text caption">
+                            {Caption}
+                        </div>
+                    {/block:Caption}
+                </div>
+            {/block:Audio}
+            
+            {block:Answer}
+                <div id="entry" class="{select:Grid Columns} {select:Entry Border Style}"><!-- Answer Post -->
+                    <div class="overlay {select:Overlay Position} {select:Overlay Style}">
+                        <div id="buttons">
+                                <ul>
+                                    <li class="reblog">
+                                        {ReblogButton color="white"}
+                                    </li>
+                                    <li class="like">
+                                        {LikeButton color="white"}
+                                    </li>
+                                    <li class="permalink">
+                                        <a href="{Permalink}">
+                                            <i class=" fa fa-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="text">
+                        <div class="question">
+                            <h1>{Asker} asked:</h1>
+                            {Question}
+                        </div>
+                        {Answer}
+                    </div>
+                </div>
+            {/block:Answer}
+            
+        {/block:Posts}
+        
+        {block:PermalinkPage}
+            {block:PostNotes}
+                <div id="entry" class="one shadow permalink"><!-- Permalink Post Infomation -->
+                    <h1>Notes</h1>
+                    {PostNotes}
+                </div>
+            {/block:PostNotes}
+        {/block:PermalinkPage}
+        
+        {block:Pagination}
+            <div id="pagination">
+                
+                {block:NextPage}
+                    <a href="{NextPage}" class="right">
+                        Next
+                    </a>
+                {/block:NextPage}
+                
+                {block:PreviousPage}
+                    <a href="{PreviousPage}" class="left">
+                        Back
+                    </a>
+                {/block:PreviousPage}
+                
+            </div>
+        {/block:Pagination}
+    </div>
+    
+    <script src="http://static.tumblr.com/uv8mqxy/B5yngbur9/jquery.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Nsengbupv/jquery.imagesloaded.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/wUzngbuqv/jquery.masonry.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Audngbuqj/jquery.infinitescroll.min.js"></script>
+    <script>
+		(function () {
+    	var $tumblelog = $('#content');
+    	$tumblelog.infinitescroll({
+        	navSelector: "#pagination",
+        	nextSelector: "#pagination a.right",
+        	itemSelector: "#entry",
+    	},
+    	function (newElements) {
+        	var $newElems = $(newElements).css({
+            	opacity: 0
+        });
+        $newElems.imagesLoaded(function () {
+           	$newElems.animate({
+               	opacity: 1
+          		});
+           	$tumblelog.masonry('appended', $newElems);
+        	});
+    	});
+    	$tumblelog.imagesLoaded(function () {
+        	$tumblelog.masonry({
+            	columnWidth: function (containerWidth) {
+                		return containerWidth / 100;
+            		}
+        		});
+    		});
+		})();
+	</script>
+</body>
+</html>
