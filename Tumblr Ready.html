@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>TwoTone (Dev)</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/iKjo5gxbe/twotone.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--
+        TwoTone by Dune Themes
+        
+        Need help?
+        dunethemes.tumblr.com/support
+        dunethemes@gmail.com
+        @DuneThemes
+        
+        Do not redistribute or claim as your own.
+        © Dune Themes
+    -->
+    
+    {block:Hidden}
+    	<!-- Modify -->
+        	<meta name="if:Invert Link Posts" content="1" />
+        
+        <!-- Text -->
+        	<meta name="text:Twitter URL" content="" />
+            <meta name="text:Facebook URL" content="" />
+            <meta name="text:Instagram URL" content="" />
+            <meta mame="text:YouTube URL" content="" />
+            <meta name="text:WordPress URL" content="" />
+            <meta name="text:Vine URL" content="" />
+            <meta name="text:Vimeo URL" content="" />
+            <meta name="text:Pinterest URL" content="" />
+            <meta name="text:Github URL" content="" />
+        
+    	<!-- Colours -->
+        	<meta name="color:Background" content="#fff" />
+            <meta name="color:Text" content="#000" />
+            <meta name="color:Links" content="#000" />
+            <meta name="color:Post Backgrounds" content="#fff" />
+            <meta name="color:Post Borders" content="#000" />
+            <meta name="color:Post Shadows" content="#000" />
+            <meta name="color:Link Post Text" content="#000" />
+            <meta name="color:Link Post Background" content="#fff" />
+            <meta name="color:Quote Posts" content="#000" />
+            <meta name="color:Chat Background" content="#000" />
+            <meta name="color:Chat Text" content="#fff" />
+            <meta name="color:Post Info Text" content="#fff" />
+            <meta name="color:Post Info Background" content="#000" />
+    	
+    {/block:Hidden}
+    
+    <style>
+		/* Fonts */
+			@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+			body{
+			  font-family: "Open Sans", sans-serif;
+			  font-weight: 400;	
+			}
+			h1, .title{
+			  font-weight: 700;
+			}
+			
+		/* Colours */
+			body{
+			  background: {color:Background};
+			  color: {color:Text};
+			}
+			a{
+			  color: {color:Links};	
+			}
+			.block.sidebar,
+			.block.entry{
+			  border: solid 2px {color:Post Borders};
+			  box-shadow: 4px 4px 0px {color:Post Shadows};
+			  background: {color:Post Backgrounds};	
+			}
+			.block.entry.photo .caption{
+			  border-top: solid 2px {color:Post Borders};	
+			}
+			a.link-post{
+			  color: {color:Link Post Text};	
+			}
+			.link-wrap{
+			  background: {color:Link Post Background};	
+			}
+			
+			{block:IfInvertLinkPosts}
+				a.link-post:hover{
+				  color: {color:Link Post Background};	
+				}
+				.link-wrap:hover{
+				  background: {color:Link Post Text};	
+				}
+			{/block:IfInvertLinkPosts}
+			
+			.block.entry.link .caption,
+			.block.entry.audio .caption,
+			.block.entry.video .caption,
+			.block.entry.answer .caption{
+			  border-top: solid 2px {color:Post Borders};	
+			}
+			.block.entry.quote h1{
+			  border-top: solid 3px {color:Quote Posts};
+			  border-bottom: solid 3px {color:Quote Posts};	
+			  color: {color:Quote Posts};
+			}
+			.block.entry.chat ul li:nth-child(even){
+			  background: {color:Chat Background};
+			  color: {color:Chat Text};	
+			}
+			.question{
+			  background: {color:Post Backgrounds};
+			  color: {color:Post Text};	
+			}
+			
+			.post-information,
+			.post-information a{
+			  color: {color:Post Info Text};
+			  background: {color:Post Info Background};	
+			}
+			
+			a.blog-title, 
+			.title{
+			  color: {color:Background};	
+			  background: {color:Post Borders};
+			}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+        
+        <div class="block sidebar">
+            
+            {block:ShowTitle}
+                <a href="{BlogURL}" class="blog-title">
+                    <div class="title">
+                        {Title}
+                    </div>
+                </a>
+            {/block:ShowTitle}
+            
+            <div class="caption">
+             	
+                {block:ShowAvatar}
+                	<img src="{PortraitURL-128}" class="portrait" />
+                {/block:ShowAvatar}
+                
+                {block:ShowDescription}
+                    <div class="description">
+                        {Description}
+                    </div>	
+                {/block:ShowDescription}
+                
+                {block:HasPages}
+                    <nav>
+                        {block:Pages}
+                        	<li><a href="{URL}">{Label}</a></li>
+                        {/block:Pages}
+                    </nav>	
+                {/block:HasPages}
+                
+                <div class="social">
+                    
+                    {block:IfTwitterURL}
+                        <a href="{text:Twitter URL}">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    {/block:IfTwitterURL}
+                    
+                    {block:IfFacebookURL}
+                        <a href="{text:Facebook URL}">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    {/block:IfFacebookURL}
+                    
+                    {block:IfInstagramURL}
+                        <a href="{text:InstagramURL}">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    {/block:IfInstagramURL}
+                    
+                    {block:IfWordPressURL}
+                        <a href="{text:WordPress URL}">
+                            <i class="fa fa-wordpress"></i>
+                        </a>
+                    {/block:IfWordPressURL}
+                    
+                    {block:IfYouTubeURL}
+                        <a href="{text:YouTubeURL}">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    {/block:IfYouTubeURL}
+                    
+                    {block:IfVineURL}
+                    	<a href="{text:Vine URL}">
+                        	<i class="fa fa-vine"></i>
+                        </a>
+                    {/block:IfVineURL}
+                    
+                    {block:IfVimeoURL}
+                    	<a href="{text:Vimeo URL}">
+                        	<i class="fa fa-vimeo"></i>
+                        </a>
+                    {/block:IfVimeoURL}
+                    
+                    {block:IfPinterestURL}
+                    	<a href="{text:Pinterest URL}">
+                        	<i class="fa fa-pinterest"></i>
+                        </a>
+                    {/block:IfPinterestURL}
+                    
+                    {block:IfGithubURL}
+                    	<a href="{text:Github URL">
+                        	<i class="fa fa-github"></i>
+                        </a>
+                    {/block:IfGithubURL}
+                    
+                </div>
+            
+            </div>
+            
+        </div>
+        
+        {block:Posts}
+        
+            {block:Text}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} text">
+                        
+                    <div class="caption">
+                    
+                        {block:Title}
+                            <a href="{Permalink}" class="post-title">
+                                <h1>{Title}</h1>
+                            </a>	
+                        {/block:Title}
+                        
+                        {Body}
+                        
+                    </div>
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Text}
+            
+            {block:Photo}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} photo">
+                    
+                    <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                    
+                    {block:Caption}
+                        <div class="caption">
+                            {Caption}
+                        </div>
+                    {/block:Caption}
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Photo}
+            
+            {block:Photoset}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} photoset">
+                    
+                    {Photoset}
+                    
+                    {block:Caption}
+                        <div class="caption">
+                            {Caption}
+                        </div>
+                    {/block:Caption}
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Photoset}
+            
+            {block:Link}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} link">
+                    
+                    <a href="{URL}" class="link-post" {Target}>
+                        <div class="link-wrap">
+                            {block:Host}<em>{Host}</em>{/block:Host}
+                            <h1>{Name}</h1>
+                            {block:Excerpt}
+                                <div class="description">
+                                    {Excerpt}
+                                </div>
+                            {/block:Excerpt}
+                        </div>
+                    </a>
+                    
+                    {block:Description}
+                        <div class="caption">
+                            {Description}
+                        </div>
+                    {/block:Description}
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Link}
+            
+            {block:Audio}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} audio">
+                    
+                    <div class="video-container">
+                        {AudioEmbed}
+                    </div>
+                    
+                    {block:Caption}
+                        <div class="caption">
+                            {Caption}
+                        </div>
+                    {/block:Caption}
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Audio}
+            
+            {block:Video}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} video">
+                    
+                    <div class="video-container">
+                        {Video-700}
+                    </div>
+                    
+                    {block:Caption}
+                        <div class="caption">
+                            {Caption}
+                        </div>
+                    {/block:Caption}
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Video}
+            
+            {block:Quote}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} quote">
+                    
+                    <div class="caption">
+                    
+                        <h1>
+                            "{Quote}"
+                        </h1>
+                        
+                        {block:Source}
+                            <div class="source">
+                                &mdash; {Source}
+                            </div>
+                        {/block:Source}
+                    
+                    </div>
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Quote}
+            
+            {block:Chat}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} chat">
+                    
+                    <div class="caption">
+                        
+                        {block:Title}
+                            <a href="{Permalink}" class="post-title">
+                                <h1>{Title}</h1>
+                            </a>
+                        {/block:Title}
+                        
+                        <ul>
+                            {block:Lines}
+                            	<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
+                            {/block:Lines}
+                        </ul>
+                        
+                    </div>
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Chat}
+            
+            {block:Answer}
+                <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} answer">
+                    
+                    <div class="question">
+                        
+                        <img src="{AskerPortraitURL-128}" class="portrait" />
+                        <h1>{Asker} asked:</h1>
+                        {Question}
+                        
+                    </div>
+                    
+                    <div class="caption">
+                        {Answer}
+                    </div>
+                    
+                    <div class="post-information">
+                        <a href="{Permalink}">Posted {TimeAgo}</a>
+                    </div>
+                    
+                </div>
+            {/block:Answer}
+            
+            {block:PermlainkPage}
+            
+            	{block:PostNotes}
+                    <div class="block entry {block:PermalinkPage}permalink{/block:PermalinkPage} notes">
+                        {PostNotes-64}
+                    </div>
+                {/block:PostNotes}
+            
+            {/block:PermalinkPage}
+            
+            {block:Pagination}
+                <div class="pagination">
+                    
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="back">
+                            Back
+                        </a>
+                    {/block:PreviousPage}
+                    
+                    {block:NextPage}
+                        <a href="{NextPage}" class="next">
+                            Next
+                        </a>
+                    {/block:NextPage}	
+                    
+                </div>
+            {/block:Pagination}
+        
+        {/block:Posts}
+        
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/Im3o4r508/jquery.imagesloaded.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/lT2o4r50k/jquery.infinitescroll.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/rzLo4r510/masonry.pkgd.js"></script>
+    <script>
+		(function() {
+		
+			// Main content container
+			var $container = $('.content');
+		
+			// Masonry + ImagesLoaded
+			$container.imagesLoaded(function(){
+				$container.masonry({
+					// selector for entry content
+					itemSelector: '.block',
+					fitWidth: true,
+					resize: true,
+				});
+			});
+		
+			// Infinite Scroll
+			$container.infinitescroll({
+		
+				// selector for the paged navigation (it will be hidden)
+				navSelector  : ".pagination",
+				// selector for the NEXT link (to page 2)
+				nextSelector : "a.next",
+				// selector for all items you'll retrieve
+				itemSelector : ".entry",
+		
+				// finished message
+				loading: {
+					finishedMsg: 'No more pages to load.'
+					}
+				},
+		
+				// Trigger Masonry as a callback
+				function( newElements ) {
+					// hide new items while they are loading
+					var $newElems = $( newElements ).css({ opacity: 0 });
+					// ensure that images load before adding to masonry layout
+					$newElems.imagesLoaded(function(){
+						// show elems now they're ready
+						$newElems.animate({ opacity: 1 });
+						$container.masonry( 'appended', $newElems, true );
+					});
+		
+			});
+		
+		})();
+	</script>
+    
+    <script>
+		$(document).ready(function(e) {
+            $("title").delay(3000).removeData();
+        });
+	</script>
+    
+</body>
+</html>
