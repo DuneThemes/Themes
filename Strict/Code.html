@@ -446,26 +446,6 @@
                 </div>
             {/block:Answer}
             
-            {block:IfNotInfiniteScroll}
-                {block:Pagination}
-                    <div class="pagination">
-                    
-                        {block:PreviousPage}
-                            <a href="{PreviousPage}" class="back">
-                                Previous
-                            </a>
-                        {/block:PreviousPage}
-                        
-                        {block:NextPage}
-                            <a href="{NextPage}" class="next">
-                                Next	
-                            </a>
-                        {/block:NextPage}
-                        
-                    </div>
-                {/block:Pagination}
-            {/block:IfNotInfiniteScroll}
-            
             {block:PermalinkPage}
                 {block:HasTags}
                     <div class="entry tags">
@@ -486,6 +466,26 @@
                 {/block:PostNotes}
             {/block:PermalinkPage}
         {/block:Posts}
+        
+        {block:IfNotInfiniteScroll}
+            {block:Pagination}
+                <div class="pagination">
+                
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="back">
+                            Previous
+                        </a>
+                    {/block:PreviousPage}
+                    
+                    {block:NextPage}
+                        <a href="{NextPage}" class="next">
+                            Next	
+                        </a>
+                    {/block:NextPage}
+                    
+                </div>
+            {/block:Pagination}
+        {/block:IfNotInfiniteScroll}
         
     </div>
     
