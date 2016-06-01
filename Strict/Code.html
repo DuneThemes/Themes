@@ -36,7 +36,6 @@
             	<meta name="if:Underline Links" content="1" />
                 <meta name="if:Animate Link Posts" content="1" />
                 <meta name="if:Show Reblog Button" content="1" />
-                <meta name="if:Infinite Scroll" content="1" />
         
         	<!-- Colours --->
             	<meta name="color:Pagination Text" content="#ffffff" />
@@ -127,6 +126,9 @@
 				}
 				
 	</style>
+    <script>
+		var infiniteScroll = yes;
+	</script>
 </head>
 
 <body>
@@ -467,66 +469,77 @@
             {/block:PermalinkPage}
         {/block:Posts}
         
-        {block:IfNotInfiniteScroll}
-            {block:Pagination}
-                <div class="pagination">
+        {block:Pagination}
+            <div class="pagination">
+            
+                {block:PreviousPage}
+                    <a href="{PreviousPage}" class="back">
+                        Previous
+                    </a>
+                {/block:PreviousPage}
                 
-                    {block:PreviousPage}
-                        <a href="{PreviousPage}" class="back">
-                            Previous
-                        </a>
-                    {/block:PreviousPage}
-                    
-                    {block:NextPage}
-                        <a href="{NextPage}" class="next">
-                            Next	
-                        </a>
-                    {/block:NextPage}
-                    
-                </div>
-            {/block:Pagination}
-        {/block:IfNotInfiniteScroll}
+                {block:NextPage}
+                    <a href="{NextPage}" class="next">
+                        Next	
+                    </a>
+                {/block:NextPage}
+                
+            </div>
+        {/block:Pagination}
         
     </div>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    {block:IfInfiniteScroll}
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="http://static.tumblr.com/uv8mqxy/Im3o4r508/jquery.imagesloaded.min.js"></script>
 		<script src="http://static.tumblr.com/uv8mqxy/lT2o4r50k/jquery.infinitescroll.min.js"></script>
+        <script src="http://static.tumblr.com/uv8mqxy/rzLo4r510/masonry.pkgd.js"></script>
         <script>
-            (function() {
-            
-                // Infinite Scroll
-                $container.infinitescroll({
-            
-                    // selector for the paged navigation (it will be hidden)
-                    navSelector  : ".pagination",
-                    // selector for the NEXT link (to page 2)
-                    nextSelector : "a.next",
-                    // selector for all items you'll retrieve
-                    itemSelector : ".entry",
-            
-                    // finished message
-                    loading: {
-                        finishedMsg: 'No more pages to load.'
-                        }
-                    },
-            
-                    // Trigger Masonry as a callback
-                    function( newElements ) {
-                        // hide new items while they are loading
-                        var $newElems = $( newElements ).css({ opacity: 0 });
-                        // ensure that images load before adding to masonry layout
-                        $newElems.imagesLoaded(function(){
-                            // show elems now they're ready
-                            $newElems.animate({ opacity: 1 });
-                            $container.masonry( 'appended', $newElems, true );
-                        });
-            
-                });
-            
-            })();
-        </script>
-    {/block:IfInfiniteScroll}
+           	(function() {
+				
+                  // Main content container
+                  var $container = $('.content');
+              
+                  // Masonry + ImagesLoaded
+                  $container.imagesLoaded(function(){
+                      $container.masonry({
+                          // selector for entry content
+                          itemSelector: '.block',
+                          fitWidth: true,
+                          resize: true,
+                      });
+                  });
+              
+                  // Infinite Scroll
+                  $container.infinitescroll({
+              
+                      // selector for the paged navigation (it will be hidden)
+                      navSelector  : ".pagination",
+                      // selector for the NEXT link (to page 2)
+                      nextSelector : "a.next",
+                      // selector for all items you'll retrieve
+                      itemSelector : ".entry",
+              
+                      // finished message
+                      loading: {
+                          finishedMsg: 'No more pages to load.'
+                          }
+                      },
+              
+                      // Trigger Masonry as a callback
+                      function( newElements ) {
+                          // hide new items while they are loading
+                          var $newElems = $( newElements ).css({ opacity: 0 });
+                          // ensure that images load before adding to masonry layout
+                          $newElems.imagesLoaded(function(){
+                              // show elems now they're ready
+                              $newElems.animate({ opacity: 1 });
+                              $container.masonry( 'appended', $newElems, true );
+                          });
+              
+                  });
+              
+              })();
+        </script> -->
     
 </body>
 </html>
