@@ -1,0 +1,884 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/w11o8em9j/smooth.css" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/gvunna6e1/creditshake.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    
+    
+    <!--
+        Smooth by Dune Themes
+        
+        Need help?
+        dunethemes.tumblr.com/support
+        dunethemes@gmail.com
+        @DuneThemes
+        
+        Do not redistribute or claim as your own.
+        © Dune Themes
+    -->
+    
+    {block:Hidden}
+    	
+    	<!-- Theme Modifications --->
+        	<meta name="if:Grid" content="0" />
+            <meta name="if:Animate Post Type Icons" content="0" />
+            <meta name="if:Show Post Information" content="1" />
+            <meta name="if:Animate Menu Links" content="1" />
+            <meta name="if:Show Reblog Button" content="1" />
+            <meta name="if:Show Post Type Button" content="1" />
+            <meta name="if:Show Search" content="1" />
+            <meta name="if:Infinite Scroll" content="0" />
+            <meta name="if:Rounded Edges" content="1" />
+        
+        <!-- Images --->
+    		<meta name="image:Background" content="" />
+        
+        <!-- Colours --->
+        	<meta name="color:Background" content="#E491B5" />
+            
+            <!-- Navigation / Header --->
+            	<meta name="color:Header" content="#FFFFFF" />
+                <meta name="color:Menu Link Text" content="#000000" />
+                <meta name="color:Menu Links" content="#FFFFFF" />
+                <meta name="color:Menu Link Hover" content="#E9E9E9" />
+                <meta name="color:Menu Link Border" content="#DBDBDB" />
+           	
+            <!-- Content --->
+            	<meta name="color:Posts" content="#FFFFFF" />
+                <meta name="color:Post Type Icon" content="#3573e6" />
+                <meta name="color:Post Type Text" content="#FFFFFF" />
+                <meta name="color:Reblog" content="#E63535" />
+                <meta name="color:Reblog Text" content="#FFFFFF" />
+                <meta name="color:Post Titles" content="#1A1A1A" />
+                <meta name="color:Quote Border" content="#212121" />
+                <meta name="color:Quote" content="#212121" />
+                <meta name="color:Link Post Text" content="#000000" />
+                <meta name="color:Link Posts" content="#ADADAD" />
+                <meta name="color:Chat Lines" content="#CCCCCC" />
+                <meta name="color:Answer Post Borders" content="#B8B8B8" />
+                <meta name="color:Post Information Text" content="#000000" />
+                <meta name="color:Post Information" content="#DFDFDF" />
+                <meta name="color:Post Information Border" content="#8F8F8F" />
+                <meta name="color:Post Information Links" content="#353535" />
+                <meta name="color:Pagination" content="#FFFFFF" />
+                <meta name="color:Pagination Text" content="#000000" />
+           	
+            <!-- Sidebar --->
+            	<meta name="color:Sidebar Items" content="#FFFFFF" />
+                <meta name="color:Search Bar" content="#FFFFFF" />
+                <meta name="color:Submit Button" content="#e63535" />
+                <meta name="color:Submit Text" content="#FFFFFF" />
+                <meta name="color:Search Text" content="#9C9C9C" />
+                <meta name="color:Description" content="#000000" />
+            
+    {/block:Hidden}
+    
+    <style>
+		
+		@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+		@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+		body{
+			font-family: 'Open Sans', sans-serif;	
+		}
+		.navigation{
+			font-family: 'Oswald', sans-serif;
+			font-weight: 400;
+		}
+		.blog-name{
+			font-family: 'Oswald', sans-serif;
+			font-weight: 700;
+		}
+		
+		/* --- Theme Modifications --- */
+			
+			/* --- If Post Information Not Shown --- */
+				{block:IfNotShowPostInformation}
+					.post-information{
+						display: none;	
+					}
+					ul.chat li:last-child{
+						margin-bottom: -10px;	
+					}
+				{/block:IfNotShowPostInformation}
+			
+			/* --- If Post Information Is Shown --- */
+				{block:IfShowPostInformation}
+					.post-information{
+						display: block;	
+					}
+					ul.chat li:last-child{
+						margin-bottom: 20px;	
+					}
+				{/block:IfShowPostInformation}
+		
+		/* --- Images --- */	
+			body{
+				background-color: {color:Background};
+				background-image: url({image:Background});
+				background-size: cover;
+				background-attachment: fixed;
+			}
+			
+			/* --- If Reblog Button Not Shown --- */
+				{block:IfNotShowReblogButton}
+					.reblog{
+						display: none;	
+					}
+				{/block:IfNotShowReblogButton}
+			
+			/* --- If Reblog Button Shown --- */
+				{block:IfShowReblogButton}
+					.reblog{
+						display: block;	
+					}
+				{/block:IfShowReblogButton}
+			
+			/* --- If Post Type Icon Not Shown --- */
+				{block:IfNotShowPostTypeButton}
+					.post-type{
+						display: none;	
+					}
+				{/block:IfNotShowPostTypeButton}
+			
+			/* --- If Post Type Icon Shown --- */
+				{block:IfShowPostTypeButton}
+					.post-type{
+						display: block;	
+					}
+				{/block:IfShowPostTypeButton}
+			
+			/* --- Rounded Edges --- */
+				{block:IfRoundedEdges}
+					.navigation, .banner,
+					.entry, .side .item,
+					.reblog, .post-type, 
+					.item.search *, .pagination a{
+						border-radius: 5px;	
+					}
+					.link-wrap{
+						border-top-left-radius: 5px;
+						border-top-right-radius: 5px;	
+					}
+					.post-information{
+						border-bottom-left-radius: 5px;
+						border-bottom-right-radius: 5px;	
+					}
+				{/block:IfRoundedEdges}
+			
+			/* --- If Infinite Scroll --- */
+				{block:IfInfiniteScroll}
+					.pagination{
+						display: none;	
+					}
+				{/block:IfInfiniteScroll}
+		
+		/* --- Colours --- */
+			/* --- Navigation / Header --- */
+				.navigation{
+					background: {color:Header};
+				}
+				.navigation a{
+					color: {color:Menu Link Text};	
+				}
+				nav li{
+					background: {color:Menu Links};
+					border-left: solid 1px {color:Menu Link Border};	
+				}
+				a.blog-link{
+					color: {TitleColor};	
+				}
+				
+				/* --- Animate Menu Links --- */
+					{block:IfAnimateMenuLinks}
+						nav li:hover{
+							background: {color:Menu Link Hover};	
+						}
+					{/block:IfAnimateMenuLinks}
+			
+			/* --- Content --- */
+				.entry{
+					background: {color:Posts};	
+				}
+				.post-type{
+					background: {color:Post Type Icon};
+					color: {color:Post Type Text};	
+				}
+				.reblog{
+					background: {color:Reblog};
+					color: {color:Reblog Text};	
+				}
+				a.permalink{
+					color: {color:Post Titles};	
+				}
+				.entry.quote blockquote{
+					border-left: solid 5px {color:Quote Border};
+					color: {color:Quote}	
+				}
+				.entry.link a.link{
+					color: {color:Link Post Text};	
+				}
+				.entry.link .link-wrap{
+					background: {color:Link Posts};	
+				}
+				ul.chat li:nth-child(even){
+					background: {color:Chat Lines};	
+				}
+				.question hr{
+					border: none;
+					border-bottom: solid 1px {color:Answer Post Borders};	
+				}
+				.post-information{
+					color: {color:Post Information Text};
+					background: {color:Post Information};
+					border-top: solid 1px {color:Post Information Border};	
+				}
+				.post-information a{
+					color: {color:Post Information Links};	
+				}
+			
+			/* --- Sidebar --- */
+				.item{
+					background: {color:Sidebar Items};	
+				}
+				.item.search input{
+					background: {color:Search Bar};	
+				}
+				.item.search ::-webkit-input-placeholder {
+					color: {color:Search Text};
+				}
+				.item.search :-moz-placeholder { /* Firefox 18- */
+					color: {color:Search Text};  
+				}
+				.item.search ::-moz-placeholder {  /* Firefox 19+ */
+					color: {color:Search Text};  
+				}
+				.item.search :-ms-input-placeholder {  
+					color: {color:Search Text};  
+				}
+				.item.search button{
+					background: {color:Submit Button};
+					color: {color:Submit Text};
+					cursor: pointer;
+				}
+				.item.description{
+					color: {color:Description};	
+				}
+			
+			/* --- Notes --- */
+				ol.notes, ol.notes a{
+					color: {color:Posts}	
+				}
+			
+			/* --- Pagination --- */
+				.pagination a{
+					background: {color:Pagination};
+					color: {color:Pagination Text};	
+				}
+			
+			{CustomCSS}
+		
+	</style>
+    
+</head>
+
+<body>
+	
+    <a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+			 width="80px" viewBox="0 0 2714.000000 657.000000"
+			 preserveAspectRatio="xMidYMid meet">
+				<g transform="translate(0.000000,657.000000) scale(0.100000,-0.100000)"
+				fill="{color:Posts}" stroke="none">
+				<path d="M145 6555 c-56 -20 -110 -81 -129 -146 -23 -77 -23 -651 -1 -727 19
+				-63 66 -119 120 -143 38 -18 140 -19 2435 -19 1617 0 2407 3 2432 10 53 15 93
+				52 125 118 l28 57 0 335 c0 250 -3 344 -13 372 -21 59 -70 118 -115 139 -41
+				18 -105 19 -2442 18 -2043 0 -2406 -2 -2440 -14z"/>
+				<path d="M6308 6560 c-50 -15 -86 -50 -117 -112 l-31 -61 0 -342 0 -342 31
+				-62 c22 -43 43 -70 72 -89 l41 -27 2431 0 2431 0 43 28 c31 21 50 45 72 90
+				l29 62 0 341 0 341 -31 62 c-22 43 -43 70 -72 89 l-41 27 -2415 2 c-1329 1
+				-2428 -2 -2443 -7z"/>
+				<path d="M12408 6493 l-58 -59 0 -375 0 -375 58 -56 57 -57 1490 -4 c1484 -4
+				1490 -4 1605 -25 568 -109 863 -405 967 -972 25 -137 25 -585 0 -717 -52 -275
+				-139 -461 -290 -619 -192 -203 -468 -315 -847 -344 -83 -6 -667 -10 -1530 -10
+				l-1394 0 -58 -57 -58 -57 0 -390 0 -389 41 -53 c24 -31 58 -61 83 -74 l42 -20
+				7227 0 c6038 0 7233 2 7260 13 46 20 102 86 121 145 15 44 17 93 14 384 l-3
+				333 -27 52 c-15 28 -44 64 -65 80 l-36 28 -4885 3 c-3896 2 -4883 5 -4879 15
+				170 396 233 710 244 1212 23 1027 -263 1737 -854 2122 -171 111 -404 207 -629
+				258 -274 61 -189 59 -1939 62 l-1600 4 -57 -58z"/>
+				<path d="M145 4715 c-56 -20 -110 -81 -129 -146 -23 -77 -23 -651 -1 -727 19
+				-63 66 -119 120 -143 39 -18 221 -19 4907 -19 l4867 0 -29 -63 c-100 -221
+				-170 -508 -205 -842 -19 -178 -22 -623 -5 -795 37 -388 114 -691 244 -957 289
+				-591 778 -913 1526 -1004 67 -9 554 -13 1664 -16 l1570 -4 58 58 58 57 0 386
+				0 386 -53 52 -53 52 -1439 0 c-1201 0 -1461 2 -1565 15 -604 71 -954 389
+				-1055 962 -43 244 -41 549 6 788 104 544 455 848 1054 915 56 6 641 10 1540
+				10 l1451 0 59 60 60 61 3 347 c5 437 5 437 -58 505 -32 35 -62 57 -88 65 -30
+				9 -1750 12 -7253 12 -6193 -1 -7220 -3 -7254 -15z"/>
+				<path d="M15960 1029 c-38 -15 -69 -48 -98 -104 l-27 -50 0 -350 0 -350 28
+				-58 c20 -40 42 -66 70 -85 l41 -27 2421 -3 2421 -2 44 22 c56 29 95 84 116
+				166 13 53 15 114 12 365 -3 291 -4 304 -26 352 -26 56 -63 100 -104 121 -23
+				12 -383 14 -2450 13 -1585 0 -2432 -4 -2448 -10z"/>
+				<path d="M22105 1021 c-44 -27 -71 -60 -97 -116 -22 -48 -23 -63 -26 -337 -3
+				-192 0 -311 8 -358 15 -90 57 -156 120 -188 l44 -22 2408 0 c1997 0 2414 2
+				2441 13 46 20 102 86 121 145 15 44 17 93 14 384 l-3 333 -27 52 c-15 28 -44
+				64 -65 80 l-36 28 -2436 2 c-2363 3 -2437 2 -2466 -16z"/>
+				</g>
+    		</svg>
+    	</div>
+    </a>
+    
+    <div class="wrap">
+    
+        <div class="navigation">
+       		
+            {block:ShowTitle}
+                <a href="{BlogURL}" class="blog-link">
+                    <div class="blog-name">
+                        {Title}
+                    </div>
+                </a>
+            {/block:ShowTitle}
+
+			{block:HasPages}            
+                <nav>
+                    {block:Pages}<a href="{URL}"><li>{Label}</li></a>{/block:Pages}
+                </nav>
+            {/block:HasPages}
+            
+        </div>
+        
+       <div class="content {block:IfGrid}grid{/block:IfGrid} {block:PermalinkPage}permalink{/block:PermalinkPage}">
+       
+           <div class="posts">
+           		{block:Posts}         
+                    
+                    {block:Text}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} text">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-pencil"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            
+                            {block:Title}
+                                <h1 class="title">
+                                    <a href="{Permalink}" class="permalink">
+                                        {Title}
+                                    </a>
+                                </h1>	
+                            {/block:Title}
+                            
+                            <div class="caption">
+                                {Body}
+                            </div>
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Text}
+                    
+                    {block:Photo}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} photo">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-photo"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+        
+                            <img src="{PhotoURL-500}" class="feature" />
+                            
+                            {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                            {/block:Caption}
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Photo}
+                    
+                    {block:Photoset}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} photo">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-photo"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+        
+                            <center>
+                            	{Photoset}
+                            </center>
+                            
+                            {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                            {/block:Caption}
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Photoset}
+                    
+                    {block:Link}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} link">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-link"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+        
+                            <a href="{URL}" class="link">
+                                <div class="link-wrap">
+                                    {block:Host}<em>{Host}</em>{/block:Host}
+                                    <h1>{Name}</h1>
+                                    {block:Excerpt}
+                                        <div class="excerpt">
+                                            {Excerpt}
+                                        </div>
+                                    {/block:Excerpt}
+                                </div>
+                            </a>
+                            
+                            {block:Description}
+                                <div class="caption">
+                                    {Description}
+                                </div>
+                            {/block:Description}
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Link}
+                    
+                    {block:Chat}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} chat">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-comments"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            
+                            {block:Title}
+                                <h1 class="title">
+                                    <a href="{Permalink}" class="permalink">
+                                        {Title}
+                                    </a>
+                                </h1>	
+                            {/block:Title}
+        
+                            <ul class="chat">
+                                {block:Lines}
+                                	<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
+                                {/block:Lines}
+                            </ul>
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Chat}
+                    
+                    {block:Quote}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} quote">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-quote-left"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            
+                            <blockquote>
+                                <h1>{Quote}</h1>
+                            </blockquote>
+                            
+                            {block:Source}<div class="caption source">&mdash; {Source}</div>{/block:Source}
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Quote}
+                    
+                    {block:Video}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} video">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-video-camera"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="video-container">
+                                {Video-500}
+                            </div>
+                            
+                            {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                            {/block:Caption}
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Video}
+                    
+                    {block:Audio}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} audio">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-headphones"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="video-container">{AudioEmbed}</div>
+                            
+                            {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                            {/block:Caption}
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Audio}
+                    
+                    {block:Answer}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} answer">
+                            
+                            <div class="icons-hold">
+                                <div class="icons no-anim {block:IfAnimatePostTypeIcons}anim{/block:IfAnimatePostTypeIcons}">
+                                    
+                                    <a href="{Permalink}">
+                                        <div class="post-type">
+                                            <i class="fa fa-question"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="{ReblogURL}" target="_blank">
+                                        <div class="reblog">
+                                            <i class="fa fa-retweet"></i>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                <div class="asker">{Asker} asked:</div>
+                                {Question}
+                                <hr />
+                            </div>
+                            
+                            <div class="caption answer">
+                                {Answer}
+                            </div>
+                            
+                            <div class="post-information">
+                                This was posted <a href="{Permalink}">{TimeAgo}</a>
+                                {block:NoteCount} and has <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}.
+                                {block:HasTags}
+                                    <div class="tags">
+                                        {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                                    </div>
+                                {/block:HasTags}
+                            </div>
+                            
+                        </div>
+                    {/block:Answer}
+                    
+                    {block:PostNotes}
+                        <div class="entry {block:IfInfiniteScroll}infiniteScroll{/block:IfInfiniteScroll} notes">
+                            
+                            {PostNotes-16}
+                            
+                        </div>
+                    {/block:PostNotes}
+                    
+                {/block:Posts}
+                {block:Pagination}
+                    <div class="pagination">
+                        {block:NextPage}
+                            <a href="{NextPage}" class="next">
+                                Next
+                            </a>
+                        {/block:NextPage}
+                        {block:PreviousPage}
+                            <a href="{PreviousPage}" class="back">
+                                Back
+                            </a>
+                        {/block:PreviousPage}
+                    </div>
+                {/block:Pagination}
+                
+            </div>
+            
+            <div class="side">
+                
+                {block:ShowAvatar}
+                    <div class="item portrait">
+                        <img src="{PortraitURL-128}" />
+                    </div>
+                {/block:ShowAvatar}
+                
+                {block:IfShowSearch}
+                    <div class="item search">
+                        <form action="/search" method="get">
+                            <input type="text" name="q" value="{SearchQuery}" placeholder="Search..." />
+                            <button type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                {/block:IfShowSearch}
+                
+                {block:ShowDescription}
+                    <div class="item description">
+                        {Description}
+                    </div>
+                {/block:ShowDescription}
+                
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Im3o4r508/jquery.imagesloaded.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/lT2o4r50k/jquery.infinitescroll.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/rzLo4r510/masonry.pkgd.js"></script>
+    <script>
+		(function() {
+		
+			// Main content container
+			var $container = $('.posts');
+		
+			// Masonry + ImagesLoaded
+			$container.imagesLoaded(function(){
+				$container.masonry({
+					// selector for entry content
+					itemSelector: '.content.grid .posts .entry',
+					fitWidth: true,
+					resize: true,
+				});
+			});
+		
+			// Infinite Scroll
+			$container.infinitescroll({
+		
+				// selector for the paged navigation (it will be hidden)
+				navSelector  : ".pagination",
+				// selector for the NEXT link (to page 2)
+				nextSelector : "a.next",
+				// selector for all items you'll retrieve
+				itemSelector : ".entry.infiniteScroll",
+		
+				// finished message
+				loading: {
+					finishedMsg: 'No more pages to load.'
+					}
+				},
+		
+				// Trigger Masonry as a callback
+				function( newElements ) {
+					// hide new items while they are loading
+					var $newElems = $( newElements ).css({ opacity: 0 });
+					// ensure that images load before adding to masonry layout
+					$newElems.imagesLoaded(function(){
+						// show elems now they're ready
+						$newElems.animate({ opacity: 1 });
+						$container.masonry( 'appended', $newElems, true );
+					});
+		
+			});
+		
+		})();
+	</script>
+   	<script>
+		$(document).ready(function(e) {
+			$('.entry').mouseenter(function(){
+				$(this).children('.icons-hold').children('.icons.anim').animate({top: "0px"});
+			});
+			$('.entry').mouseleave(function(){
+				$(this).children('.icons-hold').children('.icons.anim').animate({top: "-90px"});
+			});
+        });
+	</script>
+    
+</body>
+</html>
