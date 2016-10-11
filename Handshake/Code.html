@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}" />
+        <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/muWoevumr/handshake.css" />
+        
+        <!--
+            Handshake by Dune Themes
+            
+            Need help?
+            dunethemes.tumblr.com/support
+            dunethemes@gmail.com
+            @DuneThemes
+            
+            Do not redistribute or claim as your own.
+            © Dune Themes
+        -->
+        
+        {block:Hidden}
+        	<meta name="if:Underline Blog Title" content="0" />
+            <meta name="if:Underline Menu Links" content="0" />		
+            <meta name="if:Underline Footer Links" content="0" />
+            <meta name="if:Animate Link Posts" content="1" />
+            <meta name="if:Show Header" content="1" />
+            <meta name="if:Show Footer" content="1" />
+            <meta name="color:Text" content="#000" />
+            <meta name="color:Hovered Links" content="#D70C0C" />
+            <meta name="color:Header Text" content="#4B4B4B" />
+            <meta name="color:Hovered Header Links" content="#232323" />
+            <meta name="color:Posts" content="#fff" />
+            <meta name="color:Post Borders" content="#E9E9E9" />
+            <meta name="color:Link Posts" content="#E9E9E9" />
+            <meta name="color:Answer Posts" content="#E9E9E9" />
+            <meta name="color:Footer Text" content="#4B4B4B" />
+            <meta name="color:Hovered Footer Links" content="#232323" />
+        {/block:Hidden}
+        
+        <style>
+			/* --- Fonts --- */
+				@import 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700';
+				body{
+					font-family: 'Source Code Pro', monospace;
+					font-weight: 400;
+				}
+				header .title, .quote-wrap{
+					font-weight: 700;
+				}
+			
+			/* --- Theme Modifications --- */
+				/* --- Underline Blog Title --- */
+					{block:IfUnderlineBlogTitle}
+						header .title a{
+							text-decoration: underline;	
+						}
+					{/block:IfUnderlineBlogTitle}
+				
+				/* --- Underline Menu Links --- */
+					{block:IfUnderlineMenuLinks}
+						header nav a{
+							text-decoration: underline;	
+						}
+					{/block:IfUnderlineMenuLinks}
+				
+				/* --- Underline Footer Links --- */
+					{block:IfUnderlineFooterLinks}
+						footer a{
+							text-decoration: underline;	
+						}
+					{/block:IfUnderlineFooterLinks}
+				
+				/* --- Animate Link Posts --- */
+					{block:IfAnimateLinkPosts}
+						.link-wrap:hover{
+							padding-left: 30px;	
+							border-left: solid 10px {AccentColor};
+						}
+					{/block:IfAnimateLinkPosts}
+					
+			/* --- Colouring --- */
+				body{
+					background: {BackgroundColor};
+					color: {color:Text};	
+				}
+					a{
+						color: {AccentColor};	
+					}
+						a:hover{
+							color: {color:Hovered Links};	
+						}
+					
+					header, header a{
+						color: {color:Header Text};	
+					}
+					header a:hover{
+						color: {color:Hovered Header Links};	
+					}
+					
+					.entry{
+						background: {color:Posts};
+						color: {color:Text};	
+						border: solid 2px {color:Post Borders};
+					}
+						.link-wrap{
+							background: {color:Link Posts};	
+						}
+						.question{
+							background: {color:Answer Posts};	
+						}
+					
+					footer, footer a{
+						color: {color:Footer Text};	
+					}
+					footer a:hover{
+						color: {color:Hovered Footer Links};
+					}
+		</style>
+    </head>
+    
+    <body class="{block:PermalinkPage}permalink{/block:PermalinkPage}">
+    	
+        {block:IfShowHeader}
+            <header>
+                {block:ShowAvatar}
+                	<img src="{PortraitURL-128}" class="portrait" />
+                {/block:ShowAvatar}
+                <div class="title">
+                    <a href="{BlogURL}">{Title}</a>
+                </div>
+                {block:HasPages}
+                    <nav>
+                        {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+                    </nav>
+                {/block:HasPages}
+            </header>
+        {/block:IfShowHeader}
+        
+        <div class="content">
+        	
+            {block:Posts}
+            
+                {block:Text}
+                    <div class="entry four-col text">
+                        <div class="caption">
+                            {block:Title}
+                                <a href="{Permalink}">
+                                    <h1 class="post-title">{Title}</h1>
+                                </a>
+                            {/block:Title}
+                            {Body}
+                        </div>
+                    </div>
+                {/block:Text}    
+                
+                {block:Photo}
+                    <div class="entry four-col photo">
+                        <img src="{PhotoURL-HighRes}" class="featured" />
+                        {block:Caption}
+                            <div class="caption">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                    </div>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <div class="entry four-col photo">
+                        <center>
+                            {Photoset}
+                        </center>
+                        {block:Caption}
+                            <div class="caption">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                    </div>
+                {/block:Photoset}
+                
+                {block:Link}
+                    <div class="entry four-col link">
+                        <a href="{URL}" class="link">
+                            <div class="link-wrap">
+                                {block:Host}<em>{Host}</em>{/block:Host}
+                                <h1>{Name}</h1>
+                                {block:Excerpt}
+                                    <div class="excerpt">
+                                        {Excerpt}
+                                    </div>
+                                {/block:Excerpt}
+                            </div>
+                        </a>
+                        {block:Description}
+                            <div class="caption description">
+                                {Description}
+                            </div>
+                        {/block:Description}
+                    </div>
+                {/block:Link}
+                
+                {block:Quote}    
+                    <div class="entry four-col quote">
+                        <div class="quote-wrap">
+                            <h1>
+                                "{Quote}"
+                            </h1>
+                        </div>
+                        {block:Source}
+                            <div class="caption source">
+                                &mdash; {Source}
+                            </div>
+                        {/block:Source}
+                    </div>
+                {/block:Quote}
+                
+                {block:Chat}
+                    <div class="entry four-col chat">
+                        <div class="caption">
+                            {block:Title}
+                                <a href="{Permalink}">
+                                    <h1 class="post-title">{Title}</h1>
+                                </a>
+                            {/block:Title}
+                            <ul>
+                                {block:Lines}
+                                    <li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
+                                {/block:Lines}
+                            </ul>
+                        </div>
+                    </div>
+                {/block:Chat}
+                
+                {block:Audio}
+                    <div class="entry four-col audio">
+                        <div class="video-container">
+                            {AudioEmbed}
+                        </div>
+                        {block:Caption}
+                            <div class="caption">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                    </div>
+                {/block:Audio}
+                
+                {block:Video}    
+                    <div class="entry four-col video">
+                        <div class="video-container">
+                            {Video-700}
+                        </div>
+                        {block:Caption}
+                            <div class="caption">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                    </div>
+                {/block:Video}
+                
+                {block:Answer}
+                    <div class="entry four-col answer">
+                        <div class="question">
+                            {Asker} asked:
+                            {Question}
+                        </div>
+                        <div class="caption answer">
+                            {Answer}
+                        </div>
+                    </div>
+                {/block:Answer}
+                
+                {block:PermalinkPage}
+                    
+                    {block:HasTags}
+                        <div class="entry four-col tags">
+                            Tagged as: {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}.
+                        </div>
+                    {/block:HasTags}
+                    
+                    {block:PostNotes}
+                        <div class="entry four-col notes">
+                            <h1 id="notes">
+                                Notes
+                            </h1>
+                            {PostNotes-64}
+                        </div>
+                    {/block:PostNotes}
+                    
+                {/block:PermalinkPage}
+            
+            {/block:Posts}
+            
+            {block:Pagination}
+                <div class="pagination">
+                    {block:NextPage}
+                        <a href="{NextPage}" class="next">
+                            Next
+                        </a>
+                    {/block:NextPage}
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="back">
+                            Back
+                        </a>
+                    {/block:PreviousPage}
+                </div>
+            {/block:Pagination}
+            
+        </div>
+        
+        <footer>
+            {block:ShowAvatar}
+                <img src="{PortraitURL-128}" class="portrait" />
+            {/block:ShowAvatar}
+            <div class="title">
+                <a href="{BlogURL}">{Title}</a>
+            </div>
+            <div class="credit">
+                Designed by <a href="">Dune Themes</a>
+            </div>
+        </footer>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="http://static.tumblr.com/uv8mqxy/Im3o4r508/jquery.imagesloaded.min.js"></script>
+		<script src="http://static.tumblr.com/uv8mqxy/lT2o4r50k/jquery.infinitescroll.min.js"></script>
+        <script src="http://static.tumblr.com/uv8mqxy/rzLo4r510/masonry.pkgd.js"></script>
+        <script>
+            (function() {
+            
+                // Main content container
+                var $container = $('.content');
+            
+                // Masonry + ImagesLoaded
+                $container.imagesLoaded(function(){
+                    $container.masonry({
+                        // selector for entry content
+                        itemSelector: '.entry',
+                        fitWidth: true,
+                        resize: true,
+                    });
+                });
+            
+                // Infinite Scroll
+                $container.infinitescroll({
+            
+                    // selector for the paged navigation (it will be hidden)
+                    navSelector  : ".pagination",
+                    // selector for the NEXT link (to page 2)
+                    nextSelector : "a.next",
+                    // selector for all items you'll retrieve
+                    itemSelector : ".entry",
+            
+                    // finished message
+                    loading: {
+                        finishedMsg: 'No more pages to load.'
+                        }
+                    },
+            
+                    // Trigger Masonry as a callback
+                    function( newElements ) {
+                        // hide new items while they are loading
+                        var $newElems = $( newElements ).css({ opacity: 0 });
+                        // ensure that images load before adding to masonry layout
+                        $newElems.imagesLoaded(function(){
+                            // show elems now they're ready
+                            $newElems.animate({ opacity: 1 });
+                            $container.masonry( 'appended', $newElems, true );
+                        });
+            
+                });
+            
+            })();
+        </script>
+        	
+    </body>
+    
+</html>
