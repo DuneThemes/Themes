@@ -268,12 +268,12 @@
             {/block:IfShowHeader}
             
             
-            <div class="content {select:Post Layout}">
+            <div class="content {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage}">
     
             	{block:Posts}
                 	
                     {block:Text}
-                        <div class="entry {select:Post Layout} text">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} text">
                             <div class="caption">
                                 {block:Title}
                                     <a href="{Permalink}">
@@ -311,7 +311,7 @@
                     {/block:Text}
                     
                     {block:Photo}
-                        <div class="entry {select:Post Layout} photo">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} photo">
                             <img src="{PhotoURL-HighRes}" class="featured" />
                             {block:Caption}
                                 <div class="caption">
@@ -347,7 +347,7 @@
                     {/block:Photo}
                     
                     {block:Photoset}
-                        <div class="entry {select:Post Layout} photo">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} photo">
                             <center>{Photoset}</center>
                             {block:Caption}
                                 <div class="caption">
@@ -383,7 +383,7 @@
                     {/block:Photoset}
                     
                     {block:Link}
-                        <div class="entry {select:Post Layout} link">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} link">
                             <a href="{URL}" class="link">
                                 <div class="link-wrap">
                                     {block:Host}<em>{Host}</em>{/block:Host}
@@ -429,7 +429,7 @@
                     {/block:Link}
                     
                     {block:Quote}
-                        <div class="entry {select:Post Layout} quote">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} quote">
                             <div class="quote-wrap">
                                 <h1>
                                     "{Quote}"
@@ -469,7 +469,7 @@
                     {/block:Quote}
                     
                     {block:Chat}
-                        <div class="entry {select:Post Layout} chat">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} chat">
                             <div class="caption">
                                 {block:Title}
                                     <a href="{Permalink}">
@@ -511,7 +511,7 @@
                     {/block:Chat}
                     
                     {block:Audio}
-                        <div class="entry {select:Post Layout} audio">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} audio">
                             <div class="video-container">
                                 {AudioEmbed}
                             </div>
@@ -549,7 +549,7 @@
                     {/block:Audio}
                     
                     {block:Video}
-                        <div class="entry {select:Post Layout} video">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} video">
                             <div class="video-container">
                                 {Video-700}
                             </div>
@@ -587,7 +587,7 @@
                     {/block:Video}
                     
                     {block:Answer}
-                        <div class="entry {select:Post Layout} answer">
+                        <div class="entry {select:Post Layout} {block:PermalinkPage}one-col{/block:PermalinkPage} answer">
                             <div class="question">
                                 {Asker} asked:
                                 {Question}
