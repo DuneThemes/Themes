@@ -1,0 +1,1646 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>{block:PostTitle}{PostTitle} |{/block:PostTitle} {Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    {block:Description}
+    	<meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/gvunna6e1/creditshake.css" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/fbFoyop1w/seriousblogger.css" />
+    
+    <!--
+        Serious Blogger by Dune Themes
+        
+        Need help?
+        dunethemes.tumblr.com/support
+        dunethemes@gmail.com
+        @DuneThemes
+        
+        Do not redistribute or claim as your own.
+        © Dune Themes
+    -->
+    
+    {block:Hidden}
+    	<!-- Theme Modifications -->
+        	<!-- Global -->
+            	<meta name="if:Infinite Scroll" content="1" />
+                <meta name="if:Animate Pagination Links" content="1" />
+                <meta name="if:Show Preloader" content="1" />
+                <meta name="if:Show Link To Dune Themes" content="1" />
+                <meta name="if:Show Shadows" content="1" />
+                <meta name="if:Animate Main Menu Links" content="1" />
+                <!-- Background Image -->
+                	<meta name="image:Background" content="http://static.tumblr.com/uv8mqxy/5lpoyn6ay/black_wall.png" />
+                    <meta name="select:Background Attachment" title="Fixed" content="fixed" />
+                    <meta name="select:Background Attachment" title="Local" content="local" />
+                    <meta name="select:Background Attachment" title="Scroll" content="scroll" />
+                    <meta name="select:Background Repeat" title="Repeat" content="repeat" />
+                    <meta name="select:Background Repeat" title="Don't Repeat" content="no-repeat" />
+                    <meta name="select:Background Size" title="Cover" content="cover" />
+                    <meta name="select:Background Size" title="Contain" content="contain" />
+            <!-- Header -->
+            	<meta name="if:Show Header" content="1" />
+                <meta name="if:Show Searchbar" content="1" />
+                <meta name="if:Animate Searchbar" content="1" />
+                <meta name="select:Blog Title Alignment" title="Center" content="center" />
+                <meta name="select:Blog Title Alignment" title="Right" content="right" />
+                <meta name="select:Blog Title Alignment" title="Left" content="left" />
+                <meta name="image:Header Logo" content="" />
+                <meta name="text:Searchbar Text" content="Search..." />
+            
+            <!-- Slider -->
+            	<meta name="if:Show Slider" content="0" />
+                <!-- Images -->
+                	<meta name="image:Slide One" content="" />
+                    <meta name="image:Slide Two" content="" />
+                    <meta name="image:Slide Three" content="" />
+                    <meta name="image:Slide Four" content="" />
+                    <meta name="image:Slide Five" content="" />
+                    <meta name="image:Slide Six" content="" />
+               <!-- text (URLs) -->
+               		<meta name="text:Slide One URL" content="" />
+                    <meta name="text:Slide Two URL" content="" />
+                    <meta name="text:Slide Three URL" content="" />
+                    <meta name="text:Slide Four URL" content="" />
+                    <meta name="text:Slide Five URL" content="" />
+                    <meta name="text:Slide Six URL" content="" />
+                    
+           	<!-- Sidebar -->
+            	<meta name="select:Sidebar Alignment" title="Center" content="center" />
+                <meta name="select:Sidebar Alignment" title="Right" content="right" />
+                <meta name="select:Sidebar Alignment" title="Left" content="left" />
+                <meta name="if:Show Generic Links" content="1" />
+                <meta name="if:Show Archive Link" content="1" />
+                <meta name="if:Show Ask Link" content="1" />
+                <meta name="if:Show Random Link" content="1" />
+                <meta name="if:Show Submit Link" content="1" />
+                <!-- Social Links -->
+                	<meta name="text:Twitter URL" content="" />
+                    <meta name="text:Facebook URL" content="" />
+                    <meta name="text:Instagram URL" content="" />
+                    <meta name="text:WordPress URL" content="" />
+                    <meta name="text:YouTube URL" content="" />
+                    <meta name="text:Google Plus URL" content="" />
+                    <meta name="text:GitHub URL" content="" />
+                    <meta name="text:Apple URL" content="" />
+                    <meta name="text:Flickr URL" content="" />
+                    <meta name="text:Angellist URL" content="" />
+                    <meta name="text:BandCamp URL" content="" />
+                    <meta name="text:Behance URL" content="" />
+                    <meta name="text:Bitcoin URL" content="" />
+                    <meta name="text:Codepen URL" content="" />
+                    <meta name="text:Delicious URL" content="" />
+                    <meta name="text:Dashcube URL" content="" />
+                    <meta name="text:DeviantArt URL" content="" />
+                    <meta name="text:Digg URL" content="" />
+                    <meta name="text:Dribbble URL" content="" />
+                    <meta name="text:Etsy URL" content="" />
+                    <meta name="text:Forumbee URL" content="" />
+                    <meta name="text:IMDb URL" content="" />
+                    <meta name="text:JSFiddle URL" content="" />
+                    <meta name="text:LastFM URL" content="" />
+                    <meta name="text:LinkedIn URL" content="" />
+                    <meta name="text:Medium URL" content="" />
+                    <meta name="text:Mixcloud URL" content="" />
+                    <meta name="text:Odnoklassniki URL" content="" />
+                    <meta name="text:PayPal URL" content="" />
+                    <meta name="text:Pinterest URL" content="" />
+                    <meta name="text:SoundCloud URL" content="" />
+                    <meta name="text:Spotify URL" content="" />
+                    <meta name="text:Steam URL" content="" />
+                    <meta name="text:Stack Exchange URL" content="" />
+                    <meta name="text:Stack Overflow URL" content="" />
+                    <meta name="text:Skype URL" content="" />
+                    <meta name="text:VK URL" content="" />
+                    <meta name="text:Renren URL" content="" />
+                    <meta name="text:QQ URL" content="" />
+                    <meta name="text:Tumblr URL" content="" />
+                    <meta name="text:WhatsApp URL" content="" />
+                    <meta name="text:Vimeo URL" content="" />
+                    <meta name="text:Twitch URL" content="" />
+                <!-- Featured Post -->
+                	<meta name="image:Featured Post" content="" />
+                    <meta name="text:Featured Post Link" content="" />
+                    <meta name="text:Featured Post Title" content="" />
+                <!-- Blog Friends -->
+                	<meta name="image:Blog Friend One" content="" />
+                    <meta name="text:Blog Friend One URL" content="" />
+                    <meta name="text:Blog Friend One Title" content="" />
+                    <meta name="image:Blog Friend Two" content="" />
+                    <meta name="text:Blog Friend Two URL" content="" />
+                    <meta name="text:Blog Friend Two Title" content="" />
+                    <meta name="image:Blog Friend Three" content="" />
+                    <meta name="text:Blog Friend Three URL" content="" />
+                    <meta name="text:Blog Friend Three Title" content="" />
+                    <meta name="image:Blog Friend Four" content="" />
+                    <meta name="text:Blog Friend Four URL" content="" />
+                    <meta name="text:Blog Friend Four Title" content="" />
+                <!-- Blogroll -->
+                	<meta name="if:Show Blogroll" content="1" />
+                    <meta name="select:Blogroll Limit" title="Twenty" content="twenty" />
+                    <meta name="select:Blogroll Limit" title="Fifty" content="fifty"  />
+                    <meta name="select:Blogroll Limit" title="One Hundred" content="one-hundred" />
+                    <meta name="select:Blogroll Limit" title="No Limit" content="no-limit" /> 
+                <!-- Most Recent Video -->
+                	<meta name="if:Show Most Recent Video" content="0" />
+                    <meta name="text:YouTube Channel" content="" /> 
+                <!-- Recent Posts -->
+                	<meta name="if:Show Recent Posts" content="1" />
+                
+            <!-- Content -->
+            	<meta name="select:Post Layout" title="Single" content="single-layout" />
+                <meta name="select:Post Layout" title="Grid" content="grid-layout" />
+                <meta name="if:Show Post Ribbon" content="1" />
+                <meta name="if:Show Post Information" content="1" />
+                <meta name="if:Show Note Count" content="1" />
+                <meta name="if:Show Time Stamps" content="1" />
+                <meta name="if:Show Tags" content="1" />
+                <meta name="if:Enable Group Blog Featues" content="1" />
+                
+            <!-- Footer -->
+            	<meta name="if:Show Footer" content="1" />
+                <meta name="image:Footer Logo" content="" />
+                <meta name="text:Footer Text Title" content="About Us" />
+                <meta name="text:Footer Text" content="Summarise your blog here." />
+                
+           	<!-- Colouring -->
+            	<meta name="color:Searchbar" content="#fff" />
+                <meta name="color:Searchbar Text" content="#000" />
+                <meta name="color:Searchbar Button Text" content="#000" />
+                <meta name="color:Searchbar Button" content="#fff" />
+                <meta name="color:Sidebar" content="#fff" />
+                <meta name="color:Sidebar Text" content="#000" />
+                <meta name="color:Generic Links" content="#D4D4D4" />
+                <meta name="color:Generic Links Text" content="#000" />
+                <meta name="color:Featured Post Text Border" content="#E3E3E3" />
+                <meta name="color:Social Link Background" content="#e63535" />
+                <meta name="color:Social Link Icon" content="#fff" />
+                <meta name="color:Main Menu" content="#DCDCDC" />
+                <meta name="color:Main Menu Links" content="#000" />
+                <meta name="color:Main Menu Links Hovered" content="#C5C5C5" />
+                <meta name="color:Posts" content="#fff" />
+                <meta name="color:Post Text" content="#000" />
+                <meta name="color:Link Post Text" content="#fff" />
+                <meta name="color:Link Post Backgrounds" content="#e63535" />
+                <meta name="color:Quotes" content="#C5C5C5" />
+                <meta name="color:Questions" content="#C5C5C5" />
+                <meta name="color:Post Information" content="#CFCFCF" />
+                <meta name="color:Post Information Text" content="#000" />
+                <meta name="color:Post Information Links" content="#000" />
+                <meta name="color:Post Ribbons" content="#e63535" />
+                <meta name="color:Post Ribbon Text" content="#fff" />
+                <meta name="color:Post Ribbon Borders" content="#D92626" />
+                <meta name="color:Pagination" content="#e63535" />
+                <meta name="color:Pagination Text" content="#fff" />
+                <meta name="color:Footer" content="#C5C5C5" />
+                <meta name="color:Footer Text" content="#000" />
+                <meta name="color:Footer Main Menu" content="#fff" />
+                <meta name="color:Footer Main Menu Text" content="#000" />
+                <meta name="color:Footer Main Menu Hovered" content="#C5C5C5" />
+                <meta name="color:Preloader" content="#e63535" />
+                <meta name="color:Preloader Text" content="#fff" />
+    {/block:Hidden}
+    
+    <style>
+		/* --- Fonts --- */
+			@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+			@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+			body{
+				font-family: 'Open Sans', sans-serif;	
+			}
+			.blog-title{
+				font-family: 'Permanent Marker', cursive;	
+			}
+		
+		/* --- Theme Modifications --- */
+			/* --- Header --- */
+				/* --- Blog Title Alignment --- */
+					.blog-title{
+						text-align: {select:Blog Title Alignemnt};	
+					}
+				
+			/* --- Sidebar --- */
+				/* --- Sidebar Text Alignment --- */
+					.sidebar{
+						text-align: {select:Sidebar Alignment};	
+					}
+					
+		/* --- Colouring --- */
+			body{
+				background: {BackgroundColor};	
+			}
+			a{
+				color: {AccentColor};	
+			}
+				/* --- Header --- */
+					a.blog-link{
+						color: {TitleColor};	
+					}
+					form.search input{
+						background: {color:Searchbar};
+						color: {color:Searchbar Text};
+					}
+					form.search button{
+						color: {color:Searchbar Button Text};
+						background: {color:Searchbar Button};
+						border: solid 2px {color:Searchbar Button};
+					}
+						{block:IfAnimateSearchbar}
+							form.search input:focus{
+								box-shadow: 0px 0px 10px {AccentColor};	
+							}
+							form.search button:hover{ /* Invert colours */
+								color: {color:Searchbar Button};
+								background: {color:Searchbar Button Text};
+								border: solid 2px {color:Searchbar Button};	
+							}
+						{/block:IfAnimateSearchbar}
+				
+				/* --- Sidebar --- */
+					.sidebar{
+						color: {color:Sidebar Text};
+						background: {color:Sidebar};	
+						{block:IfShowShadows}
+							box-shadow: -5px 5px 4px rgba(26,26,26,0.53);
+						{/block:IfShowShadows}
+					}
+						nav.gen-links{
+							background: {color:Generic Links};
+						}
+							nav.gen-links a{
+								color: {color:Generic Links Text};	
+							}
+						.featured-post-title{
+							border-left: solid 2px {color:Featured Post Text Border};	
+						}
+						.fa-stack-2x{
+							color: {color:Social Link Background};	
+						}
+						.fa-stack-1x{
+							color: {color:Social Link Icon};	
+						}
+						
+				/* --- Main Menu --- */
+					nav.main-menu{
+						background: {color:Main Menu};
+						{block:IfShowShadows}
+							box-shadow: 0px 5px 4px rgba(26,26,26,0.53);	
+						{/block:IfShowShadows}
+					}
+						nav.main-menu a{
+							color: {color:Main Menu Links};	
+						}
+						{block:IfAnimateMainMenuLinks}
+							nav.main-menu li:hover{
+								background: {color:Main Menu Links Hovered};	
+							}
+						{/block:IfAnimateMainMenuLinks}
+				
+				/* --- Content --- */
+					.entry{
+						background: {color:Posts};	
+						color: {color:Post Text};
+					}
+						a.link{
+							color: {color:Link Post Text};	
+						}
+							.link-wrap{
+								background: {color:Link Post Backgrounds};	
+							}
+						.entry.chat ul li:nth-child(even){
+							background: #ECECEC;	
+						}
+						.quote-wrap{
+							background: {color:Quotes};	
+						}
+						.question{
+							background: {color:Questions};
+						}
+						/* --- Post Info --- */
+							.post-info{
+								background: {color:Post Information};
+								color: {color:Post Information Text};	
+							}
+								.post-info a{
+									color: {color:Post Information Links};	
+								}
+						/* --- Post Ribbons --- */
+							.post-ribbon{
+								background: {color:Post Ribbons};
+								color: {color:Post Ribbon Text};
+								border: solid 2px {color:Post Ribbon Borders};
+								border-top: none;
+							}
+					/* --- Pagination --- */
+						.pagination a{
+							background: {color:Pagination};
+							color: {color:Pagination Text};
+						}
+							{block:IfAnimatePaginationLinks}
+								.pagination a:hover{
+									background: {color:Pagination Text};
+									color: {color:Pagination};
+								}
+							{/block:IfAnimatePaginationLinks}
+					/* --- Notes --- */
+						.entry.notes h1{
+							color: {color:Post Text};	
+						}
+				/* --- Footer --- */
+					.footer{
+						background: {color:Footer};
+						color: {color:Footer Text};	
+					}
+						.footer a.blog-link{
+							color: {color:Footer Text};	
+						}
+						.footer-menu{
+							background: {color:Footer Main Menu};
+							{block:IfShowShadows}
+								box-shadow: 0px 5px 4px rgba(26,26,26,0.53);	
+							{/block:IfShowShadows}
+						}
+							.footer-menu a{
+								color: {color:Footer Main Menu Text};	
+							}
+							{block:IfAnimateMainMenuLinks}
+								.footer-menu li:hover{
+									background: {color:Footer Main Menu Hovered};	
+								}
+							{/block:IfAnimateMainMenuLinks}
+					
+				/* --- Preloader --- */
+					.preloader{
+						background: {color:Preloader};
+						color: {color:Preloader Text};	
+					}
+		/* --- Images --- */
+			body{
+				background: url({image:Background}); /* overrides body background colour */
+				background-attachment: {select:Background Attachment};
+				background-repeat: {select:Background Repeat};
+				background-size: {select:Background Size}; 
+			}
+	</style>
+</head>
+
+<body class="{block:PermalinkPage}permalink{/block:PermalinkPage}">
+	
+    <a href="http://dunethemes.tumblr.com">
+         <div id="credit">
+             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+			 width="80px" viewBox="0 0 2714.000000 657.000000"
+			 preserveAspectRatio="xMidYMid meet">
+				<g transform="translate(0.000000,657.000000) scale(0.100000,-0.100000)"
+				fill="{color:Posts}" stroke="none">
+				<path d="M145 6555 c-56 -20 -110 -81 -129 -146 -23 -77 -23 -651 -1 -727 19
+				-63 66 -119 120 -143 38 -18 140 -19 2435 -19 1617 0 2407 3 2432 10 53 15 93
+				52 125 118 l28 57 0 335 c0 250 -3 344 -13 372 -21 59 -70 118 -115 139 -41
+				18 -105 19 -2442 18 -2043 0 -2406 -2 -2440 -14z"/>
+				<path d="M6308 6560 c-50 -15 -86 -50 -117 -112 l-31 -61 0 -342 0 -342 31
+				-62 c22 -43 43 -70 72 -89 l41 -27 2431 0 2431 0 43 28 c31 21 50 45 72 90
+				l29 62 0 341 0 341 -31 62 c-22 43 -43 70 -72 89 l-41 27 -2415 2 c-1329 1
+				-2428 -2 -2443 -7z"/>
+				<path d="M12408 6493 l-58 -59 0 -375 0 -375 58 -56 57 -57 1490 -4 c1484 -4
+				1490 -4 1605 -25 568 -109 863 -405 967 -972 25 -137 25 -585 0 -717 -52 -275
+				-139 -461 -290 -619 -192 -203 -468 -315 -847 -344 -83 -6 -667 -10 -1530 -10
+				l-1394 0 -58 -57 -58 -57 0 -390 0 -389 41 -53 c24 -31 58 -61 83 -74 l42 -20
+				7227 0 c6038 0 7233 2 7260 13 46 20 102 86 121 145 15 44 17 93 14 384 l-3
+				333 -27 52 c-15 28 -44 64 -65 80 l-36 28 -4885 3 c-3896 2 -4883 5 -4879 15
+				170 396 233 710 244 1212 23 1027 -263 1737 -854 2122 -171 111 -404 207 -629
+				258 -274 61 -189 59 -1939 62 l-1600 4 -57 -58z"/>
+				<path d="M145 4715 c-56 -20 -110 -81 -129 -146 -23 -77 -23 -651 -1 -727 19
+				-63 66 -119 120 -143 39 -18 221 -19 4907 -19 l4867 0 -29 -63 c-100 -221
+				-170 -508 -205 -842 -19 -178 -22 -623 -5 -795 37 -388 114 -691 244 -957 289
+				-591 778 -913 1526 -1004 67 -9 554 -13 1664 -16 l1570 -4 58 58 58 57 0 386
+				0 386 -53 52 -53 52 -1439 0 c-1201 0 -1461 2 -1565 15 -604 71 -954 389
+				-1055 962 -43 244 -41 549 6 788 104 544 455 848 1054 915 56 6 641 10 1540
+				10 l1451 0 59 60 60 61 3 347 c5 437 5 437 -58 505 -32 35 -62 57 -88 65 -30
+				9 -1750 12 -7253 12 -6193 -1 -7220 -3 -7254 -15z"/>
+				<path d="M15960 1029 c-38 -15 -69 -48 -98 -104 l-27 -50 0 -350 0 -350 28
+				-58 c20 -40 42 -66 70 -85 l41 -27 2421 -3 2421 -2 44 22 c56 29 95 84 116
+				166 13 53 15 114 12 365 -3 291 -4 304 -26 352 -26 56 -63 100 -104 121 -23
+				12 -383 14 -2450 13 -1585 0 -2432 -4 -2448 -10z"/>
+				<path d="M22105 1021 c-44 -27 -71 -60 -97 -116 -22 -48 -23 -63 -26 -337 -3
+				-192 0 -311 8 -358 15 -90 57 -156 120 -188 l44 -22 2408 0 c1997 0 2414 2
+				2441 13 46 20 102 86 121 145 15 44 17 93 14 384 l-3 333 -27 52 c-15 28 -44
+				64 -65 80 l-36 28 -2436 2 c-2363 3 -2437 2 -2466 -16z"/>
+				</g>
+    		</svg>
+    	</div>
+    </a>
+    
+    {block:IfShowPreloader}
+        <div class="preloader">
+            <div class="centered">
+                <i class="fa fa-fw fa-cog fa-spin fa-4x"></i><br><br>
+                <h1>Getting things ready...</h1>
+            </div>
+        </div>
+    {/block:IfShowPreloader}
+    
+    <div class="wrap">
+    		
+        {block:IfShowHeader}
+            <div class="header-wrap"><!-- start | header -->
+                
+                {block:IfShowSearchbar}
+                    <form class="search" action="/search" method="get">
+                        <input type="text" name="q" value="{SearchQuery} "class="search-input" placeholder="{text:Searchbar Text}" />
+                        <button type="submit">
+                            <i class="fa fa-fw fa-search"></i>
+                        </button>
+                    </form>
+                {/block:IfShowSearchbar}
+                
+                {block:IfHeaderLogoImage}
+                    <a href="{BlogURL">
+                        <div class="custom-logo">
+                            <img src="{image:Header Logo}" />
+                        </div>
+                    </a>
+                {/block:IfHeaderLogoImage}
+                
+                {block:IfNotHeaderLogoImage}
+                    {block:ShowTitle}
+                        <a href="{BlogURL}" class="blog-link">
+                            <div class="blog-title">
+                                {Title}
+                            </div>
+                        </a>
+                    {/block:ShowTitle}
+                {/block:IfNotHeaderLogoImage}
+                
+            </div><!-- end | header -->
+        {/block:IfShowHeader}
+        
+        <div class="blog-content-wrap"><!-- start | blog content -->
+        	
+            {block:HasPages}
+                <nav class="main-menu">
+                    {block:Pages}
+                    	<li><a href="{URL}">{Label}</a></li>
+                    {/block:Pages}
+                    {block:IfShowLinkToDuneThemes}
+                    	<li><a href="http://dunethemes.tumblr.com" target="_blank">Themes</a></li>
+                    {/block:IfShowLinkToDuneThemes}
+                </nav>
+            {/block:HasPages}
+            
+            {block:IfShowSlider}
+                <div class="slider-wrap"><!-- start | slider -->
+                    <div class="slider-slick">
+                        {block:IfSlideOneImage}
+                            <a href="{text:Slide One URL}">
+                                <div>
+                                    <img src="{image:Slide One}" />
+                                </div>
+                            </a>
+                        {/block:IfSlideOneImage}
+                        {block:IfSlideTwoImage}
+                            <a href="{text:Slide Two URL}">
+                                <div>
+                                    <img src="{image:Slide Two}" />
+                                </div>
+                            </a>
+                        {/block:IfSlideTwoImage}
+                        {block:IfSlideThreeImage}
+                            <a href="{text:Slide Three URL}">
+                                <div>
+                                    <img src="{image:Slide Three}" />
+                                </div>
+                            </a>
+                        {/block:IfSlideThreeImage}
+                        {block:IfSlideFourImage}
+                            <a href="{text:Slide Four URL}">
+                                <div>
+                                    <img src="{image:Slide Four}" />
+                                </div>
+                            </a>
+                        {/block:IfSlideFourImage}
+                        {block:IfSlideFiveImage}
+                            <a href="{text:Slide Five URL}">
+                                <div>
+                                    <img src="{image:Slide Five" />
+                                </div>
+                            </a>
+                        {/block:IfSlideFiveImage}
+                        {block:IfSlideSixImage}
+                            <a href="{text:Slide Six URL}">
+                                <div>
+                                    <img src="{image:Slide Six URL}" />
+                                </div>
+                            </a>
+                        {/block:IfSlideSixImage}
+                    </div>
+                </div><!-- end | slider -->
+            {/block:IfShowSlider}
+            
+            <div class="content {select:Post Layout}"><!-- start | content -->
+            	
+                {block:Posts}
+                
+                    {block:Text}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col text">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <div class="caption">
+                                {block:Title}
+                                    <a href="{Permalink}">
+                                        <h1 class="post-title">{Title}</h1>
+                                    </a>
+                                {/block:Title}
+                                {Body}
+                            </div>
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Text}
+                    
+                    {block:Photo}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col photo">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <img src="{PhotoURL-HighRes}" class="featured" />
+                            {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                            {/block:Caption}
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Photo}
+                    
+                    {block:Photoset}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col photo">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <center>
+                            	{Photoset}
+                            </center>
+                            {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                            {/block:Caption}
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Photoset}
+                    
+                    {block:Link}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col link">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <a href="{URL}" class="link">
+                                <div class="link-wrap">
+                                    {block:Host}
+                                    	<em>{Host}</em>
+                                    {/block:Host}
+                                    <h1>{Name}</h1>
+                                    {block:Excerpt}
+                                        <div class="excerpt">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        </div>
+                                    {/block:Excerpt}
+                                </div>
+                            </a>
+                            {block:Description}
+                                <div class="caption description">
+                                    {Description}
+                                </div>
+                            {/block:Description}
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Link}
+                    
+                    {block:Quote}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col quote">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <div class="quote-wrap">
+                                <h1>
+                                    "{Quote}"
+                                </h1>
+                            </div>
+                            {block:Source}
+                                <div class="caption source">
+                                    &mdash; {Source}
+                                </div>
+                            {/block:Source}
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Quote}
+                    
+                    {block:Chat}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col chat">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <div class="caption">
+                                {block:Title}
+                                    <a href="{Permalink}">
+                                        <h1 class="post-title">{Title}</h1>
+                                    </a>
+                                {/block:Title}
+                                <ul>
+                                    {block:Lines}
+                                    	<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
+                                    {/block:Lines}
+                                </ul>
+                            </div>
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Chat}
+                    
+                    {block:Audio}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col audio">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <div class="video-container">
+                                {AudioEmbed}
+                            </div>
+                            {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                            {/block:Caption}
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Audio}
+                    
+                    {block:Video}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col video">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <div class="video-container">
+                                {Video-700}
+                            </div>
+                            {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                            {/block:Caption}
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Video}
+                    
+                    {block:Answer}
+                        <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col answer">
+                            {block:IfShowPostRibbon}
+                                <a href="{Permalink}" class="post-ribbon-link">
+                                    <div class="post-ribbon">
+                                        <i class="fa fa-fw fa-link"></i>
+                                    </div>
+                                </a>
+                            {/block:IfShowPostRibbon}
+                            <div class="question">
+                                {Asker} asked:
+                                {Question}
+                            </div>
+                            <div class="caption answer">
+                                {Answer}
+                            </div>
+                            {block:IfShowPostInformation}
+                                <div class="post-info">
+                                    {block:IfShowNoteCount}
+                                        <div class="notes">
+                                            <a href="{Permalink}#notes-anchor">{NoteCountWithLabel}</a>
+                                        </div>
+                                    {/block:IfShowNoteCount}
+                                    {block:IfShowTimeStamps}
+                                        <div class="time-stamp">
+                                            <a href="{Permalink}">{TimeAgo}</a>
+                                        </div>
+                                    {/block:IfShowTimeStamps}
+                                    {block:IfEnableGroupBlogFeatures}
+                                        <div class="grpblg-author">
+                                            Written by <a href="{PostAuthorURL}">{PostAuthorName}</a>.
+                                        </div>
+                                    {/block:IfEnableGroupBlogFeatures}
+                                    {block:IfShowTags}
+                                        {block:HasTags}
+                                            <div class="tags">
+                                                {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{/block:Tags}
+                                            </div>
+                                        {/block:HasTags}
+                                    {/block:IfShowTags}
+                                </div>	
+                            {/block:IfShowPostInformation}
+                        </div>
+                    {/block:Answer}
+                
+                    {block:PermalinkPage}
+                        {block:PostNotes}
+                            <div class="entry {block:IfInfiniteScroll}endless{/block:IfInfiniteScroll} two-col notes">
+                                <h1 id="notes-anchor">Post Notes</h1>
+                                {PostNotes-64}	
+                            </div>
+                        {/block:PostNotes}
+                    {/block:PermalinkPage}
+                
+                {/block:Posts}
+                
+            </div><!-- end | content -->
+            
+            {block:IfNotInfiniteScroll}
+                {block:Pagination}
+                    <div class="pagination">
+                        {block:PreviousPage}
+                            <a href="{PreviousPage}" class="back">
+                                Back
+                            </a>
+                        {/block:PreviousPage}
+                        {block:NextPage}
+                            <a href="{NextPage}" class="next">
+                                Next
+                            </a>
+                        {/block:NextPage}
+                    </div>
+                {/block:Pagination}
+            {/block:IfNotInfiniteScroll}
+        	
+            <div class="sidebar"><!-- start | sidebar -->
+            	
+                {block:IfShowGenericLinks}
+                    <nav class="gen-links"><!-- generic menu -->
+                        {block:IfShowAskLink}
+							<li><a href="{BlogURL}ask">Ask</a></li>
+                        {/block:IfShowAskLink}
+                        {block:IfShowArchiveLink}
+                        	<li><a href="{BlogURL}archive">Archive</a></li>
+                        {/block:IfShowArchiveLink}
+                        {block:IfShowRandomLink}
+                        	<li><a href="{BlogURL}random">Random</a></li>
+                        {/block:IfShowRandomLink}
+                        {block:IfShowSubmitLink}
+                        	<li><a href="{BlogURL}submit">Submit</a></li>
+                        {/block:IfShowSubmitLink}
+                    </nav>
+                {/block:IfShowGenericLinks}
+                
+                {block:ShowDescription}
+                    <div class="description">
+                        {Description}
+                    </div>
+                {/block:ShowDescription}
+                
+                <div class="social-links">
+
+                	{block:IfTwitterURL}
+                        <a href="{text:Twitter URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfTwitterURL}
+                    
+                    {block:IfFacebookURL}
+                        <a href="{text:Facebook URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfFacebookURL}
+                    
+                    {block:IfInstagramURL}
+                        <a href="{text:Instagram URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfInstagramURL}
+    
+                    {block:IfWordPressURL}
+                        <a href="{text:WordPress URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wordpress fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfWordPressURL}
+    
+                    {block:IfYouTubeURL}
+                        <a href="">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    {/block:IfYouTubeURL}
+    
+                    {block:IfGooglePlusURL}
+                        <a href="{text:Google Plus URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfGooglePlusURL}
+    
+                    {block:IfGitHubURL}
+                        <a href="{text:GitHub URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfGitHubURL}
+    
+                    {block:IfAppleURL}
+                        <a href="{text:Apple URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-apple fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfAppleURL}
+    
+                    {block:IfFlickrURL}
+                        <a href="{text:Flickr URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-flickr fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfFlickrURL}
+                    
+                    {block:IfAngellistURL}
+                        <a href="{text:Angellist URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-angellist fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfAngellistURL}
+                    
+                    {block:IfBandcampURL}
+                        <a href="{text:Bandcamp URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfBandcampURL}
+                    
+                    {block:IfBehanceURL}
+                        <a href="{text:Behance URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-behance fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfBehanceURL}
+                    
+                    {block:IfBitcoinURL}
+                        <a href="{text:Bitcoin URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-bitcoin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfBitcoinURL}
+                    
+                    {block:IfCodepenURL}
+                        <a href="{text:Codepen URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-codepen fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfCodepenURL}
+                    
+                    {block:IfDeliciousURL}
+                        <a href="{text:DeliciousURL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-delicious fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfDeliciousURL}
+                    
+                    {block:IfDashcubeURL}
+                        <a href="{text:Dashcube URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-dashcube fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfDashcubeURL}
+                    
+                    {block:DeviantArtURL}
+                        <a href="{text:DeviantArt URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-deviantart fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:DeviantArtURL}
+                    
+                    {block:IfDiggURL}
+                        <a href="{text:Digg URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-digg fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfDiggURL}
+                    
+                    {block:IfDribbbleURL}
+                        <a href="{text:Dribbble URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-dribbble fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfDribbbleURL}
+                    
+                    {block:IfEtsyURL}
+                        <a href="{text:Etsy URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-etsy fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfEtsyURL}
+                    
+                    {block:IfForumbeeURL}
+                        <a href="{text:Forumbee URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-forumbee fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfForumbeeURL}
+                    
+                    {block:IfIMDbURL}
+                        <a href="{text:IMDb URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-imdb fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfIMDbURL}
+                    
+                    {block:IfJSFiddleURL}
+                        <a href="{text:JSFiddle URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-jsfiddle fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfJSFiddleURL}
+                    
+                    {block:IfLastFMURL}
+                        <a href="{text:LastFM URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-lastfm fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfLastFMURL}
+                    
+                    {block:IfLinkedInURL}
+                        <a href="{text:LinkedIn URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfLinkedInURL}
+                    
+                    {block:IfMediumURL}
+                        <a href="{text:Medium URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-medium fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfMediumURL}
+                    
+                    {block:IfMixcloudURL}
+                        <a href="{text:Mixcloud URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mixcloud fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfMixcloudURL}
+                    
+                    {block:IfOdnoklassnikiURL}
+                        <a href="{text:Odnoklassniki URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-odnoklassniki fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfOdnoklassnikiURL}
+                    
+                    {block:IfPayPalURL}
+                        <a href="{text:PayPal URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfPayPalURL}
+                    
+                    {block:IfPinterestURL}
+                        <a href="{text:Pinterest URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfPinterestURL}
+                    
+                    {block:IfSoundCloudURL}
+                        <a href="{text:SoundCloud URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfSoundCloudURL}
+                    
+                    {block:IfSpotifyURL}
+                        <a href="{text:Spotify URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfSpotifyURL}
+                    
+                    {block:IfSteamURL}
+                        <a href="{text:Steam URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-steam fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfSteamURL}
+                    
+                    {block:IfStackExchangeURL}
+                        <a href="{text:Stack Exchange URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfStackExchangeURL}
+                    
+                    {block:IfStackOverflowURL}
+                        <a href="{text:Stack Overflow URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfStackOverflowURL}
+                    
+                    {block:IfSkypeURL}
+                        <a href="{text:Skype URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-skype fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfSkypeURL}
+                    
+                    {block:IfVKURL}
+                        <a href="{text:VK URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfVKURL}
+                    
+                    {block:IfRenrenURL}
+                        <a href="{text:Renren URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-renren fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfRenrenURL}
+                    
+                    {block:IfQQURL}
+                        <a href="{text:QQ URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfQQURL}
+                    
+                    {block:IfTumblrURL}
+                        <a href="{text:Tumblr URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-tumblr fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfTumblrURL}
+                    
+                    {block:IfWhatsAppURL}
+                        <a href="{text:WhatsApp}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfWhatsAppURL}
+                    
+                    {block:IfVimeoURL}
+                        <a href="{text:Vimeo URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-vimeo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfVimeoURL}
+                    
+                    {block:IfTwitchURL}
+                        <a href="{text:Twitch URL}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitch fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {/block:IfTwitchURL}
+                </div>
+                
+                {block:IfFeaturedPostImage}
+                    <h1>Featured Post</h1>
+                    <a href="{text:Featured Post URL}">
+                        <div class="featured-post">
+                            <img src="{image:Featured Post}" class="featured-post-image" />
+                            <div class="featured-post-title">
+                                {text:Featured Post Title}
+                            </div>
+                        </div>
+                    </a>
+                {/block:IfFeaturedPostImage}
+                
+                {block:IfShowBlogFriends}
+                    <h1>Blog Friends</h1>
+                    <ul class="blog-friends">
+                        {block:IfBlogFriendOneImage}
+                            <a href="{text:Blog Friend One URL}">
+                                <li>
+                                    <img src="{image:Blog Friend One}" class="blog-portrait" /> {text:Blog Friend One Title}
+                                </li>
+                            </a>
+                        {/block:IfBlogFriendOneImage}
+                        {block:IfBlogFriendTwoImage}
+                            <a href="{text:Blog Friend Two URL}">
+                                <li>
+                                    <img src="{image:Blog Friend Two}" class="blog-portrait" /> {text:Blog Friend Two Title}
+                                </li>
+                            </a>
+                        {/block:IfBlogFriendTwoImage}
+                        {block:IfBlogFriendThreeImage}
+                            <a href="{text:Blog Friend Three URL}">
+                                <li>
+                                    <img src="{image:Blog Friend Three}" class="blog-portrait" /> {text:Blog Friend Three Title}
+                                </li>
+                            </a>
+                        {/block:IfBlogFriendThreeImage}
+                        {block:IfBlogFriendFourImage}
+                            <a href="{text:Blog Friend Four URL}">
+                                <li>
+                                    <img src="{image:Blog Friend Four}" class="blog-portrait" /> {text:Blog Friend Four Title}
+                                </li>
+                            </a>
+                        {/block:IfBlogFriendFourImage}
+                        <!-- To add more spaces for blog friends, copy blog friend four code and paste as many more as you 
+                             need below it. Then change to the relative numbers -->
+                    </ul>
+                {/block:IfShowBlogFriends}
+                
+                {block:IfShowRecentPosts}
+                    <h1>Recent Posts</h1>
+                    <div class="recent-posts" id="recent-posts">
+                        <!-- Posts appeneded here -->
+                    </div>
+                {/block:IfShowRecentPosts}
+
+                
+                {block:IfShowMostRecentYouTubeVideo}
+                    <div class="youtube-most-recent">
+                        <h1>Most Recent Video</h1>
+                        <div class="video-container">
+                            <iframe width="300" height="200" src="http://www.youtube.com/embed?max-results=3&controls=0&showinfo=0&rel=0&listType=user_uploads&list={text:YouTube Channel}" frameborder="0" allowfullscreen></iframe> 
+                        </div>
+                    </div>
+                {/block:IfShowMostRecentYouTubeVideo}
+                
+                {block:IfShowBlogroll}
+                    {block:Following}
+                        <div class="blogroll {text:Blogroll Limit}">
+                            <h1>I Follow</h1>
+                            {block:Followed}
+                                <a href="{FollowedURL}">
+                                    <img src="{FollowedPortraitURL-64}" class="followed-blog" />
+                                </a>
+                            {/block:Followed}
+                        </div>
+                    {/block:Following}
+                {/block:IfShowBlogroll}
+                                
+            </div><!-- end | sidebar -->
+            
+        </div><!-- end | blog content -->
+        
+        {block:IfShowFooter}
+            <div class="footer"><!-- start | footer -->
+                {block:HasPages}
+                    <div class="footer-menu">
+                        {block:Pages}
+                            <li><a href="{URL}">{Label}</a></li>
+                        {/block:Pages}
+                        {block:IfShowLinkToDuneThemes}
+                        	<li><a href="http://dunethemes.tumblr.com" target="_blank">Themes</a></li>
+                        {/block:IfShowLinkToDuneThemes}
+                    </div>
+                {/block:HasPages}
+                <div class="footer-content-wrap">
+                    {block:IfFooterLogoImage}
+                        <a href="{BlogURL}">
+                            <img src="{image:Footer Logo}" class="footer-logo" />
+                        </a>
+                    {/block:IfFooterLogoImage}
+                    {block:IfNotFooterLogoImage}
+                        {block:ShowTitle}
+                            <a href="{BlogURL}" class="blog-link">
+                                <div class="blog-title">
+                                    {Title}
+                                </div>
+                            </a>
+                        {/block:ShowTitle}
+                    {/block:IfNotFooterLogoImage}
+                    <div class="blog-description">
+                        {block:IfFooterTextTitle}
+                        	<h1>{text:Footer Text Title}</h1>
+                        {/block:IfFooterTextTitle}
+                        {block:IfFooterText}
+                       		<p>{text:Footer Text}</p>
+                        {/block:IfFooterText}
+                    </div>
+                </div>
+            </div><!-- end | footer -->
+        {/block:IfShowFooter}
+        
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="http://static.tumblr.com/uv8mqxy/Im3o4r508/jquery.imagesloaded.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/lT2o4r50k/jquery.infinitescroll.min.js"></script>
+    <script src="http://static.tumblr.com/uv8mqxy/rzLo4r510/masonry.pkgd.js"></script>
+    <script>
+		(function() {
+		
+			// Main content container
+			var $container = $('.content');
+		
+			// Masonry + ImagesLoaded
+			$container.imagesLoaded(function(){
+				$container.masonry({
+					// selector for entry content
+					itemSelector: '.entry',
+					fitWidth: true,
+					resize: true,
+				});
+			});
+		
+			// Infinite Scroll
+			$container.infinitescroll({
+		
+				// selector for the paged navigation (it will be hidden)
+				navSelector  : ".pagination",
+				// selector for the NEXT link (to page 2)
+				nextSelector : "a.next",
+				// selector for all items you'll retrieve
+				itemSelector : ".entry.endless",
+		
+				// finished message
+				loading: {
+					finishedMsg: 'No more pages to load.'
+					}
+				},
+		
+				// Trigger Masonry as a callback
+				function( newElements ) {
+					// hide new items while they are loading
+					var $newElems = $( newElements ).css({ opacity: 0 });
+					// ensure that images load before adding to masonry layout
+					$newElems.imagesLoaded(function(){
+						// show elems now they're ready
+						$newElems.animate({ opacity: 1 });
+						$container.masonry( 'appended', $newElems, true );
+					});
+		
+			});
+		
+		})();
+	</script>
+    <script src="http://static.tumblr.com/uv8mqxy/jmRoyoo5d/slick.min.js"></script>
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/O7Hoyoo3h/slick.css" />
+    <link rel="stylesheet" href="http://static.tumblr.com/uv8mqxy/74voyoo4z/slick-theme.css" />
+	<script>
+		// Slider (powered by Slick)
+			$('.slider-slick').slick({
+				autoplay: true,
+				arrows: false,
+				dots: true,
+			});
+		
+		// Preloader
+			$(document).ready(function(e) {
+				$('.preloader').delay(5000).animate({right: "50px"});
+				$('.preloader').animate({right: "-100%"});
+			});
+		
+		// Post Ribbons
+			$(document).ready(function(e) {
+				$('.entry').mouseenter(function(){
+					$(this).children('.post-ribbon').animate({top: "0px"});	
+				});
+				$('.entry').mouseleave(function(){
+					$(this).children('.post-ribbon').animate({top: "-65px"});	
+				});
+			});
+		
+		// Recent Posts 
+			$(function() {
+				var url = '{BlogURL}rss';
+				var $list = $('#recent-posts');
+				$.ajax({
+					url: url,
+					type: 'GET',
+					dataType: 'xml',
+					success: function(data) {                
+						var $items = $(data).find('item');
+						$items.each( function() {
+							var $item = $(this);
+							var link = $item.children('link').text();
+							var title = $item.children('title').text();
+							if (link && title) {
+								$list.append($('<li><a href="' + link + '">' + title + '</a></li>'));
+							}
+						});
+					}
+				});
+			});
+		
+	</script>
+    	
+</body>
+</html>
